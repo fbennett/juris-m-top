@@ -1,0 +1,313 @@
+//------------------------------------------------------------------------------
+// Layout
+
+$empty-gutters: (
+xs: 0,
+sm: 0,
+md: 0,
+lg: 0,
+xl: 0
+);
+
+// A container for creating a full-width, multi-row navbar
+//
+// Sample hierarchy:
+//
+// .navbar
+// |- .navbar-container
+//    |- .row.no-gutters
+//    |  |- .col.bg-faded (left gutter)
+//    |  |- .navbar-content
+//    |  |- .col.bg-faded (right gutter)
+//    |- .row.no-gutters
+//       |- .col.bg-maroon (left gutter)
+//       |- .navbar-content
+//       |- .col.bg-maroon (right gutter)
+.navbar-container {
+  @include make-container($empty-gutters);
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+// A flexbox container for the top row of the navbar
+//
+// NOTE: This container's parent must be a block element!
+// justify-content: flex-end;
+.navbar-top-row {
+  display: flex;
+
+  @include bg-faded;
+}
+
+// A container that allows its content to grow
+// only up to the maximum lg container width
+.main-content {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include media-breakpoint-down(md) {
+    @include make-col(12);
+    max-width: map-get($container-max-widths, lg);
+  }
+  @include media-breakpoint-up(lg) {
+    flex: 0 0 auto;
+    width: map-get($container-max-widths, lg);
+  }
+}
+
+// A container that allows its content to grow
+// only up to the maximum xl container width
+.navbar-content {
+  @include media-breakpoint-down(lg) {
+    @include make-col(12);
+    max-width: map-get($container-max-widths, xl);
+  }
+  @include media-breakpoint-only(xl) {
+    flex: 0 0 auto;
+    width: map-get($container-max-widths, xl);
+  }
+}
+
+// Add padding around the navbar's top row
+.navbar-top-row {
+  @include media-breakpoint-only(xs) {
+    padding: .25rem .5rem;
+  }
+  @include media-breakpoint-between(sm,md) {
+    padding-left:   .5rem;
+    padding-right:  .5rem;
+    padding-top:    .5rem;
+    padding-bottom: .5rem;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-left:   $spacer;
+    padding-right:  $spacer;
+    padding-top:    $spacer/2;
+    padding-bottom: $spacer/2;
+  }
+}
+
+$desktop-navigation-collapsed-height: 56px;
+$desktop-navigation-expanded-height: 296px;
+
+.navbar-fixed-height {
+  height: $desktop-navigation-collapsed-height;
+}
+
+// Expand and collapse the full navigation menu on mouseover
+.navbar-nav#desktopNavMenu {
+  min-width: 992px;
+  max-width: 1200px;
+
+  max-height: $desktop-navigation-collapsed-height;
+  overflow: hidden;
+
+  // TODO: Add a mixin for all the different vendor variations
+  -webkit-transition: max-height 0.25s ease-in-out;
+  transition: max-height 0.25s ease-in-out;
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+
+  &.expanded {
+    max-height: $desktop-navigation-expanded-height;
+  }
+
+  .dropdown-nav {
+    min-height: $desktop-navigation-expanded-height - $desktop-navigation-collapsed-height;
+  }
+}
+
+// Adjust margins, padding, and borders around dropdown menu items in the navbar
+.navbar {
+  .navbar-nav {
+    .dropdown-menu {
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem 0.75rem 1rem;
+      }
+    }
+    .dropdown-nav {
+      .nav-item {
+        display: block;
+        padding: 0.75rem 1.5rem 0.75rem 1rem;
+      }
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+// Hamburger menu
+
+// Responsively resize the hamburger menu button
+.navbar-toggler {
+  @include media-breakpoint-only(xs) {
+    font-size: 1rem;
+    margin: .25rem 0 .25rem .5rem;
+    padding: .25rem .5rem;
+  }
+  @include media-breakpoint-up(sm) {
+    margin-left: .25rem;
+  }
+}
+
+// Allow the hamburger menu to be filled in with the primary brand color
+.navbar-toggler.btn-primary {
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+
+  > .navbar-toggler-icon {
+    background-image: $navbar-light-toggler-bg-hover;
+  }
+}
+
+// Allow the hamburger menu to be outlined with the primary brand color
+.navbar-light {
+  .navbar-toggler.btn-outline-primary {
+    @include button-outline-variant($btn-primary-bg);
+
+    &:hover > .navbar-toggler-icon {
+      background-image: $navbar-light-toggler-bg-hover;
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+// Typography
+
+// Category names in the navbar are uppercase
+.navbar-nav {
+  .category-name {
+    text-transform: uppercase;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Colors
+
+$category-name-default-color: darken($body-bg, 3%);
+$category-name-default-bg:    $maroon;
+$category-name-hover-color:   $maroon;
+$category-name-hover-bg:      darken($body-bg, 3%);
+$navigation-bg:               $maroon;
+
+.navbar {
+  #mobileNavMenu {
+    .category-name {
+      &:focus, &:hover {
+        color:            $category-name-hover-color;
+        background-color: $category-name-hover-bg;
+        text-decoration:  none;
+      }
+    }
+  }
+
+  .navbar-nav {
+    &.expanded {
+      .category-name {
+        &:focus, &:hover {
+          // Show an inverted caret when hovering over category tabs
+          @include inverted-caret;
+        }
+      }
+    }
+
+    .category-name {
+      color:            $category-name-default-color;
+      background-color: $category-name-default-bg;
+
+      &.current {
+        color:            $category-name-hover-color;
+        background-color: $category-name-hover-bg;
+
+        &:focus, &:hover {
+          color: $category-name-hover-color;
+          text-decoration: none;
+        }
+      }
+
+      &:focus, &:hover {
+        color: $category-name-default-color;
+        text-decoration: none;
+      }
+    }
+
+    .dropdown-menu, .dropdown-nav {
+      // The dropdown navigation menu is slightly translucent
+      background-color: rgba($navigation-bg, 0.9);
+
+      .subcategory-name {
+        color: $category-name-default-color;
+
+        &:focus, &:hover {
+          color:            $category-name-hover-color;
+          background-color: $category-name-hover-bg;
+
+          text-decoration: none;
+        }
+      }
+    }
+
+    // Highlight navigation columns under the mouse cursor
+    .dropdown-nav.highlight {
+      background-color: $copper;
+    }
+  } // .navbar-nav
+} // .navbar
+
+//------------------------------------------------------------------------------
+// Miscellaneous
+
+// Hide the navbar logo on any screen smaller than the iPhone 7
+@media (max-width: $iphone-7-min-width - 1) {
+  .navbar-brand img {
+    display: none;
+  }
+}
+
+// Automatically generate a caret after category names in the navbar
+.navbar .navbar-nav .category-name {
+  @include caret;
+}
+
+// Responsively resize the search button
+.search-button {
+  @include media-breakpoint-only(xs) {
+    font-size: 1rem;
+    margin: .25rem 0 .25rem .5rem;
+    padding: .25rem .5rem;
+  }
+  @include media-breakpoint-up(sm) {
+    margin-right: .25rem;
+  }
+}
+
+// Ensure that headings are not hidden by the navbar when jumping from TOC links
+h1[id]:before,
+h2[id]:before,
+h3[id]:before,
+h4[id]:before,
+h5[id]:before,
+h6[id]:before {
+  display: block;
+  content: " ";
+  visibility: hidden;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: -$navbar-xs-header-height - 34px;
+    height: $navbar-xs-header-height + 34px;
+  }
+  @include media-breakpoint-between(sm,md) {
+    margin-top: -$navbar-header-height - 34px;
+    height: $navbar-header-height + 34px;
+  }
+  @include media-breakpoint-up(lg) {
+    margin-top: -$navbar-header-height - $navbar-nav-height - 39px;
+    height: $navbar-header-height + $navbar-nav-height + 39px;
+  }
+}

@@ -1,0 +1,47 @@
+// Transparent background
+.bg-transparent {
+  background-color: transparent;
+}
+
+// Maroon background
+.bg-maroon {
+  background-color: $maroon;
+}
+.bg-maroon-translucent {
+  background-color: rgba($maroon, 0.9);
+}
+
+a {
+  font-weight: 500;
+}
+
+a:not(.navbar-brand, .nav-link, .footer-link .nodecor) {
+  color: $maroon;
+  text-decoration: none;
+
+  &:focus, &:hover {
+    color: $maroon;
+    text-decoration: underline;
+  }
+}
+
+a.nodecor {
+    color: inherit;
+    text-decoration: none;
+
+    &:focus, &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+}
+
+a.footer-link {
+  font-weight: 700;
+  color: $silver-chalice !important;
+  text-decoration: none !important;
+
+  &:focus, &:hover {
+    color: $silver-chalice !important;
+    text-decoration: underline !important;
+  }
+}

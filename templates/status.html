@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+<head>
+  <title>Validation Report</title>
+</head>
+<body>
+<h1>Validation Report</h1>
+<p>
+  <b>Date:</b> {{ updated }}
+</p>
+{% for key, entry in errors %}
+{% if entry.fail %}
+<h3>Errors: {{ key }}</h3>
+{% else %}
+<h3>Warnings: {{ key }}</h3>
+{% endif %}
+{% for info in entry.messages %}
+<dl>
+  <dt>{{ info.label|safe }}</dt>
+  <dd>{{ info.message|safe }}</dd>
+</dl>
+{% endfor %}
+{% endfor %}
+</body>
+</html>

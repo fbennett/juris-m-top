@@ -1,0 +1,51 @@
+// |----------------------| -------
+// | .site-flex-container |    ^
+// |                      |    |
+// | |------------------| |    |
+// | | .container-fluid | |    |
+// | |                  | |    |
+// | |------------------| | >=100vh
+// |                      |    |
+// | |------------------| |    |
+// | | .site-footer     | |    |
+// | |                  | |    |
+// | |------------------| |    v
+// |----------------------| -------
+// |<------- 100% ------->|
+
+.site-flex-container {
+  // To ensure that the footer always appears at the bottom of the screen,
+  // don't let the site be shorter than the screen is
+  min-height: 100vh;
+
+  // Add padding to prevent the navbar from hiding content
+  // at the top of the page
+  @include media-breakpoint-only(xs) {
+    padding-top: $navbar-xs-header-height + 65px;
+  }
+  @include media-breakpoint-between(sm,md) {
+    padding-top: $navbar-header-height + 65px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: $navbar-header-height + $navbar-nav-height + 65px;
+  }
+
+  // Use Flexbox
+  display: flex;
+  // Lay out the page content and footer in a single column
+  flex-direction: column;
+  // Pack the page content and footer at the bottom of the page,
+  // but by using 'mb-auto' (i.e. 'margin-bottom: auto;') on the page content
+  // we can push only the footer to the bottom
+  justify-content: flex-end;
+  // Let the page content and footer fill the full width of the screen
+  align-items: stretch;
+}
+
+//------------------------------------------------------------------------------
+// Lists
+
+// Add extra spacing between items in unstyled lists
+ul.list-unstyled li {
+  margin: 5px 0;
+}

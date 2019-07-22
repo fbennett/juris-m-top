@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GSLNews//NONSGML Event Calendar//EN
+{% for session in sessions %}
+
+BEGIN:VEVENT
+UID:{{ session.id }}
+CREATED:{{ session.created }}
+LAST-MODIFIED:{{ session['last-modified'] }}
+DTSTAMP:{{ session['last-modified'] }}
+ORGANIZER;CN={{ session.authorName }}:MAILTO:{{ session.authorEmail }}
+DTSTART:{{ session.startCal }}
+DTEND:{{ session.endCal }}
+SUMMARY:{{ session.calSummary }}
+{% if session.description %}
+DESCRIPTION:{{ session.description }}
+{% endif %}
+LOCATION:{{ session.place }}
+URL:{{ session.url }}
+END:VEVENT
+
+{% endfor %}
+END:VCALENDAR

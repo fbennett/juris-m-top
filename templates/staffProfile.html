@@ -1,0 +1,147 @@
+{% extends "main.html" %}
+{% block content %}
+<h2 class="hidden-sm-down">{{ pageSubTitle }}</h2>
+<h2 class="hidden-md-up">{% if shortSubTitle %}{{ shortSubTitle }}{% else %}{{ pageSubTitle }}{% endif %}</h2>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="{{ toppath }}/directory/staff/">&#171; Staff Profiles</a>
+  </li>
+</ol>
+<div class="card my-3">
+  <h4 class="card-header">Basic Information</h4>
+  <dl class="dl-group">
+    {% if posts %}
+    <div class="dl-group-item stubborn">
+      <dt>Academic post</dt>
+      {% for post in posts %}
+      <dd>{{ post|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if faculties %}
+    <div class="dl-group-item stubborn">
+      <dt>Faculty section</dt>
+      {% for faculty in faculties %}
+      <dd>{{ faculty|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if offices %}
+    <div class="dl-group-item stubborn">
+      <dt>Office</dt>
+      {% for office in offices %}
+      <dd>{{ office|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if phones %}
+    <div class="dl-group-item stubborn">
+      <dt>Phone</dt>
+      {% for phone in phones %}
+      <dd>{{ phone|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if emails %}
+    <div class="dl-group-item stubborn">
+      <dt>Email</dt>
+      {% for email in emails %}
+      <dd>{{ email|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if websites %}
+    <div class="dl-group-item stubborn">
+      <dt>Websites</dt>
+      {% for website in websites %}
+      <dd>{{ website|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if appointment_channels %}
+    <div class="dl-group-item stubborn">
+      <dt>Office hours</dt>
+      {% for appointment_channel in appointment_channels %}
+      <dd>{{ appointment_channel|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if admission_contacts %}
+    <div class="dl-group-item stubborn">
+      <dt>Admission queries</dt>
+      {% for admission_contact in admission_contacts %}
+      <dd>{{ admission_contact|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if interests %}
+    <div class="dl-group-item stubborn">
+      <dt>Research interests</dt>
+      {% for interest in interests %}
+      <dd>{{ interest|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if associations %}
+    <div class="dl-group-item stubborn">
+      <dt>Professional associations</dt>
+      {% for association in associations %}
+      <dd>{{ association|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if visitorships %}
+    <div class="dl-group-item stubborn">
+      <dt>Visitorships</dt>
+      {% for visitorship in visitorships %}
+      <dd>{{ visitorship|safe }}</dd>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </dl>
+</div>
+
+{% if jobs_and_degrees %}
+<div class="card my-3">
+  <h4 class="card-header">Career summary</h4>
+  <ul class="list-group list-group-flush">
+    {% for job_or_degree in jobs_and_degrees %}
+    <li class="list-group-item">{{ job_or_degree|safe }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if books %}
+<div class="card my-3">
+  <h4 class="card-header">Books</h4>
+  <ul class="list-group list-group-flush">
+    {% for book in books %}
+    <li class="list-group-item"><div style="display:inline-block;margin-left:1em;text-indent:-1em;">{{ book|safe }}</div></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if others %}
+<div class="card my-3">
+  <h4 class="card-header">Chapters, Articles, and Papers</h4>
+  <ul class="list-group list-group-flush">
+    {% for other in others %}
+    <li class="list-group-item"><div style="display:inline-block;margin-left:1em;text-indent:-1em;">{{ other|safe }}</div></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+{% endblock %}

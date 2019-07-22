@@ -1,0 +1,52 @@
+//------------------------------------------------------------------------------
+// Colors
+
+// Palette
+$chocolate:       #370202;
+//$maroon:          #800000;
+$maroon:          #016029;
+$log-cabin:       #242a1d;
+$cape-cod:        #484949;
+//$camarone:        #016029;
+$camarone:        #800000;
+$copper:          #b87333;
+$silver-chalice:  #c0c0c0;
+$alabaster:       #fafafa;
+$white:           #ffffff;
+
+// Brand colors
+$brand-secondary: $camarone;
+
+//------------------------------------------------------------------------------
+// Layout
+
+// Navbar dimensions
+$navbar-xs-header-height: 50px;
+$navbar-header-height: 56px;
+$navbar-nav-height: 56px;
+
+// Maximum container size
+$container-max-width: 1400px;
+
+// Number of categories
+$category-count: 5;
+
+// iPhone SE screen dimensions
+$iphone-se-min-width:      320px;
+$iphone-se-max-width:      568px;
+
+// iPhone 7 screen dimensions
+$iphone-7-min-width:       375px;
+$iphone-7-max-width:       667px;
+
+// iPhone 7 Plus screen dimensions
+$iphone-7-plus-min-width:  414px;
+$iphone-7-plus-max-width:  736px;
+
+// iPad screen dimensions
+$ipad-min-width:           768px;
+$ipad-max-width:           1024px;
+
+// iPad Pro screen dimensions
+$ipad-pro-min-width:       1024px;
+$ipad-pro-max-width:       1366px;

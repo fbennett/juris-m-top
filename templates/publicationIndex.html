@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{% block content %}
+<h2 class="hidden-sm-down">{{ pageSubTitle }}</h2>
+<h2 class="hidden-md-up">{% if shortSubTitle %}{{ shortSubTitle }}{% else %}{{ pageSubTitle }}{% endif %}</h2>
+<p>
+  The links below provide lists of faculty publications in particular
+  topic areas.  Prospective applicants to postgraduate programs should
+  consult these lists when drafting a research proposal, as they give
+  an approximate picture of the research focus and approach of
+  potential supervisors.
+</p>
+<p>
+  Note that these listings are limited in principle to publications
+  within the past five years.
+</p>
+<grid class="index-list">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-7">
+      Subject Category
+    </div>
+    <div class="col-2 hidden-sm-down text-center">
+      Documents
+    </div>
+    <div class="col-3 hidden-lg-down text-center">
+      Staff Members
+    </div>
+  </div>
+  {% for datum in data %}
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-7"><a href="{{ toppath }}/directory/publications/{{ datum.urlName|urlencode }}.html">{{ datum.subjectName }}</a></div>
+    <div class="col-2 hidden-sm-down text-center">{{ datum.documentCount }}</div>
+    <div class="col-3 hidden-lg-down text-center">{{ datum.staffCount }}</div>
+  </div>
+  {% endfor %}
+</grid>
+{% endblock %}

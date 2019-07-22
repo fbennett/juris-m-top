@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block content %}
+<h2 class="hidden-sm-down">{{ pageSubTitle }}</h2>
+<h2 class="hidden-md-up">{% if shortSubTitle %}{{ shortSubTitle }}{% else %}{{ pageSubTitle }}{% endif %}</h2>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="{{ toppath }}/alumni/{{ blogname }}/">&#171; {{ blogtitle }}</a>
+  </li>
+</ol>
+<p>{{ author }}<br/><a title="permalink" href="https://our.law.nagoya-u.ac.jp/alumni/topic/{{ slug }}">{{ date }}</a></p>
+{{ content|safe }}
+{% endblock %}

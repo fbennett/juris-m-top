@@ -1,0 +1,174 @@
+#+LATEX_CLASS: texMemo
+#+LaTeX_CLASS_OPTIONS: [10pt]
+#+MACRO: NOINDENT @@latex:\noindent @@
+#+MACRO: SAMEPAGE_BEGIN @@latex:\begin{samepage}@@
+#+MACRO: SAMEPAGE_END @@latex:\end{samepage}@@
+#+MACRO: PAGEBREAK @@latex:\pagebreak{}@@
+#+MACRO: ARROW @@latex:\MVRightArrow{}@@
+#+MACRO: BEGIN_FORM @@latex:\begin{Form}@@
+#+MACRO: END_FORM @@latex:\end{Form}@@
+#+MACRO: CHECKBOX_OPEN @@latex:\CheckBox[name=@@
+#+MACRO: CHECKBOX_CLOSE @@latex:]{}@@
+#+TITLE: MEMO
+#+LATEX_HEADER: \memoto|{{recipient}}|
+#+LATEX_HEADER: \memofrom{Frank Bennett}
+#+LATEX_HEADER: \memosubject{English web document updates}
+#+LATEX_HEADER: \memodate{\today}
+
+
+* Overview
+
+Over fifty separate documents related to admissions and instruction in
+the Graduate School of Law are accessible via the English website.
+Responsibility for updating individual documents and links is delegated
+to relevant offices within the GSL.
+
+Delegated content is stored on the NUSS filesystem, and can be
+accessed directly using a Nagoya University ID. Files can be uploaded
+or edited on the NUSS system at any time, but changes are not
+immediately reflected on the English GSL website. The website is
+periodically updated (typically once per day) from the files stored in
+NUSS. Changes become visible immediately after the update. Figure 1 on the
+following page shows the workflow.
+
+#+CAPTION: NUSS content and the GSL website
+#+NAME: fig:architecture
+[[../graphics/architecture.png]]
+
+See *Appendix 2* of this memorandum for a checklist of documents to be
+maintained by {{recipient}}, in the order in which they should be
+updated or confirmed during the academic year. At the end of each
+entry are links to a 説明文 file =DESCRIPTION.txt=, and another to the
+upload directory for a document or link address. The use of each is
+explained below.
+
+* 説明文：the =DESCRIPTION.txt= file
+
+Under each document entry in *Appendix 2* there is a descriptive
+text. This text, which appears next to the document link on the
+English website, is contained in a =DESCRIPTION.txt= file on the NUSS
+system.
+
+Clicking on the［上記の説明文」link under an *Appendix 2* entry will open
+the document's NUSS information directory in your browser. Click on
+the =DESCRIPTION.txt= file in your browser to edit the file. Your
+changes will be saved automatically.
+
+* 文書・アドレス：the =document= upload directory
+
+Clicking on the「文書・アドレス」link under an entry in *Appendix 2* will
+open the document's NUSS upload folder in your browser. The upload folder
+may contain multiple files, but only the most recent file will be
+made available on the English GSL website. Depending on its content
+and filename, an uploaded file may be a downloadable file, a local
+web page on the English GSL site, a link to a local web page,
+or a link to an external web page located on another site. The
+composition of each of these file types is explained below.
+
+** Downloadable file
+
+To update a downloadable file in the upload folder, simply drag your
+file into the =document= folder page shown in the browser. The file
+may be a Word file, an Excel file, a PDF, or a ZIP file. Please note
+that the file will be automatically renamed when it is placed on the
+English GSL website.
+
+** Local web page
+
+To add a local web page to the upload folder, prepare a plain text
+file with the extension =.md=. For example:
+
+  =jds-application-process.md=
+
+|||NOINDENT|||
+The first line of the file should begin with =pageTitle:=, followed by
+the title of the page and a blank line. Write the content of the page
+beneath the blank line, as follows:
+
+  =pageTitle: JDS Scholarships=
+  
+  =[text begins here]=
+
+
+** Internal link
+
+In ordinary operation, it should not be necessary to edit internal
+links to other documents inside the English GSL website. The syntax
+of link files is described here only for completeness.
+
+|||NOINDENT|||
+Internal links are written in plain text files with a =.txt= extension.
+For example:
+
+  =link-to-llm-english-mofamext.txt=
+
+|||NOINDENT|||
+The content of an internal link file consists of a single line
+beginning with =resources/forms/= or =resources/documents/=,
+followed by the name of the target page or document on the
+English GSL website. For example:
+
+  =resources/forms/cl-llm-mofamext-en.html=
+
+|||NOINDENT|||
+You can confirm the filename by clicking on the appropriate
+item in the *Quick Links |||ARROW||| Documents* or *Quick Links |||ARROW||| Forms*
+view on the [[https://www.law.nagoya-u.ac.jp/en][English GSL website]].
+
+** External link
+
+Like internal links, external links are written on a single line
+in a file with a =.txt= extension. For example:
+
+  =china-scholarship-info.txt=
+
+|||NOINDENT|||
+The line should begin with =http://= or =https://= to correctly express
+the link address: 
+
+  =http://www.nushanghai.net/nu_shanghainews/=
+
+
+|||PAGEBREAK|||
+
+* Appendix 1: Markdown
+
+Use the ``Markdown'' syntax described below in plain-text web page
+files uploaded to a =document= folder (i.e. files ending in =.md=).
+
+|||NOINDENT|||
+In the =DESCRIPTION.txt= file, only the markup shown under *Emphasis*
+is needed.
+
+[[../src/markdown-cheatsheet-online-1.pdf]]
+
+
+|||PAGEBREAK|||
+
+* Appendix 2: Documents for {{recipient}}
+
+|||BEGIN_FORM|||
+
+{% for entry in info %}
+** |||CHECKBOX_OPEN|||{{ entry.entrykey }}|||CHECKBOX_CLOSE||| {{ entry.doc_name }} ({{ entry.language }} {{ entry.label }}) [{{ entry.doc_type }}]
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+  
+|||SAMEPAGE_BEGIN|||
+{{ entry.description|safe }}
+
+{% if entry.update_req_date %}
+- *{{ col_map.update_req_date }}:* {{ entry.update_req_date }}月（{{ entry.archive_tanto }}）
+{% endif %}
+{% if entry.rev_deadline_date %}
+- *{{ col_map.rev_deadline_date }}:* {{ entry.rev_deadline_date }}月（{{ entry.rev_tanto }}）
+{% endif %}
+- *{{ col_map.uploader }}:* {{ entry.uploader }}
+- *リンク:*
+  - [[{{ entry.top_url }}][上記の説明文]] (=DESCRIPTION.txt=)
+  - [[{{ entry.document_url }}][文書・アドレス]] (最新のファイル)
+|||SAMEPAGE_END|||
+{% endfor %}
+
+|||END_FORM|||

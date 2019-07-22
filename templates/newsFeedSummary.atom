@@ -1,0 +1,5 @@
+We are pleased to announce{% if isSingularLabel %} a{% endif %}
+{{ label }}
+by {{ names.loong }},
+to take place
+{% if isSingular %}on{% elif isPlural %}between{% endif %} {{ startDate }}{% if isPlural %} and {{ endDate }}{% endif %}.

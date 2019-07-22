@@ -1,0 +1,24 @@
+//------------------------------------------------------------------------------
+// Sticky footer
+
+.site-footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  color: $silver-chalice;
+  background-color: $brand-primary;
+
+  > .row {
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-down(md) {
+      @include make-col(12);
+      max-width: map-get($container-max-widths, lg);
+    }
+    @include media-breakpoint-up(lg) {
+      flex: 0 0 auto;
+      width: map-get($container-max-widths, lg);
+    }
+  }
+}

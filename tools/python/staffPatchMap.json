@@ -1,0 +1,187 @@
+{
+    "nameFixes": {
+        "Colombo_G": {
+            "名前": {
+                "kana": "ころんぼ　じょるじお　ふぁびお",
+                "ja": "コロンボ　ジョルジオ　ファビオ",
+                "en": "Colombo, Giorgio Fabio"
+            },
+            "並べ替え": {
+                "ja": "コロンボジョルジオファビオ",
+                "en": "colombogiorgiofabio"
+            }
+        },
+        "Bennett_F": {
+            "名前": {
+                "kana": "べねっと　ふらんく　じょーじ",
+                "ja": "ベネット　フランク　ジョオジ",
+                "en": "Bennett, Frank George"
+            },
+            "並べ替え": {
+                "ja": "ベネットフランクジョオジ",
+                "en": "bennettfrankgeorge"
+            }
+        },
+        "Kang_D": {
+            "名前": {
+                "kana": "カン　ドングック",
+                "ja": "姜 東局",
+                "en": "Kang Dongkuk"
+            },
+            "並べ替え": {
+                "ja": "カンドングック",
+                "en": "kangdongkuk"
+            }
+        },
+        "Ishii_A": {
+            "名前": {
+                "kana": "いしい　あきら",
+                "ja": "石井　晃",
+                "en": "Ishii Akira"
+            },
+            "並べ替え": {
+                "ja": "いしいあきら",
+                "en": "ishiiakira"
+            }
+        },
+        "Iritani_S": {
+            "名前": {
+                "kana": "いりたに しゅうじ",
+                "ja": "入谷 修司",
+                "en": "Iritani Shūji"
+            },
+            "並べ替え": {
+                "ja": "いりたにしゅうじ",
+                "en": "iritanishuuji"
+            }
+        },
+        "Shimada_Y": {
+            "名前": {
+                "kana": "しまだ ゆづる",
+                "ja": "島田 弦",
+                "en": "Shimada Yuzuru"
+            },
+            "並べ替え": {
+                "ja": "しまだゆづる",
+                "en": "shimadayudzuru"
+            }
+        }
+    },
+    "postFixes": {
+        "Ishii_A": {
+            "役職": {
+                "ja": "医学系研究科　教授",
+                "en": "Professor, Faculty of Medicine"
+            },
+            "専門分野": {
+                "ja": "",
+                "en": "Forensic Medicine"
+            }
+        },
+        "Iritani_S": {
+            "役職": {
+                "ja": "医学系研究科　教授",
+                "en": "Professor, Faculty of Medicine"
+            },
+            "専門分野": {
+                "ja": "",
+                "en": "Forensic Psychiatry"
+            }
+        },
+        "Shimada_Y": {
+            "役職": {
+                "ja": "国際開発研究科・准教授",
+                "en": "Associate Professor, GSID"
+            },
+            "専門分野": {
+                "ja": "",
+                "en": "Comparative Law and Disaster Relief"
+            }
+        },
+        "Kawai_N": {
+            "役職": {
+                "ja": [
+                    "実務法曹養成専攻（実務家教員）教授",
+                    "弁護士"
+                ],
+                "en": [
+                    "Professor (legal practice course)",
+                    "Lawyer"
+                ]
+            },
+            "専門分野": {
+                "ja": "ロイヤリング、エクスターンシップ、比較民事法総合、総合問題研究（民事法）II",
+                "en": "Civil Practice and Legal Advocacy"
+            }
+        },
+        "Matsukuma_K": {
+            "役職": {
+                "ja": [
+                    "実務法曹養成専攻（実務家教員）教授",
+                    "名古屋高等検察庁検事"
+                ],
+                "en": [
+                    "Professor (legal practice course)",
+                    "Public Prosecutor, Nagoya High Court"
+                ]
+            },
+            "専門分野": {
+                "ja": "刑事実務基礎、総合問題演習（刑事法）、総合問題研究（刑事法）",
+                "en": "Criminal Practice and Procedure"
+            }
+        },
+        "Noda_H": {
+            "役職": {
+                "ja": [
+                    "実務法曹養成専攻（実務家教員）教授",
+                    "弁護士"
+                ],
+                "en": [
+                    "Professor (legal practice course)",
+                    "Lawyer"
+                ]
+            },
+            "専門分野": {
+                "ja": "総合問題演習（民事法）、総合問題研究（民事法）I、模擬裁判（民事）",
+                "en": "Civil Practice and Courtroom Advocacy"
+            }
+        },
+        "Okuda_S": {
+            "役職": {
+                "ja": "講師（留学生担当）",
+                "en": "Lecturer (overseas student advisor)"
+            },
+            "専門分野": {
+                "ja": "留学生教育・指導相談",
+                "en": "Cross-Border Pedagogy and Supervision"
+            }
+        },
+        "Tomizaki_O": {
+            "役職": {
+                "ja": "講師",
+                "en": "Lecturer (systems administrator)"
+            },
+            "専門分野": {
+                "ja": "IT担当",
+                "en": "Institutional IT systems design and deployment"
+            }
+        },
+        "Yasuda_D": {
+            "役職": {
+                "ja": [
+                    "実務法曹養成専攻（実務家教員）教授",
+                    "裁判官　（名古屋地方裁判所）"
+                ],
+                "en": [
+                    "Professor (legal practice course)",
+                    "Judge, Nagoya District Court"
+                ]
+            },
+            "専門分野": {
+                "ja": "民事実務基礎I、総合問題演習（民事法）、総合問題研究（民事法）I",
+                "en": "Civil Law Practice"
+            }
+        }
+    }
+    
+}

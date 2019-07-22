@@ -1,0 +1,47 @@
+{% extends "main.html" %}
+{% block content %}
+{% if sessions.length %}
+<div style="margin-bottom: 1em;">
+<h3 style="visibility: hidden;">Event</h3>
+<h4 class="event-title">{{ title }}</h4>
+<h5>👤 <span class="presenter-name">{{ names.shrt }}</span></h5>
+</div>
+{{ summaryMD|safe }}
+{{ overview|safe }}
+<div class="card my-3">
+  <dl class="dl-group">
+    <div class="dl-group-item">
+      <dt>Calendar</dt>
+      <dd>
+        <a href="{{ toppath }}/events/{{ fn }}.ics">
+          <img src="{{ toppath }}/assets/icons/calendar.svg" height="36px"/>
+        </a>
+      </dd>
+    </div>
+  </dl>
+</div>
+    {% for session in sessions %}
+<div class="card my-3">
+  <h4 class="card-header">Session {{ session.seq }}</h4>
+  <dl class="dl-group">
+    <div class="dl-group-item stubborn">
+      <dt>Topic</dt>
+      <dd><span class="session-title" style="font-size:larger;">{{ session.title }}</span></dd>
+    </div>
+    <div class="dl-group-item stubborn">
+      <dt>Time</dt>
+      <dd>{{ session.date }}, {{ session.startNews }}-{{ session.endNews }}</dd>
+    </div>
+    <div class="dl-group-item stubborn">
+      <dt>Place</dt>
+      <dd>{{ session.place }}</dd>
+    </div>
+  </dl>
+</div>
+    {% endfor %}
+{% else %}
+<h2>GSL Announcement</h2>
+<h3>{{ names.shrt }}: {{ title }}</h3>
+{{ entry.summaryMD|safe }}
+{% endif %}
+{% endblock %}

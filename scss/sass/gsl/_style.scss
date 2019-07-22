@@ -1,0 +1,203 @@
+//------------------------------------------------------------------------------
+// Definition lists
+
+// A definition list with a line between each item
+//
+// For more information on the Bootstrap mixins, see
+// https://v4-alpha.getbootstrap.com/layout/grid/#mixins
+h3 {
+    font-size: 1.5rem;
+}
+
+h2.dividers {
+    margin-top: 1em;
+    border-top: 8px solid #ccc;
+    padding-top: 0.75em;
+}
+
+div#langselector {
+    position: sticky;
+    z-index: 100;
+    margin:0px 0px 1em 0px;
+    text-align: center;
+    @include media-breakpoint-down(xs) {
+        top: 51px;
+    }
+    @include media-breakpoint-up(xs) {
+        top: 56px;
+    }
+    @include media-breakpoint-up(md) {
+        top: 56px;
+    }
+    @include media-breakpoint-up(lg) {
+        top: 116px;
+    }
+    > div {
+      display: inline-block;
+      margin-top: 2px;
+      padding: 0.2em 0.5em;
+      font-weight: bold;
+      background: #efefef;
+      border: 2px solid #999999;
+      border-radius: 1em;
+      color: #aaaaaa;
+      cursor: pointer;
+    }
+    > div.checked {
+      color: black;
+    }
+}
+.index-list {
+
+    > div {
+        padding: 0.75rem;
+    }
+
+    > div:first-child {
+        position: -webkit-sticky;
+        position: sticky;
+        font-weight: bold;
+        background: white;
+        z-index: 100;
+        @include media-breakpoint-only(xs) {
+            display: none;
+        }
+        @include media-breakpoint-down(md) {
+            top: 50px;
+        }
+        @include media-breakpoint-up(lg) {
+            top: 110px;
+        }
+    }
+
+   > div:not(:first-child) {
+        z-index: 50;
+        
+        > div:first-child {
+            font-weight: bold;
+        }
+
+    }
+    
+    > div:nth-of-type(even) {
+        background-color: $table-bg-accent;
+    }
+
+}
+
+.dl-group {
+  // Pad the entire definition list
+  padding: .75rem 1.25rem;
+
+  // A group containing a term and its description
+  > .dl-group-item {
+    // Create a wrapper for a series of Bootstrap columns
+    @include make-row();
+
+    // Add a border after every term/description pair except the last one
+    &:not(:last-child) {
+      border-bottom:  1px solid rgba(0,0,0,0.1);
+    }
+
+    // Remove margins above the first term/description pair
+    &:first-child > dt, &:first-child > dd {
+      margin-top: 0;
+    }
+
+    // Remove margins below the last term/description pair
+    &:last-child > dt, &:last-child > dd {
+      margin-bottom: 0;
+    }
+
+    // A term
+    > dt {
+      // Add margins above and below each term  
+      margin-top: .75rem;
+      margin-bottom: .75rem;
+
+      @include make-col-ready();
+
+      @include media-breakpoint-only(md) {
+        @include make-col(4);
+      }
+      @include media-breakpoint-up(lg) {
+        @include make-col(3);
+      }
+    }
+
+    // A description
+    > dd {
+      // Add margins above and below each description
+      margin-top: .75rem;  
+      margin-bottom: .75rem;
+
+      // Make the element grid-ready (applying everything but the width)
+      @include make-col-ready();
+
+      &:first-of-type {
+        @include media-breakpoint-only(md) {
+          @include make-col(8);
+        }
+        @include media-breakpoint-up(lg) {
+          @include make-col(9);
+        }
+      }
+      // Offset/indent any description after the first
+      &:not(:first-of-type) {
+        @include media-breakpoint-only(md) {
+          @include make-col(8);
+          @include make-col-offset(4);
+        }
+        @include media-breakpoint-up(lg) {
+          @include make-col(9);
+          @include make-col-offset(3);
+        }
+      }
+      > p {
+          white-space: pre-line;
+      }
+    }
+  }
+  // A group item that spoofs first-position treatment. Used when
+  // actual first-position element is hidden.
+  > .dl-group-item.first-item {
+      > dt {
+          margin-top: 0;
+      }
+      > dd {
+          margin-top: 0;
+      }
+  }
+// A group item that spoofs last-position treatment. Used when
+  // actual first-position element is hidden.
+  > .dl-group-item.last-item {
+      border-bottom: none;
+      > dt {
+          margin-bottom: 0;
+      }
+      > dd {
+          margin-bottom: 0;
+      }
+  }
+  // A group item that is reluctant to flip to vertical alignment
+  > .dl-group-item.stubborn {
+    > dt {
+      @include media-breakpoint-only(sm) {
+        @include make-col(5);
+      }
+    }
+    > dd {
+      &:first-of-type {
+        @include media-breakpoint-only(sm) {
+          @include make-col(7);
+        }
+      }
+      &:not(:first-of-type) {
+        @include media-breakpoint-only(sm) {
+          @include make-col(7);
+          @include make-col-offset(5);
+        }
+      }
+    }
+  }
+}

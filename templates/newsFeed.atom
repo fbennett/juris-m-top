@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ title }}</title>
+  <link rel="self" href="{{ selfLink }}"/>
+  <updated>{{ updated }}</updated>
+  <author>
+    <name>{{ author.name }}</name>
+  </author>
+  <id>https://law.nagoya-u.ac.jp/en/index.atom</id>
+  {% for category in categories %}
+  <category term="{{ category|lower }}" label="{{ category }}"/>
+  {% endfor %}
+  {% if contributors %}
+  <contributor>
+    {% for contributor in contributors %}
+    <name>{{ contributor.name }}</name>
+    {% endfor %}
+  </contributor>
+  {% endif %}
+  <rights>{{ rights }}</rights>
+  <subtitle>{{ subtitle }}</subtitle>
+  {% for entry in entries %}
+  <entry>
+    <title>
+      {% if entry.title %}
+        {% if entry.names.shrt %}
+          {{ entry.names.shrt }}:
+        {% endif %}
+        {{ entry.title }}
+      {% else %}
+        {{ entry.category }}
+      {% endif %}
+    </title>
+    {% if entry.category == "Event" %}
+      <link href="https://law.nagoya-u.ac.jp/en/{{ entry.category }}/{{ entry.fn }}.html"/>
+    {% else %}
+      <link href="https://law.nagoya-u.ac.jp/en"/>
+    {% endif %}
+    <id>{{ entry.id }}</id>
+    <updated>{{ entry.updated }}</updated>
+    <summary>
+      {% if entry.category == "Event" %}
+        {{ entry.summary }}
+      {% else %}
+        {{ entry.announcement }}
+      {% endif %}  
+    </summary>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          {% if entry.category == "Event" %}
+            <h3>{{ entry.names.shrt }}: {{ entry.title }}</h3>
+            {{ entry.summaryMD|safe }}
+            {{ entry.overview|safe }}
+            {% if entry.sessions.length %}
+            <h3>Schedule</h3>
+            <dl>
+            {% for session in entry.sessions %}
+              <dt>{{ session.date }}, {{ session.startNews }}-{{ session.endNews }}</dt>
+              <dd>{{ session.title }}</dd>
+              <dd>Place: {{ session.place }}</dd>
+            {% endfor %}
+            </dl>
+            {% endif %}
+          {% else %}
+            <h3>Announcement</h3>
+            <p>
+              {{ entry.announcement }}
+            </p>
+            {% if entry.deadline %}
+              <dl>
+                <dt>deadline</dt>
+                <dd>{{ entry.deadline.date }}</dd>
+              </dl>
+            {% endif %}
+          {% endif %}
+        </div>
+      </content>
+  </entry>
+  {% endfor %}
+</feed>

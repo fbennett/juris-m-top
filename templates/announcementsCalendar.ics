@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GSLNews//NONSGML Event Calendar//EN
+{% for announcement in announcements %}
+
+BEGIN:VEVENT
+UID:{{ announcement.id }}
+LAST-MODIFIED:{{ announcement['last-modified'] }}
+DTSTAMP:{{ announcement['last-modified'] }}
+DTSTART;VALUE=DATE:{{ announcement.startCalDate }}
+DTEND;VALUE=DATE:{{ announcement.endCalDate }}
+SUMMARY:{{ announcement.title }}
+URL:https://www.law.nagoya-u.ac.jp/en
+END:VEVENT
+
+{% endfor %}
+END:VCALENDAR

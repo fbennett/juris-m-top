@@ -1,0 +1,51 @@
+{% extends "main.html" %}
+{% block content %}
+<h2 class="hidden-sm-down">{{ pageSubTitle }}</h2>
+<h2 class="hidden-md-up">{% if shortSubTitle %}{{ shortSubTitle }}{% else %}{{ pageSubTitle }}{% endif %}</h2>
+
+<div class="row">
+  <div class="col-xs-12 col-md-12 col-lg-12">
+    {% for language in pageData %}
+    <h3 style="margin-top:0.5em;margin-bottom:0.5em;">{{ language.name }}-taught programs</h3>
+    {% for pageDatum in center.centerData %}
+    <div style="margin-bottom:1em;margin-left:1.5em;" class="card">
+      <span style="position:absolute;top:-120px;" id="{{ pageDatum.slug }}">&nbsp;</span>
+      <h4 class="card-header">{{ pageDatum.title }}</h4>
+      {% if pageDatum.children %}
+      <div class="card-block hidden-xs-down">
+        <p class="card-text">{{ pageDatum.description }}</p>
+      </div>
+      {% endif %}
+      <div class="card-group">
+        <div class="card">
+          <dl class="dl-group">
+            {% if pageDatum.children %}
+            {% for child in pageDatum.children %}
+            <div class="dl-group-item stubborn">
+              <dt>
+                <a class="nodecor" href="{{ child.fileName }}"><img src="{{ toppath }}/assets/icons/file.svg" height="36px"/>&nbsp;&nbsp;Download</a>
+              </dt>
+              <dd>
+                {{ child.subtitle }}
+              </dd>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="dl-group-item stubborn">
+              <dt>
+                <a class="nodecor" href="{{ pageDatum.fileName }}"><img src="{{ toppath }}/assets/icons/file.svg" height="36px"/>&nbsp;&nbsp;Download</a>
+              </dt>
+              <dd>
+                <p>{{ pageDatum.description }}</p>
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

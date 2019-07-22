@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{% block content %}
+<h2 class="hidden-sm-down">{{ pageSubTitle }}</h2>
+<h2 class="hidden-md-up">{% if shortSubTitle %}{{ shortSubTitle }}{% else %}{{ pageSubTitle }}{% endif %}</h2>
+{% for pageDatum in pageData %}
+<div class="row contacts-row" id="{{ pageDatum.slug }}">
+  <div class="col-xs-12 col-md-12 col-lg-12">
+    <div style="margin-bottom:1em;" class="card">
+      <h4 class="card-header hidden-sm-down contact-title">{{ pageDatum.name }}</h4>
+      <h4 class="card-header hidden-md-up">{{ pageDatum.shortname }}</h4>
+      <div class="card-group" style="flex-flow: row nowrap;">
+        <div class="card hidden-xs-down">
+          <div class="card-block">
+            {% for comment in pageDatum.comments %}
+            <p class="card-text">{{ comment|safe }}</p>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="card">
+          <dl class="dl-group">
+            {% for detail in pageDatum.details %}
+            <div class="dl-group-item">
+              <dt>{{ detail.label|safe }}</dt>
+              {% for value in detail.values %}
+              <dd>{{ value|safe }}</dd>
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

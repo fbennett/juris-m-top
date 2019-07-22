@@ -1,0 +1,8 @@
+
+[Undergrad]
+baseurl = http://law.nagoya-u.ac.jp/teacher
+indexurl = http://law.nagoya-u.ac.jp/teacher/index.html
+
+[Lawschool]
+baseurl = http://www.law.nagoya-u.ac.jp/ls/teacher
+indexurl = http://www.law.nagoya-u.ac.jp/ls/teacher/index.html

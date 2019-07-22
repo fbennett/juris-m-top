@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+{% block content %}
+{% if pageSubTitle %}
+<h2 class="hidden-sm-down">{{ pageSubTitle }}</h2>
+<h2 class="hidden-md-up">{% if shortSubTitle %}{{ shortSubTitle }}{% else %}{{ pageSubTitle }}{% endif %}</h2>
+{% endif %}
+<grid class="index-list">
+  <div class="row">
+    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+      Name
+    </div>
+    <!-- div class="col-3 hidden-sm-down">
+      Position
+    </div -->
+    <div class="col-xs-7 col-sm-7 col-md-4 col-lg-4">
+      Field of Research
+    </div>
+  </div>
+  {% for datum in data %}
+  <div class="row">
+    {% if datum.unilink %}
+    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><a href="{{ datum.unilink}}">{{ datum.name|safe }}</a></div>
+    {% else %}
+    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">{{ datum.name|safe }}</div>
+    {% endif %}
+    <!-- div class="col-3 hidden-sm-down">{{ datum.post|safe }}</div -->
+    <div class="col-xs-7 col-sm-7 col-md-4 col-lg-4">{{ datum.field|safe }}</div>
+  </div>
+  {% endfor %}
+</grid>
+{% endblock %}

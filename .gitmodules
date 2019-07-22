@@ -1,0 +1,6 @@
+[submodule "nodejs/locales"]
+	path = tools/nodejs/locales
+	url = https://github.com/citation-style-language/locales.git
+[submodule "nodejs/style-modules"]
+	path = tools/nodejs/style-modules
+	url = https://github.com/Juris-M/style-modules.git

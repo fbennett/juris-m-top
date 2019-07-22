@@ -1,0 +1,27 @@
+    <div style="margin-bottom:1em;position: relative;top:-120px;z-index:10;height:0px;" id="{{ slug }}">&nbsp;</div>
+    <div class="card">
+      <h4 class="card-header">{{ title }}</h4>
+      <div class="card-group">
+        {% if description %}
+        <div class="card hidden-xs-down">
+          <div class="card-block">
+            <p class="card-text">{{ description }}</p>
+          </div>
+        </div>
+        {% endif %}
+        <div class="card">
+          <dl class="dl-group">
+            {% for info in links %}
+            <div id="{{ info.slug }}" class="dl-group-item stubborn{{ info.lang }}">
+              <dt>
+                <a style="display:inline-block;white-space:nowrap;" class="nodecor" href="{{ info.urlpath }}"><img style="vertical-align: {% if info.sublabel %}top{% else %}normal{% endif %};" src="{{ toppath }}/assets/icons/{{ info.icon }}" height="36px"/>&nbsp;&nbsp;{% if info.sublabel %}<div style="display: inline-block;">{{ info.label }}<br/><span style="font-size: smaller;">{{ info.sublabel }}</span></div>{% else %}{{ info.label }}{% endif %}</a>
+              </dt>
+              <dd>
+                {{ info.description|safe }}
+              </dd>
+            </div>
+            {% endfor %}
+          </dl>
+        </div>
+      </div>
+    </div>
