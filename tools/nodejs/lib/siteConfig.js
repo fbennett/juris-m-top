@@ -2,7 +2,7 @@ module.exports = {
     siteTitle: "Faculty of Law, Nagoya University",
     siteMaintainer: "Frank Bennett",
     rights: "© 2017 Nagoya University",
-    repoRoot: '/media/storage/src/gsl-build',
+    repoRoot: '/media/storage/src/JM/juris-m-top',
     templateDir: 'templates',
     embedsDir: 'templates',
     buildDir: 'build',

@@ -72,8 +72,8 @@ help:
 
 all: software compass skeleton \
 	news
-#	contacts \
 #	contents \
+#	contacts \
 #	index \
 #	redirects
 
