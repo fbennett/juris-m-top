@@ -52,12 +52,12 @@
             <div class="navbar-top-row">
               <!-- Logo and site name -->
               <a class="navbar-brand mr-auto" href="{{ toppath }}/">
-                <img src="{{ toppath }}/assets/images/jurism-logo.svg" style="width: 200px;" alt=" "/>
+                <img src="{{ toppath }}/assets/icons/jurism-logo.svg" style="width: 200px;" alt=" "/>
                 <div class="hidden-sm-down" style="display: inline-block;vertical-align: middle;">
                   <div>
                     The Jurism Reference Manager
                   </div>
-                  <div style="font-size: smaller;font-family: italic;">
+                  <div style="font-size: smaller;font-family: italic !important;">
                     for the laws and languages of the world
                   </div>
                 </div>
@@ -94,20 +94,18 @@
               <ul class="navbar-nav w-100 justify-content-between hidden-lg-up">
                 
                 <li class="nav-item dropdown w-100">
-                  <a class="nav-link p-3 dropdown-toggle category-name" href="{{ toppath }}/programs" id="programs-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Tutorials <span class="caret"> </span>
+                  <a class="nav-link p-3 dropdown-toggle category-name" href="{{ toppath }}/programs" id="documentation-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Documentation <span class="caret"> </span>
                   </a>
-                  <div class="dropdown-menu bg-maroon-translucent w-100" aria-labelledby="programs-link">
+                  <div class="dropdown-menu bg-maroon-translucent w-100" aria-labelledby="documentation-link">
                     
-                    <a class="dropdown-item subcategory-name" href="{{ toppath }}/programs/undergraduate">&#187; Undergraduate</a>
+                    <a class="dropdown-item subcategory-name" href="{{ toppath }}/docs/tutorials">&#187; Tutorials</a>
                     
-                    <a class="dropdown-item subcategory-name" href="{{ toppath }}/programs/masters">&#187; Masters</a>
+                    <a class="dropdown-item subcategory-name" href="{{ toppath }}/docs/guides">&#187; User Guides</a>
                     
-                    <a class="dropdown-item subcategory-name" href="{{ toppath }}/programs/doctorate">&#187; Doctorate</a>
+                    <a class="dropdown-item subcategory-name" href="{{ toppath }}/docs/manuals">&#187; Tech Manuals</a>
                     
-                    <a class="dropdown-item subcategory-name" href="{{ toppath }}/programs/non-degree">&#187; Non-Degree</a>
-                    
-                    <a class="dropdown-item subcategory-name" href="{{ toppath }}/programs/exchange">&#187; Student Exchange</a>
+                    <a class="dropdown-item subcategory-name" href="{{ toppath }}/docs/roadmap">&#187; Roadmap</a>
                     
                   </div>
                 </li>
@@ -192,21 +190,19 @@
               
               <li class="nav-item w-100">
                 
-                <a class="nav-link p-3 category-name{{ current.programs }}" href="#" id="programs-link">
-                  Tutorials
+                <a class="nav-link p-3 category-name{{ current.programs }}" href="#" id="documentation-link">
+                  Documentation
                 </a>
                 
                 <div class="dropdown-nav bg-maroon-translucent w-100">
                   
-                  <a class="nav-item subcategory-name" href="{{ toppath }}/programs/undergraduate">Undergraduate</a>
+                  <a class="nav-item subcategory-name" href="{{ toppath }}/docs/tutorials">Tutorials</a>
                   
-                  <a class="nav-item subcategory-name" href="{{ toppath }}/programs/masters">Masters</a>
+                  <a class="nav-item subcategory-name" href="{{ toppath }}/docs/guides">User Guides</a>
                   
-                  <a class="nav-item subcategory-name" href="{{ toppath }}/programs/doctorate">Doctorate</a>
+                  <a class="nav-item subcategory-name" href="{{ toppath }}/docs/manuals">Tech Manuals</a>
                   
-                  <a class="nav-item subcategory-name" href="{{ toppath }}/programs/non-degree">Non-Degree</a>
-                  
-                  <a class="nav-item subcategory-name" href="{{ toppath }}/programs/exchange">Student Exchange</a>
+                  <a class="nav-item subcategory-name" href="{{ toppath }}/docs/roadmap">Roadmap</a>
                   
                 </div>
               </li>
