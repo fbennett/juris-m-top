@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Faculty of Law, Nagoya University</title>
+  <link rel="self" href="http://localhost:8080/news.atom"/>
+  <updated></updated>
+  <author>
+    <name>Frank Bennett</name>
+  </author>
+  <id>https://law.nagoya-u.ac.jp/en/index.atom</id>
+  
+  
+  <rights>© 2017 Nagoya University</rights>
+  <subtitle>Announcements and news of upcoming events</subtitle>
+  
+</feed>

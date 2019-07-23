@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head profile="http://www.w3.org/2005/10/profile">
+    <script>
+      if (!(window.location.host.startsWith("127.0.0.1")) && !(window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
+      window.location.protocol = "https";
+    </script>
+    <title>
+      
+        
+          
+            
+          
+        
+      
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="keywords" content="Nagoya University Law School, Nagoya University Graduates School of Law, Nagoya University, Meidai, Law Programs, Programs in English, English Program, Japan, Nagoya, Aichi, legal, education, research, college, international, overseas, graduate, undergraduate, lld, llm, Monbukagakusho, Monbusho, globalisation, oda, asian studies"/>
+
+    <meta property="og:type" content="summary"/>
+    <meta property="og:image" content="https://www.law.nagoya-u.ac.jp/en/icons/nulogo-square.png"/>
+    <meta property="og:description" content="Graduate School of Law"/>
+    <meta property="og:title" content="Nagoya University"/>
+    <meta property="og:url" content="https://www.law.nagoya-u.ac.jp/en/"/>
+
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
+
+    <!-- Stylesheets -->
+    <link href="./assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="./assets/css/font-awesome.css" rel="stylesheet"/>
+    <link href="./assets/css/main.css" rel="stylesheet"/>
+    
+  </head>
+  <body onload="attachListener();">
+    <!-- Navbar -->
+    <nav class="navbar navbar-toggleable-md navbar-light fixed-top">
+      <div class="navbar-container">
+        <div class="row no-gutters">
+          <div class="col bg-faded"><!-- Left gutter --></div>
+          <div class="navbar-content">
+            <!-- Top half of the navbar (visible on all displays) -->
+            <div class="navbar-top-row">
+              <!-- Logo and site name -->
+              <a class="navbar-brand mr-auto" href="./">
+                <img src="./assets/images/jurism-logo.svg" style="width: 200px;" alt=" "/>
+                <div class="hidden-sm-down" style="display: inline-block;vertical-align: middle;">
+                  <div>
+                    The Jurism Reference Manager
+                  </div>
+                  <div style="font-size: smaller;font-family: italic;">
+                    for the laws and languages of the world
+                  </div>
+                </div>
+              </a>
+              <!-- Inline search form (only visible on larger displays) -->
+              <form class="form-inline hidden-md-down">
+                <input class="form-control hidden-md-down search" text="text" placeholder="Search…"/>
+                <button class="btn btn-primary search-button" type="submit" role="button">
+                  <span class="fa fa-search" aria-hidden="true"/>
+                </button>
+              </form>
+              <!-- Search button (only visible on smaller displays) -->
+              <button class="btn btn-primary search-button hidden-lg-up" type="button" data-toggle="collapse" data-target="#mobileSearchMenu" aria-expanded="false" aria-controls="mobileSearchMenu">
+                <span class="fa fa-search" aria-hidden="true"/>
+              </button>
+              <!-- "Hamburger" button -->
+              <button class="navbar-toggler btn-primary" type="button" data-toggle="collapse" data-target="#mobileNavMenu" aria-controls="mobileNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"/>
+              </button>
+            </div>
+            <!-- Dropdown search menu (only visible on smaller displays) -->
+            <form id="mobileSearchMenu" class="collapse hidden-lg-up">
+              <div class="input-group">
+                <input type="text" class="form-control search" id="mobile-search-text" aria-describedby="query-text"/>
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="submit">
+                    Search
+                  </button>
+                </span>
+              </div>
+            </form>
+            <!-- Collapsible navigation menu (only visible on smaller displays) -->
+            <div id="mobileNavMenu" class="collapse navbar-collapse">
+              <ul class="navbar-nav w-100 justify-content-between hidden-lg-up">
+                
+                <li class="nav-item dropdown w-100">
+                  <a class="nav-link p-3 dropdown-toggle category-name" href="./programs" id="programs-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tutorials <span class="caret"> </span>
+                  </a>
+                  <div class="dropdown-menu bg-maroon-translucent w-100" aria-labelledby="programs-link">
+                    
+                    <a class="dropdown-item subcategory-name" href="./programs/undergraduate">» Undergraduate</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./programs/masters">» Masters</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./programs/doctorate">» Doctorate</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./programs/non-degree">» Non-Degree</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./programs/exchange">» Student Exchange</a>
+                    
+                  </div>
+                </li>
+                
+                <li class="nav-item dropdown w-100">
+                  <a class="nav-link p-3 dropdown-toggle category-name" href="./curriculum" id="curriculum-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Developers <span class="caret"> </span>
+                  </a>
+                  <div class="dropdown-menu bg-maroon-translucent w-100" aria-labelledby="curriculum-link">
+                    
+                    <a class="dropdown-item subcategory-name" href="./curriculum/english">» Classes in English</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./curriculum/japanese">» Classes in Japanese</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./curriculum/writing">» Writing Lab</a>
+                  </div>
+                </li>
+                
+                <li class="nav-item dropdown w-100">
+                  <a class="nav-link p-3 dropdown-toggle category-name" href="./directory" id="directory-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Downloads <span class="caret"> </span>
+                  </a>
+                  <div class="dropdown-menu bg-maroon-translucent w-100" aria-labelledby="directory-link">
+                    
+                    <a class="dropdown-item subcategory-name" href="./directory/staff">» Staff Profiles</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./directory/gsl">» School of Law</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./directory/university">» Nagoya University</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./directory/external">» External</a>
+                    
+                  </div>
+                </li>
+                
+                <li class="nav-item dropdown w-100">
+                  <a class="nav-link p-3 dropdown-toggle category-name" href="./resources" id="resources-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Links <span class="caret"> </span>
+                  </a>
+                  <div class="dropdown-menu bg-maroon-translucent w-100" aria-labelledby="resources-link">
+                    
+                    <a class="dropdown-item subcategory-name" href="http://www.nagoya-u.ac.jp">» University Home</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="http://www.law.nagoya-u.ac.jp">» GSL in Japanese</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./resources/facilities">» Research Facilities</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./resources/documents">» Documents</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="./resources/forms">» Forms</a>
+                    
+                  </div>
+                </li>
+                
+                <li class="nav-item dropdown w-100">
+                  <a class="nav-link p-3 dropdown-toggle category-name" href="./alumni" id="alumni-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Support <span class="caret"> </span>
+                  </a>
+                  <div class="dropdown-menu bg-maroon-translucent w-100" aria-labelledby="alumni-link">
+                    
+                    <a class="dropdown-item subcategory-name" href="https://our.law.nagoya-u.ac.jp/alumni/tag/legal-news/">» Legal News</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="https://our.law.nagoya-u.ac.jp/alumni/tag/working-papers/">» Working Papers</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="https://our.law.nagoya-u.ac.jp/alumni/tag/alumni-blog/">» Alumni Blog</a>
+                    
+                    <a class="dropdown-item subcategory-name" href="https://our.law.nagoya-u.ac.jp/alumni/tag/tech-notes/">» Tech Notes</a>
+                    
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col bg-faded"><!-- Right gutter --></div>
+        </div>
+        <div class="row no-gutters hidden-md-down">
+          <div class="col navbar-fixed-height bg-maroon"><!-- Left gutter --></div>
+          <div class="navbar-content">
+            <!-- Fullscreen navigation menu (only visible on larger displays) -->
+            <ul class="navbar-nav w-100 justify-content-between hidden-md-down" id="desktopNavMenu">
+              
+              <li class="nav-item w-100">
+                
+                <a class="nav-link p-3 category-name" href="#" id="programs-link">
+                  Tutorials
+                </a>
+                
+                <div class="dropdown-nav bg-maroon-translucent w-100">
+                  
+                  <a class="nav-item subcategory-name" href="./programs/undergraduate">Undergraduate</a>
+                  
+                  <a class="nav-item subcategory-name" href="./programs/masters">Masters</a>
+                  
+                  <a class="nav-item subcategory-name" href="./programs/doctorate">Doctorate</a>
+                  
+                  <a class="nav-item subcategory-name" href="./programs/non-degree">Non-Degree</a>
+                  
+                  <a class="nav-item subcategory-name" href="./programs/exchange">Student Exchange</a>
+                  
+                </div>
+              </li>
+              
+              <li class="nav-item w-100">
+                
+                <a class="nav-link p-3 category-name" href="#" id="curriculum-link">
+                  Developers
+                </a>
+                
+                <div class="dropdown-nav bg-maroon-translucent w-100">
+                  
+                  <a class="nav-item subcategory-name" href="./curriculum/english">Classes in English</a>
+                  
+                  <a class="nav-item subcategory-name" href="./curriculum/japanese">Classes in Japanese</a>
+                  
+                  <a class="nav-item subcategory-name" href="./curriculum/writing">Writing Lab</a>
+                  
+                </div>
+              </li>
+              
+              <li class="nav-item w-100">
+                
+                <a class="nav-link p-3 category-name" href="#" id="directory-link">
+                  Downloads
+                </a>
+                
+                <div class="dropdown-nav bg-maroon-translucent w-100">
+                  
+                  <a class="nav-item subcategory-name" href="./directory/staff">Staff Profiles</a>
+                  
+                  <a class="nav-item subcategory-name" href="./directory/gsl">School of Law</a>
+                  
+                  <a class="nav-item subcategory-name" href="./directory/university">Nagoya University</a>
+                  
+                  <a class="nav-item subcategory-name" href="./directory/external">External</a>
+                  
+                </div>
+              </li>
+              
+              <li class="nav-item w-100">
+                
+                <a class="nav-link p-3 category-name" href="#" id="resources-link">
+                  Links
+                </a>
+                
+                <div class="dropdown-nav bg-maroon-translucent w-100">
+                  
+                  <a class="nav-item subcategory-name" href="http://www.nagoya-u.ac.jp">University Home</a>
+                  
+                  <a class="nav-item subcategory-name" href="http://www.law.nagoya-u.ac.jp">GSL in Japanese</a>
+                  
+                  <a class="nav-item subcategory-name" href="./resources/facilities">Research Facilities</a>
+                  
+                  <a class="nav-item subcategory-name" href="./resources/documents">Documents</a>
+                  
+                  <a class="nav-item subcategory-name" href="./resources/forms">Forms</a>
+                  
+                </div>
+              </li>
+              
+              <li class="nav-item w-100">
+                
+                <a class="nav-link p-3 category-name" href="#" id="alumni-link">
+                  Support
+                </a>
+                
+                <div class="dropdown-nav bg-maroon-translucent w-100">
+                  
+                  <a class="nav-item subcategory-name" href="https://our.law.nagoya-u.ac.jp/alumni/tag/legal-news/">Legal News</a>
+                  
+                  <a class="nav-item subcategory-name" href="https://our.law.nagoya-u.ac.jp/alumni/tag/working-papers/">Working Papers</a>
+                  
+                  <a class="nav-item subcategory-name" href="https://our.law.nagoya-u.ac.jp/alumni/tag/alumni-blog/">Alumni Blog</a>
+                  
+                  <a class="nav-item subcategory-name" href="https://our.law.nagoya-u.ac.jp/alumni/tag/tech-notes/">Tech Notes</a>
+                  
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+          <div class="col navbar-fixed-height bg-maroon"><!-- Right gutter --></div>
+        </div>
+      </div>
+    </nav> <!-- .navbar.fixed-top -->
+
+    <div class="site-flex-container">
+      <div class="container-fluid mb-auto">
+        <div class="row justify-content-center">
+          <div class="main-content" role="main" aria-label="Content" style="margin-bottom: 10px;">
+            <div id="proper-page">
+              
+              
+              
+<h1>Hello!</h1>
+
+<p>Hi there.</p>
+
+            </div>
+            <div id="search-page" style="display: none;">
+              <h1 style="margin-bottom: 0.5em;" class="hidden-md-down">Search Results</h1>
+              <h1 class="hidden-lg-up" style="margin-top:20px;">Search Results</h1>
+              <ul class="searchresults">
+                <li>Hello</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="site-footer container-fluid">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <address class="small">
+              Graduate School of Law
+              <br/>
+              Nagoya University
+              <br/>
+              Furo-chō, Chikusa Ward
+              <br/>
+              Nagoya, Aichi Prefecture 464-0814
+              <br/>
+            </address>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div><a class="footer-link small" href="./directions">Directions</a></div>
+            <div><a class="footer-link small" href="./news.atom">Subscribe to News</a></div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div><a class="footer-link small" href="mailto:bennett@law.nagoya-u.ac.jp">Email</a></div>
+            <table>
+              <cols>
+                <col/>
+                <col width="100%"/>
+              </cols>
+              <tr>
+                <td>Tel:</td>
+                <td><a class="footer-link small" href="tel:052-789-4910">052-789-4910</a> (Japan)</td>
+              </tr>
+              <tr>
+                <td/>
+                <td><a class="footer-link small" href="tel:+81-52-789-4910">+81-52-789-4910</a> (International)</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm-6 col-md-6 hidden-lg-up hidden-xs-down" style="postion:relative;">
+            <div class="small" style="position:absolute;bottom:0;">© 2007–2017 Nagoya University Graduate School of Law</div>
+          </div>
+          <div class="col-sm-6 col-md-6 hidden-sm-up" style="margin-top:0.5em;">
+            <div class="small">© 2007–2017 Nagoya University Graduate School of Law</div>
+          </div>
+        </div>
+        <div class="row hidden-md-down">
+          <div class="col-md-12" style="text-align:center;">
+            <p class="small">© 2007–2017 Nagoya University Graduate School of Law</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <!-- Tether (required for Bootstrap tooltips to work) -->
+    <script src="./assets/js/tether.min.js" type="text/javascript"></script>
+    <!-- All compiled Bootstrap plugins -->
+    <script src="./assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- Custom Javascript -->
+    <script src="./assets/js/utility.js" type="text/javascript"></script>
+    <script src="./assets/js/lunr.js" type="text/javascript"></script>
+    <script src="./assets/js/loadIndex3.js" type="text/javascript"></script>
+  </body>
+</html>
