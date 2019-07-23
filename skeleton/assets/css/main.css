@@ -581,11 +581,11 @@ ul.list-unstyled li {
 }
 /* line 115, ../../../scss/sass/gsl/_navbar.scss */
 .navbar-nav#desktopNavMenu.expanded {
-  max-height: 296px;
+  max-height: 210px;
 }
 /* line 119, ../../../scss/sass/gsl/_navbar.scss */
 .navbar-nav#desktopNavMenu .dropdown-nav {
-  min-height: 240px;
+  min-height: 154px;
 }
 
 /* line 127, ../../../scss/sass/gsl/_navbar.scss */
