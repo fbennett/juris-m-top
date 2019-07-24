@@ -23,13 +23,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="keywords" content="Nagoya University Law School, Nagoya University Graduates School of Law, Nagoya University, Meidai, Law Programs, Programs in English, English Program, Japan, Nagoya, Aichi, legal, education, research, college, international, overseas, graduate, undergraduate, lld, llm, Monbukagakusho, Monbusho, globalisation, oda, asian studies"/>
+    <meta name="keywords" content="digital humanities, reference managment, bibliography, research tools, legal research"/>
 
     <meta property="og:type" content="summary"/>
     <meta property="og:image" content="https://www.law.nagoya-u.ac.jp/en/icons/nulogo-square.png"/>
-    <meta property="og:description" content="Graduate School of Law"/>
-    <meta property="og:title" content="Nagoya University"/>
-    <meta property="og:url" content="https://www.law.nagoya-u.ac.jp/en/"/>
+    <meta property="og:description" content="for the laws and languages of the world"/>
+    <meta property="og:title" content="The Jurism Project"/>
+    <meta property="og:url" content="https://juris-m.github.io/"/>
 
     
     <!-- Favicon -->
@@ -236,13 +236,15 @@
           <div class="main-content" role="main" aria-label="Content" style="margin-bottom: 10px;">
             <div id="proper-page">
               {% if pageTitle %}
-              {% if suppressTitle %}
+              {% if not suppressTitle %}
+              {% if shyTitle %}
               <div class="hidden-xs-down">
               {% endif %}
                 <h1 style="margin-bottom: 0.5em;" class="hidden-sm-down">{{ pageTitle }}</h1>
                 <h1 class="hidden-md-up">{% if shortTitle %}{{ shortTitle }}{% else %}{{ pageTitle }}{% endif %}</h1>
-              {% if suppressTitle %}
+              {% if shyTitle %}
               </div>
+              {% endif %}
               {% endif %}
               {% endif %}
               {{ topInsert|safe }}
@@ -262,48 +264,21 @@
       <footer class="site-footer container-fluid">
         <div class="row">
           <div class="col-sm-6 col-md-6 col-lg-4">
-            <address class="small">
-              Graduate School of Law
-              <br/>
-              Nagoya University
-              <br/>
-              Furo-chō, Chikusa Ward
-              <br/>
-              Nagoya, Aichi Prefecture 464-0814
-              <br/>
-            </address>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-4">
-            <div><a class="footer-link small" href="{{ toppath }}/directions">Directions</a></div>
-            <div><a class="footer-link small" href="{{ toppath }}/news.atom">Subscribe to News</a></div>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-4">
-            <div><a class="footer-link small" href="mailto:bennett@law.nagoya-u.ac.jp">Email</a></div>
-            <table>
-              <cols>
-                <col/>
-                <col width="100%"/>
-              </cols>
-              <tr>
-                <td>Tel:</td>
-                <td><a class="footer-link small" href="tel:052-789-4910">052-789-4910</a> (Japan)</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td><a class="footer-link small" href="tel:+81-52-789-4910">+81-52-789-4910</a> (International)</td>
-              </tr>
-            </table>
           </div>
-          <div class="col-sm-6 col-md-6 hidden-lg-up hidden-xs-down" style="postion:relative;">
-            <div class="small" style="position:absolute;bottom:0;">&#169; 2007&#8211;2017 Nagoya University Graduate School of Law</div>
+          <div class="col-sm-6 col-md-6 hidden-lg-up hidden-xs-down" style="text-align:center;">
+            <div class="small" style="position:absolute;bottom:0;">&#169; 2019 Frank Bennett</div>
           </div>
-          <div class="col-sm-6 col-md-6 hidden-sm-up" style="margin-top:0.5em;">
-            <div class="small">&#169; 2007&#8211;2017 Nagoya University Graduate School of Law</div>
+          <div class="col-sm-6 col-md-6 hidden-sm-up" style="text-align:center;">
+            <div class="small">&#169; 2019 Frank Bennett</div>
           </div>
         </div>
         <div class="row hidden-md-down">
           <div class="col-md-12" style="text-align:center;">
-            <p class="small">&#169; 2007&#8211;2017 Nagoya University Graduate School of Law</p>
+            <p class="small">&#169; 2019 Frank Bennett</p>
           </div>
         </div>
       </footer>

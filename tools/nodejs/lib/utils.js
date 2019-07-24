@@ -132,53 +132,6 @@ function makeSlug(title) {
     return slug(title, {remove: /[.]/g})
 }
 
-function insertDelegatedSections(txt) {
-    var lines = normalizeLineEndings(txt).split("\n");
-    for (var i=lines.length-1; i>-1; i--) {
-        var seeLine = lines[i].trim();
-        var m = seeLine.match(/^include:\s*([^\s]+)$/);
-        if (m) {
-            var pth = path.join(p.centerinfo, m[1]);
-            var insert = fs.readFileSync(pth).toString();
-            var insertLst = normalizeLineEndings(insert).split("\n");
-            var minHash = 0;
-            for (var j=0,jlen=insertLst.length; j<jlen; j++) {
-                var mm = insertLst[j].match(/^(##*)/);
-                if (mm) {
-                    if (!minHash || mm[1].length < minHash) {
-                        minHash = mm[1].length;
-                    }
-                }
-            }
-            var hashOffset = (2 - minHash);
-            if (hashOffset > 0) {
-                // Add appropriate number of hash-marks to normalize
-                var hsh = "#";
-                while (hsh.length < hashOffset) {
-                    hsh += "#";
-                }
-                for (var j=0,jlen=insertLst.length; j<jlen; j++) {
-                    var mm = insertLst[j].match(/^(##*)/);
-                    if (mm) {
-                        insertLst[j] = hsh + insertLst[j];
-                    }
-                }
-            } else if (hashOffset < 0) {
-                // Remove appropriate number of hash-marks to normalize
-                hashOffset = (hashOffset * -1);
-                for (var j=0,jlen=insertLst.length; j<jlen; j++) {
-                    var mm = insertLst[j].match(/^(##*)/);
-                    if (mm) {
-                        insertLst[j] = insertLst[j].slice(0, hashOffset);
-                    }
-                }
-            }
-            lines = lines.slice(0, i).concat(insertLst).concat(lines.slice(i+1))
-        }
-    }
-    return lines.join("\n");
-}
-
 function extractYAML(txt) {
     var yamlCount = 0;
     var objList = [];
@@ -264,7 +217,6 @@ module.exports = {
     makeList: makeList,
     makeLinkSlug: makeLinkSlug,
     makeSlug: makeSlug,
-    insertDelegatedSections: insertDelegatedSections,
     extractYAML: extractYAML,
     loadAndValidate: loadAndValidate,
     normalizeLineEndings: normalizeLineEndings

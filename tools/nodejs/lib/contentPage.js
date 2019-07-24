@@ -47,7 +47,7 @@ function makePage(tmpl, targetDir, buildFilePath, data, formData, documentData, 
     var offset = 0;
     while (true) {
         var line = lines[offset];
-        var m = line.match(/^(pageTitle|shortTitle|suppressTitle):\s*(.*)$/);
+        var m = line.match(/^(pageTitle|shortTitle|shyTitle|suppressTitle):\s*(.*)$/);
         if (m) {
             header[m[1]] = m[2];
             offset += 1;
@@ -56,7 +56,6 @@ function makePage(tmpl, targetDir, buildFilePath, data, formData, documentData, 
         }
     }
     var txt = lines.slice(offset).join("\n");
-    var txt = utils.insertDelegatedSections(txt);
     var res = utils.extractYAML(txt);
     var tmpl = markdown.toHTML(res.tmpl);
 
@@ -156,6 +155,7 @@ function makePage(tmpl, targetDir, buildFilePath, data, formData, documentData, 
     var params = {
         pageTitle: header.pageTitle,
         shortTitle: header.shortTitle,
+        shyTitle: header.shyTitle,
         suppressTitle: header.suppressTitle,
         toppath: pagedirs.toppath,
         INSERTME: pg,
