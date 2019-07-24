@@ -1,4 +1,4 @@
-title: The Jurism Project
+pageTitle: The Jurism Project
 
 # Hello!
 
