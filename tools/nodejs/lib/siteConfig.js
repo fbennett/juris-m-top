@@ -1,38 +1,28 @@
 module.exports = {
-    siteTitle: "Faculty of Law, Nagoya University",
+    siteTitle: "The Jurism Project",
     siteMaintainer: "Frank Bennett",
-    rights: "© 2017 Nagoya University",
+    rights: "© 2019 Frank Bennett",
     repoRoot: '/media/storage/src/JM/juris-m-top',
     templateDir: 'templates',
     embedsDir: 'templates',
     buildDir: 'build',
-    groupID: '1110314',
-    centerFolders: [
-        {
-            key: "GSL",
-            name: "Graduate School of Law"
+    cardTypes: {
+        software: {
+            dirname: "software",
+            name: "Software"
         },
-        {
-            key: "ASCI",
-            name: "ASCI Program"
+        styles: {
+            dirname: "styles",
+            name: "Styles"
         },
-        {
-            key: "Leading",
-            name: "Leading Program"
+        "juris-bundles": {
+            dirname: "juris-bundles",
+            name: "Juris Bundles"
         },
-        {
-            key: "G30",
-            name: "Global 30 Program"
-        },
-        {
-            key: "CALE",
-            name: "Center for Asian Legal Exchange"
-        },
-        {
-            key: "AW",
-            name: "Academic Writing Team"
+        links: {
+            dirname: "links",
+            name: "Links"
         }
-    ],
-    newsTypes: ["Events", "Announcements"],
+    },
     urlBase: 'http://localhost:8080'
 }

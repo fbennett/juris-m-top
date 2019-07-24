@@ -25,6 +25,7 @@ function getRelative(elems) {
 }
 
 function makePointableSourceDir(dirname) {
+    dirname = dirname.join(path.sep);
     var firstPath = path.join(config.repoRoot, "src", dirname)
     if (fs.existsSync(firstPath)) {
         var stat = fs.statSync(firstPath);
@@ -48,12 +49,12 @@ function makePaths() {
     this.root = config.repoRoot;
     this.templates = makePath(config.templateDir);
     this.embeds = makePath(config.embedsDir);
-    this.staffinfo = makePointableSourceDir('staffinfo');
-    this.contacts = makePointableSourceDir('contacts');
-    this.content = makePointableSourceDir('content');
-    this.centerinfo = makePointableSourceDir('centerinfo');
-    this.documents = makePointableSourceDir('documents');
-    this.forms = makePointableSourceDir('forms');
+    this.content = makePointableSourceDir(['content']);
+    this.cards = makePointableSourceDir(['cards']);
+    this.links = makePointableSourceDir(['cards', 'links']);
+    this.software = makePointableSourceDir(['cards', 'software']);
+    this.styles = makePointableSourceDir(['cards', 'styles']);
+    this["juris-bundles"] = makePointableSourceDir(['cards', 'juris-bundles']);
     this.getRelative = getRelative;
     this.builddir = makePath(config.buildDir);
 }

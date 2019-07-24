@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="297mm" height="210mm" version="1.1" viewBox="0 0 1052.3622 744.09448" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="b" color-interpolation-filters="sRGB">
+   <feGaussianBlur result="result1" stdDeviation="1"/>
+   <feComposite in="result1" in2="result1" operator="in" result="result4"/>
+   <feBlend in="result1" in2="result4" mode="screen" result="result5"/>
+   <feGaussianBlur in="result5" result="result6" stdDeviation="8"/>
+   <feComposite in="result6" in2="result5" operator="atop" result="result8"/>
+   <feComposite in="result6" in2="result8" operator="in" result="fbSourceGraphic"/>
+   <feGaussianBlur in="fbSourceGraphic" result="result0" stdDeviation="2.5"/>
+   <feSpecularLighting lighting-color="rgb(255,255,255)" in="result0" result="result1" specularConstant="1.5" specularExponent="45">
+    <fePointLight x="-6000" y="-9000" z="21000"/>
+   </feSpecularLighting>
+   <feComposite in="result1" in2="fbSourceGraphic" operator="in" result="result2"/>
+   <feComposite in="fbSourceGraphic" in2="result2" k2="1" k3="1" operator="arithmetic" result="result4"/>
+   <feComposite in="result9" in2="result4" operator="in" result="result91"/>
+   <feBlend in2="result91" mode="multiply"/>
+  </filter>
+  <filter id="a" color-interpolation-filters="sRGB">
+   <feGaussianBlur result="result1" stdDeviation="1"/>
+   <feComposite in="result1" in2="result1" operator="in" result="result4"/>
+   <feBlend in="result1" in2="result4" mode="screen" result="result5"/>
+   <feGaussianBlur in="result5" result="result6" stdDeviation="8"/>
+   <feComposite in="result6" in2="result5" operator="atop" result="result8"/>
+   <feComposite in="result6" in2="result8" operator="in" result="fbSourceGraphic"/>
+   <feGaussianBlur in="fbSourceGraphic" result="result0" stdDeviation="2.5"/>
+   <feSpecularLighting lighting-color="rgb(255,255,255)" in="result0" result="result1" specularConstant="1.5" specularExponent="45">
+    <fePointLight x="-6000" y="-9000" z="21000"/>
+   </feSpecularLighting>
+   <feComposite in="result1" in2="fbSourceGraphic" operator="in" result="result2"/>
+   <feComposite in="fbSourceGraphic" in2="result2" k2="1" k3="1" operator="arithmetic" result="result4"/>
+   <feComposite in="result9" in2="result4" operator="in" result="result91"/>
+   <feBlend in2="result91" mode="multiply"/>
+  </filter>
+ </defs>
+ <g transform="translate(0 -308.27)">
+  <path d="m634.38 910.44a45.962 28.789 0 0 1 -45 28.78 45.962 28.789 0 0 1 -46.89 -27.57" fill-opacity="0"/>
+  <g transform="translate(-78.792 47.477)" fill="#0000cd">
+   <ellipse transform="matrix(.99998 .0063245 -.029184 .99957 0 0)" cx="597.81" cy="840.85" rx="80.301" ry="17.185" fill="#000" filter="url(#a)"/>
+   <path transform="matrix(1.0025 0 0 .96796 -1.4683 310.03)" d="m280.68 73.131c-5.0832 0-9.1758 4.0925-9.1758 9.1758v374.03c0 5.0833 4.0925 9.1758 9.1758 9.1758h596.27c5.0833 0 9.1758-4.0925 9.1758-9.1758v-374.03c0-5.0833-4.0925-9.1758-9.1758-9.1758h-596.27zm286.32 401.94c-2.5864 0-4.668 2.0835-4.668 4.6699v56.965c0 2.5864 2.0816 4.668 4.668 4.668h16.559c2.5864 0 4.6699-2.0816 4.6699-4.668v-56.965c0-2.5864-2.0835-4.6699-4.6699-4.6699h-16.559z" fill-opacity="0" filter="url(#b)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="26.534"/>
+  </g>
+ </g>
+</svg>

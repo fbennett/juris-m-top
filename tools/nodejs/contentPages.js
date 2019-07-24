@@ -38,10 +38,6 @@ function makePages(srcdir, targetdir, incdir, catalogFile) {
     for (var key in formData.formsByKey) {
         var form = formData.formsByKey[key];
         if (form.filepath) {
-            //console.log("XXX "+form.filepath);
-            //if (form.filepath === "/home/bennett/ownCloud/Web/forms/comparative-law/masters/jds/english/document/jds-application-process.md") {
-            //    console.log(fs.readFileSync("/home/bennett/ownCloud/Web/forms/comparative-law/masters/jds/english/document/jds-application-process.md").toString());
-            //}
             if (form.filetype === "document") {
                 // Copy document from filepath to urlpath.
                 fs.writeFileSync(path.join(targetdir, form.urlpath), fs.readFileSync(form.filepath, 'binary'), 'binary');
