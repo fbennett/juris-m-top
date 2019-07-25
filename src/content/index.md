@@ -4,3 +4,7 @@ suppressTitle: true
 # Hello!
 
 Hi there.
+
+```yaml
+type: embedDownloadButtons
+```
