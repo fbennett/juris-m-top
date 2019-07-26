@@ -847,21 +847,28 @@ h6[id]:before {
   color: #c0c0c0;
   background-color: #016029;
 }
-/* line 11, ../../../scss/sass/gsl/_footer.scss */
+@media (max-width: 991px) {
+  /* line 4, ../../../scss/sass/gsl/_footer.scss */
+  .site-footer {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+/* line 16, ../../../scss/sass/gsl/_footer.scss */
 .site-footer > .row {
   margin-left: auto;
   margin-right: auto;
 }
 @media (max-width: 991px) {
-  /* line 11, ../../../scss/sass/gsl/_footer.scss */
+  /* line 16, ../../../scss/sass/gsl/_footer.scss */
   .site-footer > .row {
     flex: 0 0 100%;
     max-width: 100%;
-    max-width: 960px;
+    max-width: 540px;
   }
 }
 @media (min-width: 992px) {
-  /* line 11, ../../../scss/sass/gsl/_footer.scss */
+  /* line 16, ../../../scss/sass/gsl/_footer.scss */
   .site-footer > .row {
     flex: 0 0 auto;
     width: 960px;

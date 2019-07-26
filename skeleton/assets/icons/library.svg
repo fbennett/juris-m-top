@@ -7,10 +7,10 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="297mm"
-   height="210mm"
+   width="208.67224mm"
+   height="156.98769mm"
    version="1.1"
-   viewBox="0 0 1052.3622 744.09448"
+   viewBox="0 0 739.38983 556.25557"
    id="svg2"
    inkscape:version="0.91 r13725"
    sodipodi:docname="library.svg">
@@ -40,17 +40,24 @@
      id="namedview70"
      showgrid="false"
      inkscape:zoom="0.31358025"
-     inkscape:cx="526.1811"
-     inkscape:cy="372.04724"
+     inkscape:cx="-383.83046"
+     inkscape:cy="258.90915"
      inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     showborder="true"
+     inkscape:showpageshadow="true"
+     borderlayer="false" />
   <defs
      id="defs4">
     <filter
        id="b"
-       color-interpolation-filters="sRGB">
+       style="color-interpolation-filters:sRGB">
       <feGaussianBlur
          result="result1"
          stdDeviation="1"
@@ -90,7 +97,7 @@
          stdDeviation="2.5"
          id="feGaussianBlur19" />
       <feSpecularLighting
-         lighting-color="rgb(255,255,255)"
+         lighting-color="#ffffff"
          in="result0"
          result="result1"
          specularConstant="1.5"
@@ -115,9 +122,10 @@
          k3="1"
          operator="arithmetic"
          result="result4"
-         id="feComposite27" />
+         id="feComposite27"
+         k1="0"
+         k4="0" />
       <feComposite
-         in="result9"
          in2="result4"
          operator="in"
          result="result91"
@@ -129,7 +137,7 @@
     </filter>
     <filter
        id="a"
-       color-interpolation-filters="sRGB">
+       style="color-interpolation-filters:sRGB">
       <feGaussianBlur
          result="result1"
          stdDeviation="1"
@@ -169,7 +177,7 @@
          stdDeviation="2.5"
          id="feGaussianBlur46" />
       <feSpecularLighting
-         lighting-color="rgb(255,255,255)"
+         lighting-color="#ffffff"
          in="result0"
          result="result1"
          specularConstant="1.5"
@@ -194,9 +202,10 @@
          k3="1"
          operator="arithmetic"
          result="result4"
-         id="feComposite54" />
+         id="feComposite54"
+         k1="0"
+         k4="0" />
       <feComposite
-         in="result9"
          in2="result4"
          operator="in"
          result="result91"
@@ -208,85 +217,81 @@
     </filter>
   </defs>
   <g
-     transform="translate(0 -308.27)"
+     transform="translate(-130.30684,-382.97084)"
      id="g60">
     <path
-       d="m634.38 910.44a45.962 28.789 0 0 1 -45 28.78 45.962 28.789 0 0 1 -46.89 -27.57"
-       fill-opacity="0"
-       id="path62" />
+       d="m 634.38,910.44 a 45.962,28.789 0 0 1 -45,28.78 45.962,28.789 0 0 1 -46.89,-27.57"
+       id="path62"
+       inkscape:connector-curvature="0"
+       style="fill-opacity:0" />
     <g
-       transform="translate(-78.792 47.477)"
-       fill="#0000cd"
-       id="g64">
+       transform="translate(-78.792,47.477)"
+       id="g64"
+       style="fill:#0000cd">
       <ellipse
-         transform="matrix(.99998 .0063245 -.029184 .99957 0 0)"
+         transform="matrix(0.99998,0.0063245,-0.029184,0.99957,0,0)"
          cx="597.81"
-         cy="840.85"
-         rx="80.301"
-         ry="17.185"
-         fill="#000"
-         filter="url(#a)"
-         id="ellipse66" />
+         cy="840.84998"
+         rx="80.301003"
+         ry="17.184999"
+         id="ellipse66"
+         style="fill:#000000;filter:url(#a)" />
       <path
-         transform="matrix(1.0025 0 0 .96796 -1.4683 310.03)"
-         d="m280.68 73.131c-5.0832 0-9.1758 4.0925-9.1758 9.1758v374.03c0 5.0833 4.0925 9.1758 9.1758 9.1758h596.27c5.0833 0 9.1758-4.0925 9.1758-9.1758v-374.03c0-5.0833-4.0925-9.1758-9.1758-9.1758h-596.27zm286.32 401.94c-2.5864 0-4.668 2.0835-4.668 4.6699v56.965c0 2.5864 2.0816 4.668 4.668 4.668h16.559c2.5864 0 4.6699-2.0816 4.6699-4.668v-56.965c0-2.5864-2.0835-4.6699-4.6699-4.6699h-16.559z"
-         fill-opacity="0"
-         filter="url(#b)"
-         stroke="#000"
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         stroke-width="26.534"
-         id="path68" />
+         transform="matrix(1.0025,0,0,0.96796,-1.4683,310.03)"
+         d="m 280.68,73.131 c -5.0832,0 -9.1758,4.0925 -9.1758,9.1758 l 0,374.03 c 0,5.0833 4.0925,9.1758 9.1758,9.1758 l 596.27,0 c 5.0833,0 9.1758,-4.0925 9.1758,-9.1758 l 0,-374.03 c 0,-5.0833 -4.0925,-9.1758 -9.1758,-9.1758 l -596.27,0 z M 567,475.071 c -2.5864,0 -4.668,2.0835 -4.668,4.6699 l 0,56.965 c 0,2.5864 2.0816,4.668 4.668,4.668 l 16.559,0 c 2.5864,0 4.6699,-2.0816 4.6699,-4.668 l 0,-56.965 c 0,-2.5864 -2.0835,-4.6699 -4.6699,-4.6699 l -16.559,0 z"
+         id="path68"
+         inkscape:connector-curvature="0"
+         style="fill-opacity:0;stroke:#000000;stroke-width:26.5340004;stroke-linecap:round;stroke-linejoin:round;filter:url(#b)" />
     </g>
   </g>
   <g
      id="g5511"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5513"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5515"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5517"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5519"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5521"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5523"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5525"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5527"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5529"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5531"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5533"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5535"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5537"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      id="g5539"
-     transform="matrix(5.5085528,0,0,5.5085528,340.11024,150.64567)" />
+     transform="matrix(5.5085528,0,0,5.5085528,209.8034,75.944828)" />
   <g
      style="fill:#000000;stroke:none"
-     transform="matrix(0.02676893,0,0,-0.02676893,332.61104,457.67802)"
+     transform="matrix(0.02676893,0,0,-0.02676893,202.3042,382.97718)"
      id="g78">
     <path
        inkscape:connector-curvature="0"

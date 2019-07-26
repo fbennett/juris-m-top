@@ -8,13 +8,18 @@
   color: $silver-chalice;
   background-color: $brand-primary;
 
-  > .row {
+  @include media-breakpoint-down(md) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+> .row {
     margin-left: auto;
     margin-right: auto;
 
     @include media-breakpoint-down(md) {
       @include make-col(12);
-      max-width: map-get($container-max-widths, lg);
+      max-width: map-get($container-max-widths, sm);
     }
     @include media-breakpoint-up(lg) {
       flex: 0 0 auto;
