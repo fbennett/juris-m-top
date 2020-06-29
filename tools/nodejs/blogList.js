@@ -7,6 +7,8 @@ var scriptDir = path.dirname(require.main.filename);
 var utils = require(path.join(scriptDir, 'lib', 'utils'));
 var p = require(path.join(scriptDir, 'lib', 'sitePaths'));
 
+var pagedirs = new p.getRelative(["posts"]);
+
 nunjucks.configure(
     p.embeds,
     {
@@ -29,6 +31,7 @@ for (var fn of files) {
     var { txt, header } = utils.breakOutText(filePath, txt);
     data.posts.push(header);
 }
+data.toppath = pagedirs.toppath;
 
 var page = nunjucks.render('blogList.html', data);
 
