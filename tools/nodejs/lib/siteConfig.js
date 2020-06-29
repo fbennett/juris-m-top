@@ -5,7 +5,7 @@ module.exports = {
     repoRoot: '/media/storage/src/JM/juris-m-top',
     templateDir: 'templates',
     embedsDir: 'templates',
-    buildDir: 'build',
+    buildDir: 'docs',
     cardTypes: {
         software: {
             dirname: "software",

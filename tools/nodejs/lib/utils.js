@@ -20,6 +20,16 @@ nunjucks.configure({
 });
 nunjucks.configure(p.templates, { autoescape: true });
 
+function makeDate(str) {
+    var m = str.match(/^([0-9]{4})-([0-9]{2})-([0-9]{2})/);
+    var year = m[1];
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    var monthIdx = parseInt(m[2]) - 1;
+    var month = months[monthIdx];
+    var day = parseInt(m[3]);
+    return `${month} ${day}, ${year}`;
+}
+
 function normalizeLineEndings(txt) {
     return txt.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 }
@@ -138,6 +148,9 @@ function extractYAML(txt) {
     var yamlList = [];
     var endPos = -1;
     var lines = normalizeLineEndings(txt).split("\n");
+    /*
+     Replaces YAML blocks with a template insertion marker.
+     */
     for (var i=lines.length-1;i>-1;i--) {
         var line = lines[i];
         var seeLine = line.trim();
@@ -213,11 +226,49 @@ var loadAndValidate = Promise.coroutine(function*(errors, fullpath, type, txt, i
     return errors;
 });
 
+function breakOutText(filePath, str) {
+    
+    var lines = normalizeLineEndings(str).split("\n");
+    var header = {};
+    var offset = 0;
+    while (true) {
+        var line = lines[offset];
+        var m = line.match(/^(pageTitle|shortTitle|shyTitle|suppressTitle|author):\s*(.*)$/);
+        if (m) {
+            header[m[1]] = m[2];
+            offset += 1;
+        } else {
+            break;
+        }
+    }
+
+    var date = false;
+    var fn = filePath.split("/").slice(-1)[0];
+    var m = fn.match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})/);
+    if (m) {
+        date = makeDate(m[1]);
+    }
+    if (date) {
+        header.date = date;
+    }
+
+    header.id = fn.slice(0, -3);
+    
+    var txt = lines.slice(offset).join("\n");
+
+    return {
+        txt: txt,
+        header: header
+    };
+}
+
 module.exports = {
     makeList: makeList,
     makeLinkSlug: makeLinkSlug,
     makeSlug: makeSlug,
     extractYAML: extractYAML,
     loadAndValidate: loadAndValidate,
-    normalizeLineEndings: normalizeLineEndings
+    normalizeLineEndings: normalizeLineEndings,
+    makeDate: makeDate,
+    breakOutText: breakOutText
 }

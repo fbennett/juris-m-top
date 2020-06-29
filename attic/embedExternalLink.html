@@ -1,0 +1,19 @@
+<div class="row">
+    <div style="margin-bottom:1em;margin-left:1.5em;" class="card">
+      <h4 class="card-header">{{ title }}</h4>
+      <div class="card-group">
+        <div class="card">
+          <dl class="dl-group">
+            <div class="dl-group-item stubborn">
+              <dt>
+                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href="{{ urlpath }}"><img style="vertical-align: top;width: 36px;" src="{{ toppath }}/assets/icons/{{ info.icon }}"/></a>
+              </dt>
+              <dd>
+                <p>{{ description|safe }}</p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+</div>

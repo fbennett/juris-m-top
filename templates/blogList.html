@@ -5,7 +5,7 @@
 <div class="card my-3">
   <ul class="list-group list-group-flush">
     {% for post in posts %}
-    <li class="list-group-item"><div style="display:inline-block;margin-left:1em;text-indent:-1em;">{{ post.author }}, <a href="{{ toppath }}/alumni/{{ post.blogname }}/{{ post.id }}.html">{{ post.pageTitle }}</a> ({{ post.date }})</div></li>
+    <li class="list-group-item"><div style="display:inline-block;margin-left:1em;text-indent:-1em;"><a href="{{ toppath }}/posts/{{ post.id }}.html">{{ post.pageTitle }}</a> ({{ post.author }}, {{ post.date }})</div></li>
     {% endfor %}
   </ul>
 </div>

@@ -5,6 +5,27 @@
 //
 // For more information on the Bootstrap mixins, see
 // https://v4-alpha.getbootstrap.com/layout/grid/#mixins
+
+/*
+#proper-page img {
+    width: 100%;
+}
+*/
+
+.button-link {
+    border: 6px solid rgb(1, 96, 41);
+    padding: 0.6rem;
+    border-radius: 1.5rem;
+    color: #555;
+    font-size: smaller;
+}
+
+.button-link:hover {
+    background: rgba(1, 96, 41, 0.08);
+    text-decoration: none;
+    color: #555;
+}
+ 
 h3 {
     font-size: 1.5rem;
 }
@@ -100,7 +121,7 @@ div#langselector {
     }
 
     // Remove margins above the first term/description pair
-    &:first-child > dt, &:first-child > dd {
+    &:first-child > dt, &:first-child > dt > a, &:first-child > dd {
       margin-top: 0;
     }
 
@@ -111,17 +132,29 @@ div#langselector {
 
     // A term
     > dt {
-      // Add margins above and below each term  
-      margin-top: .75rem;
-      margin-bottom: .75rem;
 
       @include make-col-ready();
 
       @include media-breakpoint-only(md) {
-        @include make-col(4);
+        @include make-col(2);
       }
       @include media-breakpoint-up(lg) {
-        @include make-col(3);
+        @include make-col(2);
+      }
+
+      > a {
+          // Add margins above and below each term  
+          padding-top: .75rem;
+          padding-bottom: .75rem;
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-top: 0.75rem;
+      }
+
+      > a:hover {
+          border-radius: 1rem;
+          background-color: rgba($maroon, 0.3);
+
       }
     }
 
@@ -136,10 +169,10 @@ div#langselector {
 
       &:first-of-type {
         @include media-breakpoint-only(md) {
-          @include make-col(8);
+          @include make-col(10);
         }
         @include media-breakpoint-up(lg) {
-          @include make-col(9);
+          @include make-col(10);
         }
       }
       // Offset/indent any description after the first

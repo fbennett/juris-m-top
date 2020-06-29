@@ -1,6 +1,0 @@
-{% extends "main.html" %}
-{% block content %}
-<h2 class="hidden-sm-down">{{ pageSubTitle }}</h2>
-<h2 class="hidden-md-up">{% if shortSubTitle %}{{ shortSubTitle }}{% else %}{{ pageSubTitle }}{% endif %}</h2>
-{{ contentBlocks|safe }}
-{% endblock %}

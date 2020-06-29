@@ -8,7 +8,7 @@ var yaml = require('js-yaml');
 
 var scriptDir = path.dirname(require.main.filename);
 var p = require(path.join(scriptDir, 'lib', 'sitePaths'));
-var utils = require(path.join(scriptDir, 'lib', 'utils'));
+var utils = require('./utils');
 var pageoutput = p.builddir;
 
 var xpath = require('xpath');
@@ -21,20 +21,21 @@ nunjucks.configure({
     trimBlocks: true
 });
 
-function markupObject(obj) {
-    for (var key in obj) {
-        if (typeof obj[key] === "string") {
-            obj[key] = markdown.toHTML(obj[key]).replace(/^\s*<p>(.*)<\/p>\s*$/, "$1");
-        } else if (typeof obj[key] === "object" && typeof obj[key].length === "undefined") {
-            obj[key] = markupObject(obj[key]);
-        }
+function markupObject(txt) {
+    if (typeof txt=== "string") {
+        txt = txt.trim().split("\n").join("\n\n");
+        txt = markdown.toHTML(txt.replace(/^\\/, ""));
     }
-    return obj;
+    return txt;
 }
 
-function makePage(tmpl, targetDir, buildFilePath, data, formData, documentData, globalIndex) {
+function makePage(tmpl, targetDir, filePathStub, latest) {
+    var origFilePath = filePathStub;
     var current = {};
-    var dirPath = buildFilePath.split("/");
+    if (latest) {
+        filePathStub = "latest/index.html";
+    }
+    var dirPath = filePathStub.split("/");
     var fileName = dirPath.slice(-1)[0];
     dirPath = dirPath.slice(0, -1);
     if (dirPath.length > 0) {
@@ -42,20 +43,8 @@ function makePage(tmpl, targetDir, buildFilePath, data, formData, documentData, 
     }
     var pagedirs = new p.getRelative(dirPath);
 
-    var lines = utils.normalizeLineEndings(tmpl).split("\n");
-    var header = {};
-    var offset = 0;
-    while (true) {
-        var line = lines[offset];
-        var m = line.match(/^(pageTitle|shortTitle|shyTitle|suppressTitle):\s*(.*)$/);
-        if (m) {
-            header[m[1]] = m[2];
-            offset += 1;
-        } else {
-            break;
-        }
-    }
-    var txt = lines.slice(offset).join("\n");
+    var { txt, header } = utils.breakOutText(origFilePath, tmpl);
+
     var res = utils.extractYAML(txt);
     var tmpl = markdown.toHTML(res.tmpl);
 
@@ -65,62 +54,17 @@ function makePage(tmpl, targetDir, buildFilePath, data, formData, documentData, 
     for (var i=0,ilen=res.objList.length;i<ilen;i++) {
         var langs = {};
         var obj = res.objList[i];
-        if (data && data[obj.type]) {
-            var embedData = data[obj.type];
-        } else {
-            var embedData = markupObject(obj);
+
+        var embedData = obj;
+
+        if (embedData.description) {
+            embedData.description = markupObject(embedData.description);
         }
 
-        if (embedData.documentid) {
-            Object.assign(embedData, documentData.byKey[embedData.documentid]);
-            for (var link of embedData.links) {
-                // These URL adjustments are ugly-ugly.
-                // They are fixed in contentPage IF they are rendered
-                // somewhere. Otherwise, we need to fix them up here.
-                // There must be a less arcane way of handling these.
-                link.urlpath = link.urlpath.replace(/^(\.\.\/)*/g, "");
-                if (!link.urlpath.match(/^https?:\/\//)) {
-                    if (link.urlpath[0] !== "/") {
-                        link.urlpath = pagedirs.toppath + path.sep + link.urlpath
-                    }
-                }
-            }
-        }
-
-        if (embedData.categoryid) {
-            try {
-                embedData.title = formData.categoriesByKey[embedData.categoryid].title;
-            } catch (e) {
-                throw "Ouch. Bad categoryid: " + embedData.categoryid + " while attempting to build " + buildFilePath;
-            }
-        }
-
-        if (embedData.formids) {
-            embedData.links = [];
-            for (var formid of embedData.formids) {
-                var fdata = formData.formsByKey[formid];
-                if (!fdata) {
-                    console.log("Oops. Page calls a nonexistent form key " + formid);
-                    process.exit();
-                }
-                if (fdata.filetype === "url") {
-                    fdata.urlpath = fs.readFileSync(fdata.filepath).toString().trim();
-                } else {
-                    if (!fdata.urlpath.match(/^https?:\/\//)) {
-                        if (fdata.urlpath[0] !== "/") {
-                            fdata.urlpath = pagedirs.toppath + path.sep + fdata.urlpath
-                        }
-                    }
-                }
-                fdata.pos = globalIndex;
-                globalIndex++;
-                embedData.links.push(fdata);
-            }
-        }
-
-        if (embedData.title) {
-            embedData.slug = utils.makeSlug(embedData.title);
-        }
+        // if (embedData.description) {
+        //     embedData.description = markdown
+        // }
+        
         if (embedData.links) {
             if (Object.keys(embedData.links).length) {
                 var links = [];
@@ -130,6 +74,9 @@ function makePage(tmpl, targetDir, buildFilePath, data, formData, documentData, 
                 embedData.links = links;
             }
             for (var linkdata of embedData.links) {
+                if (linkdata.description) {
+                    linkdata.description = markupObject(linkdata.description);
+                }
                 if (linkdata.lang) {
                     langs[linkdata.lang] = true;
                     linkdata.lang = " " + linkdata.lang;
@@ -138,14 +85,22 @@ function makePage(tmpl, targetDir, buildFilePath, data, formData, documentData, 
             }
         }
 
-        if (Object.keys(langs).length) {
-            topInsert = true;
-        }
+        
+
+        
         embedData.toppath = pagedirs.toppath;
+
         inserts[obj.id] = nunjucks.render(obj.type + '.html', embedData);
+
     }
-    var pg = nunjucks.renderString(tmpl, inserts)
+
+    var pg = nunjucks.renderString(tmpl, inserts);
     
+    var filePath = path.join(targetDir, dirPath.join(path.sep));
+    if (!fs.existsSync(filePath)) {
+        fs.mkdirSync(filePath);
+    }
+
     // AHA!
     // Make this a file. Provide for conditional wake-up of top-page content
     // in generic template.
@@ -158,9 +113,10 @@ function makePage(tmpl, targetDir, buildFilePath, data, formData, documentData, 
         shyTitle: header.shyTitle,
         suppressTitle: header.suppressTitle,
         toppath: pagedirs.toppath,
+        author: header.author,
         INSERTME: pg,
         current: current,
-        topInsert: topInsert ? '<div id="langselector"><div id="eselect">English-taught</div> <div id="jselect">Japanese-taught</div></div>' : ""
+        date: header.date
     }
     var realpage = nunjucks.renderString(template, params).replace(/&nbsp;/g, "&#160;");
     // Split serialized HTML text, insert DIVs, insert class attributes?
@@ -235,7 +191,8 @@ function makePage(tmpl, targetDir, buildFilePath, data, formData, documentData, 
     if (fileName.slice(-3) === ".md") {
         fileName = fileName.slice(0, -3) + ".html";
     }
-    fs.writeFileSync(path.join(filePath, fileName), realpage)
+    //fs.writeFileSync(path.join(filePath, fileName), realpage)
+    fs.writeFileSync(path.join(filePath, fileName), realpage);
 }
 
 // if (require.main === module) {

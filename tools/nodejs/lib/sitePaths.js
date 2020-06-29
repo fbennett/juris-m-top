@@ -50,11 +50,14 @@ function makePaths() {
     this.templates = makePath(config.templateDir);
     this.embeds = makePath(config.embedsDir);
     this.content = makePointableSourceDir(['content']);
-    this.cards = makePointableSourceDir(['cards']);
-    this.links = makePointableSourceDir(['cards', 'links']);
-    this.software = makePointableSourceDir(['cards', 'software']);
-    this.styles = makePointableSourceDir(['cards', 'styles']);
-    this["juris-bundles"] = makePointableSourceDir(['cards', 'juris-bundles']);
+    this.beta = makePointableSourceDir(['content', 'beta']);
+    this.release = makePointableSourceDir(['content', 'release']);
+    this.jurismdocs = makePointableSourceDir(['content', 'jurism-docs']);
+    this.cslmdocs = makePointableSourceDir(['content', 'cslm-docs']);
+    this.indigobook = makePointableSourceDir(['content', 'indigobook']);
+    this.csl = makePointableSourceDir(['content', 'csl']);
+    this.blog = makePointableSourceDir(['blog', 'posts']);
+    this.mail = makePointableSourceDir(['content', 'mail']);
     this.getRelative = getRelative;
     this.builddir = makePath(config.buildDir);
 }

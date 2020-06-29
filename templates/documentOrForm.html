@@ -18,7 +18,7 @@
             {% for child in pageDatum.children %}
             <div class="dl-group-item stubborn">
               <dt>
-                <a class="nodecor" href="{{ child.fileName }}"><img src="{{ toppath }}/assets/icons/file.svg" height="36px"/>&nbsp;&nbsp;Download</a>
+                <a class="nodecor" href="{{ child.fileName }}"><img src="{{ toppath }}/assets/icons/link.svg" style="width:20px;" height="36px"/>&nbsp;&nbsp;Install</a>
               </dt>
               <dd>
                 {{ child.subtitle }}
@@ -28,7 +28,7 @@
             {% else %}
             <div class="dl-group-item stubborn">
               <dt>
-                <a class="nodecor" href="{{ pageDatum.fileName }}"><img src="{{ toppath }}/assets/icons/file.svg" height="36px"/>&nbsp;&nbsp;Download</a>
+                <a class="nodecor" href="{{ pageDatum.fileName }}"><img src="{{ toppath }}/assets/icons/link.svg" style="width:20px;" width="20px" height="36px"/>&nbsp;&nbsp;Install</a>
               </dt>
               <dd>
                 <p>{{ pageDatum.description }}</p>

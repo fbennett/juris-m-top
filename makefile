@@ -11,34 +11,27 @@ NODE_MODULES = $(NODE_DIR)/node_modules
 ### content
 ifeq ($(shell test -f $(CURDIR)/src/content && echo -n yes),yes)
     CONTENT_SRC_DIR = $(shell head -1 $(CURDIR)/src/content)
+    BLOG_SRC_DIR = $(shell head -1 $(CURDIR)/src/blog)
 else
     CONTENT_SRC_DIR = $(CURDIR)/src/content
+    BLOG_SRC_DIR = $(CURDIR)/src/blog
 endif
 
 
 ## Targets
 
 ### directories
-BUILD = $(CURDIR)/build
-CARDBASE_DIR = $(BUILD)/cards
+BUILD = $(CURDIR)/docs
 
-BUILDDIRS = $(BUILD)/doc \
-			$(BUILD)/doc/tutorials \
-			$(BUILD)/doc/guides \
-			$(BUILD)/doc/manuals \
-			$(BUILD)/download \
-			$(BUILD)/download/software \
-			$(BUILD)/download/styles \
-			$(BUILD)/download/jurisdictions \
-			$(BUILD)/link \
-			$(BUILD)/link/csl \
-			$(BUILD)/link/ctr \
-			$(BUILD)/link/zotero \
-			$(BUILD)/support \
-			$(BUILD)/support/blog \
-			$(BUILD)/support/list \
-			$(BUILD)/support/roadmap \
-			$(BUILD)/cards
+BUILDDIRS = $(BUILD)/release \
+			$(BUILD)/beta \
+			$(BUILD)/jurism-docs \
+			$(BUILD)/cslm-docs \
+			$(BUILD)/indigobook \
+			$(BUILD)/lrr \
+			$(BUILD)/posts \
+			$(BUILD)/latest \
+			$(BUILD)/mail
 
 ## Main targets
 
@@ -51,9 +44,11 @@ help:
 	@echo "  "make distclean"   "\(wipes out site build and software dependencies\)
 
 all: software compass skeleton \
-	top
-#	cards \
-#	contents \
+	top \
+	contents \
+	blogposts \
+	latest \
+	bloglist
 #	contacts \
 #	index \
 #	redirects
@@ -76,7 +71,7 @@ $(BUILDDIRS):
 	mkdir -p $@
 
 
-SKEL_FILES = $(shell find skeleton -type f | sed -e "s/^skeleton/build/")
+SKEL_FILES = $(shell find skeleton -type f | sed -e "s/^skeleton/docs/")
 
 compass:
 	cd scss; compass compile; cd ..
@@ -84,19 +79,25 @@ compass:
 skeleton: $(BUILDDIRS) $(SKEL_FILES)
 
 $(SKEL_FILES):
-	mkdir -p $(shell dirname $@) && cp $(shell echo $@ | sed -e "s/^build/skeleton/") $@
+	mkdir -p $(shell dirname $@) && cp $(shell echo $@ | sed -e "s/^docs/skeleton/") $@
 
 contents: $(BUILDDIRS)
-	node ./tools/nodejs/contentPages.js -s $(CONTENT_SRC_DIR) -t $(BUILD) -i $(CENTERINFO_SRC_DIR)
+	node ./tools/nodejs/contentPages.js -s $(CONTENT_SRC_DIR) -t $(BUILD)
+
+latest: $(BUILDDIRS)
+	node ./tools/nodejs/contentPages.js -s $(BLOG_SRC_DIR) -t $(BUILD) -L
+
+blogposts: $(BUILDDIRS)
+	node ./tools/nodejs/contentPages.js -s $(BLOG_SRC_DIR) -t $(BUILD)
+
+bloglist: $(BUILDDIRS)
+	node ./tools/nodejs/blogList.js
 
 redirects:
 	node ./tools/nodejs/setRedirects.js
 
 top: 
 	node ./tools/nodejs/outputTopPage.js
-
-cards: 
-	node ./tools/nodejs/outputCardIndex.js
 
 software: | $(NODE_MODULES)
 

@@ -45,19 +45,40 @@
     margin-right: 15px;
   }
 }
-/* line 8, ../../../scss/sass/gsl/_style.scss */
+/*
+#proper-page img {
+    width: 100%;
+}
+*/
+/* line 15, ../../../scss/sass/gsl/_style.scss */
+.button-link {
+  border: 6px solid #016029;
+  padding: 0.6rem;
+  border-radius: 1.5rem;
+  color: #555;
+  font-size: smaller;
+}
+
+/* line 23, ../../../scss/sass/gsl/_style.scss */
+.button-link:hover {
+  background: rgba(1, 96, 41, 0.08);
+  text-decoration: none;
+  color: #555;
+}
+
+/* line 29, ../../../scss/sass/gsl/_style.scss */
 h3 {
   font-size: 1.5rem;
 }
 
-/* line 12, ../../../scss/sass/gsl/_style.scss */
+/* line 33, ../../../scss/sass/gsl/_style.scss */
 h2.dividers {
   margin-top: 1em;
   border-top: 8px solid #ccc;
   padding-top: 0.75em;
 }
 
-/* line 18, ../../../scss/sass/gsl/_style.scss */
+/* line 39, ../../../scss/sass/gsl/_style.scss */
 div#langselector {
   position: sticky;
   z-index: 100;
@@ -66,24 +87,24 @@ div#langselector {
   top: 56px;
 }
 @media (max-width: 575px) {
-  /* line 18, ../../../scss/sass/gsl/_style.scss */
+  /* line 39, ../../../scss/sass/gsl/_style.scss */
   div#langselector {
     top: 51px;
   }
 }
 @media (min-width: 768px) {
-  /* line 18, ../../../scss/sass/gsl/_style.scss */
+  /* line 39, ../../../scss/sass/gsl/_style.scss */
   div#langselector {
     top: 56px;
   }
 }
 @media (min-width: 992px) {
-  /* line 18, ../../../scss/sass/gsl/_style.scss */
+  /* line 39, ../../../scss/sass/gsl/_style.scss */
   div#langselector {
     top: 116px;
   }
 }
-/* line 35, ../../../scss/sass/gsl/_style.scss */
+/* line 56, ../../../scss/sass/gsl/_style.scss */
 div#langselector > div {
   display: inline-block;
   margin-top: 2px;
@@ -95,16 +116,16 @@ div#langselector > div {
   color: #aaaaaa;
   cursor: pointer;
 }
-/* line 46, ../../../scss/sass/gsl/_style.scss */
+/* line 67, ../../../scss/sass/gsl/_style.scss */
 div#langselector > div.checked {
   color: black;
 }
 
-/* line 52, ../../../scss/sass/gsl/_style.scss */
+/* line 73, ../../../scss/sass/gsl/_style.scss */
 .index-list > div {
   padding: 0.75rem;
 }
-/* line 56, ../../../scss/sass/gsl/_style.scss */
+/* line 77, ../../../scss/sass/gsl/_style.scss */
 .index-list > div:first-child {
   position: -webkit-sticky;
   position: sticky;
@@ -113,41 +134,41 @@ div#langselector > div.checked {
   z-index: 100;
 }
 @media (max-width: 575px) {
-  /* line 56, ../../../scss/sass/gsl/_style.scss */
+  /* line 77, ../../../scss/sass/gsl/_style.scss */
   .index-list > div:first-child {
     display: none;
   }
 }
 @media (max-width: 991px) {
-  /* line 56, ../../../scss/sass/gsl/_style.scss */
+  /* line 77, ../../../scss/sass/gsl/_style.scss */
   .index-list > div:first-child {
     top: 50px;
   }
 }
 @media (min-width: 992px) {
-  /* line 56, ../../../scss/sass/gsl/_style.scss */
+  /* line 77, ../../../scss/sass/gsl/_style.scss */
   .index-list > div:first-child {
     top: 110px;
   }
 }
-/* line 73, ../../../scss/sass/gsl/_style.scss */
+/* line 94, ../../../scss/sass/gsl/_style.scss */
 .index-list > div:not(:first-child) {
   z-index: 50;
 }
-/* line 76, ../../../scss/sass/gsl/_style.scss */
+/* line 97, ../../../scss/sass/gsl/_style.scss */
 .index-list > div:not(:first-child) > div:first-child {
   font-weight: bold;
 }
-/* line 82, ../../../scss/sass/gsl/_style.scss */
+/* line 103, ../../../scss/sass/gsl/_style.scss */
 .index-list > div:nth-of-type(even) {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* line 88, ../../../scss/sass/gsl/_style.scss */
+/* line 109, ../../../scss/sass/gsl/_style.scss */
 .dl-group {
   padding: .75rem 1.25rem;
 }
-/* line 93, ../../../scss/sass/gsl/_style.scss */
+/* line 114, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item {
   display: flex;
   flex-wrap: wrap;
@@ -155,49 +176,47 @@ div#langselector > div.checked {
   margin-left: -15px;
 }
 @media (min-width: 576px) {
-  /* line 93, ../../../scss/sass/gsl/_style.scss */
+  /* line 114, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item {
     margin-right: -15px;
     margin-left: -15px;
   }
 }
 @media (min-width: 768px) {
-  /* line 93, ../../../scss/sass/gsl/_style.scss */
+  /* line 114, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item {
     margin-right: -15px;
     margin-left: -15px;
   }
 }
 @media (min-width: 992px) {
-  /* line 93, ../../../scss/sass/gsl/_style.scss */
+  /* line 114, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item {
     margin-right: -15px;
     margin-left: -15px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 93, ../../../scss/sass/gsl/_style.scss */
+  /* line 114, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item {
     margin-right: -15px;
     margin-left: -15px;
   }
 }
-/* line 98, ../../../scss/sass/gsl/_style.scss */
+/* line 119, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item:not(:last-child) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-/* line 103, ../../../scss/sass/gsl/_style.scss */
-.dl-group > .dl-group-item:first-child > dt, .dl-group > .dl-group-item:first-child > dd {
+/* line 124, ../../../scss/sass/gsl/_style.scss */
+.dl-group > .dl-group-item:first-child > dt, .dl-group > .dl-group-item:first-child > dt > a, .dl-group > .dl-group-item:first-child > dd {
   margin-top: 0;
 }
-/* line 108, ../../../scss/sass/gsl/_style.scss */
+/* line 129, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item:last-child > dt, .dl-group > .dl-group-item:last-child > dd {
   margin-bottom: 0;
 }
-/* line 113, ../../../scss/sass/gsl/_style.scss */
+/* line 134, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item > dt {
-  margin-top: .75rem;
-  margin-bottom: .75rem;
   position: relative;
   width: 100%;
   min-height: 1px;
@@ -205,49 +224,62 @@ div#langselector > div.checked {
   padding-left: 15px;
 }
 @media (min-width: 576px) {
-  /* line 113, ../../../scss/sass/gsl/_style.scss */
+  /* line 134, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dt {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 @media (min-width: 768px) {
-  /* line 113, ../../../scss/sass/gsl/_style.scss */
+  /* line 134, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dt {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 @media (min-width: 992px) {
-  /* line 113, ../../../scss/sass/gsl/_style.scss */
+  /* line 134, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dt {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 113, ../../../scss/sass/gsl/_style.scss */
+  /* line 134, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dt {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 113, ../../../scss/sass/gsl/_style.scss */
+  /* line 134, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dt {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 113, ../../../scss/sass/gsl/_style.scss */
+  /* line 134, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dt {
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
   }
 }
-/* line 129, ../../../scss/sass/gsl/_style.scss */
+/* line 145, ../../../scss/sass/gsl/_style.scss */
+.dl-group > .dl-group-item > dt > a {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 0.75rem;
+}
+/* line 154, ../../../scss/sass/gsl/_style.scss */
+.dl-group > .dl-group-item > dt > a:hover {
+  border-radius: 1rem;
+  background-color: rgba(1, 96, 41, 0.3);
+}
+/* line 162, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item > dd {
   margin-top: .75rem;
   margin-bottom: .75rem;
@@ -258,50 +290,50 @@ div#langselector > div.checked {
   padding-left: 15px;
 }
 @media (min-width: 576px) {
-  /* line 129, ../../../scss/sass/gsl/_style.scss */
+  /* line 162, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dd {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 @media (min-width: 768px) {
-  /* line 129, ../../../scss/sass/gsl/_style.scss */
+  /* line 162, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dd {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 @media (min-width: 992px) {
-  /* line 129, ../../../scss/sass/gsl/_style.scss */
+  /* line 162, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dd {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 129, ../../../scss/sass/gsl/_style.scss */
+  /* line 162, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dd {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 137, ../../../scss/sass/gsl/_style.scss */
+  /* line 170, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dd:first-of-type {
-    flex: 0 0 66.66667%;
-    max-width: 66.66667%;
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 137, ../../../scss/sass/gsl/_style.scss */
+  /* line 170, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dd:first-of-type {
-    flex: 0 0 75%;
-    max-width: 75%;
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 146, ../../../scss/sass/gsl/_style.scss */
+  /* line 179, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dd:not(:first-of-type) {
     flex: 0 0 66.66667%;
     max-width: 66.66667%;
@@ -310,39 +342,39 @@ div#langselector > div.checked {
 }
 
 @media (min-width: 992px) {
-  /* line 146, ../../../scss/sass/gsl/_style.scss */
+  /* line 179, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item > dd:not(:first-of-type) {
     flex: 0 0 75%;
     max-width: 75%;
     margin-left: 25%;
   }
 }
-/* line 156, ../../../scss/sass/gsl/_style.scss */
+/* line 189, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item > dd > p {
   white-space: pre-line;
 }
-/* line 164, ../../../scss/sass/gsl/_style.scss */
+/* line 197, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item.first-item > dt {
   margin-top: 0;
 }
-/* line 167, ../../../scss/sass/gsl/_style.scss */
+/* line 200, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item.first-item > dd {
   margin-top: 0;
 }
-/* line 173, ../../../scss/sass/gsl/_style.scss */
+/* line 206, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item.last-item {
   border-bottom: none;
 }
-/* line 175, ../../../scss/sass/gsl/_style.scss */
+/* line 208, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item.last-item > dt {
   margin-bottom: 0;
 }
-/* line 178, ../../../scss/sass/gsl/_style.scss */
+/* line 211, ../../../scss/sass/gsl/_style.scss */
 .dl-group > .dl-group-item.last-item > dd {
   margin-bottom: 0;
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  /* line 184, ../../../scss/sass/gsl/_style.scss */
+  /* line 217, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item.stubborn > dt {
     flex: 0 0 41.66667%;
     max-width: 41.66667%;
@@ -350,7 +382,7 @@ div#langselector > div.checked {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  /* line 190, ../../../scss/sass/gsl/_style.scss */
+  /* line 223, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item.stubborn > dd:first-of-type {
     flex: 0 0 58.33333%;
     max-width: 58.33333%;
@@ -358,7 +390,7 @@ div#langselector > div.checked {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  /* line 195, ../../../scss/sass/gsl/_style.scss */
+  /* line 228, ../../../scss/sass/gsl/_style.scss */
   .dl-group > .dl-group-item.stubborn > dd:not(:first-of-type) {
     flex: 0 0 58.33333%;
     max-width: 58.33333%;
@@ -581,11 +613,11 @@ ul.list-unstyled li {
 }
 /* line 115, ../../../scss/sass/gsl/_navbar.scss */
 .navbar-nav#desktopNavMenu.expanded {
-  max-height: 210px;
+  max-height: 156px;
 }
 /* line 119, ../../../scss/sass/gsl/_navbar.scss */
 .navbar-nav#desktopNavMenu .dropdown-nav {
-  min-height: 154px;
+  min-height: 100px;
 }
 
 /* line 127, ../../../scss/sass/gsl/_navbar.scss */
