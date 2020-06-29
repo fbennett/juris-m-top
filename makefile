@@ -85,7 +85,7 @@ contents: $(BUILDDIRS)
 	node ./tools/nodejs/contentPages.js -s $(CONTENT_SRC_DIR) -t $(BUILD)
 
 latest: $(BUILDDIRS)
-	node ./tools/nodejs/contentPages.js -s $(BLOG_SRC_DIR) -t $(BUILD) -L
+	node ./tools/nodejs/contentPages.js -s $(BLOG_SRC_DIR) -t $(BUILD) -L posts
 
 blogposts: $(BUILDDIRS)
 	node ./tools/nodejs/contentPages.js -s $(BLOG_SRC_DIR) -t $(BUILD)

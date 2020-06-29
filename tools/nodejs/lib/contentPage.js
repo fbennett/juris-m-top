@@ -96,11 +96,6 @@ function makePage(tmpl, targetDir, filePathStub, latest) {
 
     var pg = nunjucks.renderString(tmpl, inserts);
     
-    var filePath = path.join(targetDir, dirPath.join(path.sep));
-    if (!fs.existsSync(filePath)) {
-        fs.mkdirSync(filePath);
-    }
-
     // AHA!
     // Make this a file. Provide for conditional wake-up of top-page content
     // in generic template.

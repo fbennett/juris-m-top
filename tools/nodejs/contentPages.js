@@ -17,15 +17,14 @@ function composePage(srcdir, fn, targetdir, latest) {
 
 function makePages(srcdir, targetdir, latest) {
     if (latest) {
-        var paths = fs.readdirSync(srcdir);
+        var paths = fs.readdirSync(path.join(srcdir, latest));
+        paths = paths.filter((str) => {
+            return str.slice(-3) === ".md";
+        });
         paths.sort();
-        paths.reverse();
-        for (var fn of paths) {
-            if (fn.slice(-3) !== ".md") continue;
-            var fn = paths.slice(-1)[0];
-            composePage(srcdir, fn, targetdir, true);
-            break;
-        }
+        var fn = paths.slice(-1)[0];
+        fn = path.join(latest, fn);
+        composePage(srcdir, fn, targetdir, latest);
     } else {
         var paths = walkSync(srcdir, {directories: false, globs: ['*/**']});
         for (var fn of paths) {
@@ -38,7 +37,7 @@ function makePages(srcdir, targetdir, latest) {
 var opt = require('node-getopt').create([
     ['s' 		, 'sourcedir=ARG'  ,  'Source directory.'],
     ['t' 		, 'targetdir=ARG'  ,  'Target directory.'],
-    ['L' 		, 'latest'         ,  'Output only the latest (last-in-sort) page'],
+    ['L' 		, 'latest=ARG'     ,  'Output only the latest (last-in-sort) page'],
     ['h' 		, 'help'           ,  'display this help']
 ])              // create Getopt instance
     .bindHelp()     // bind option 'help' to default action
