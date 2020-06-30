@@ -25,15 +25,15 @@ links:
     -
       label: Jurism-Enhanced IndigoBook
       icon: link.svg
-      urlpath: https://juris-m.github.io/indigobook/indigobook.html
+      urlpath: https://juris-m.github.io/indigobook
       description: A copy of the IndigoBook with links on its citation
                    examples that open popup guidance illustrating
                    how data should be entered in Jurism for each
                    type of material.
     -
-      label: IndigoBook+Jurism Design Notes
+      label: IndigoBook+Jurism Integration
       icon: link.svg
-      urlpath: https://juris-m.github.io/indigobook
-      description: An overview of the IndigoBook integration project
-                   and its objectives.
+      urlpath: ../posts/2020-06-30-0.html
+      description: A blog post that explains what this project aims to
+                   do and why it’s cool.
 ```
