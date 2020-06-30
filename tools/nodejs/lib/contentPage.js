@@ -3,7 +3,13 @@
 var fs = require('fs');
 var path = require('path');
 var nunjucks = require('nunjucks');
-var markdown = require('markdown').markdown;
+
+var md = require('markdown-it')({
+    html: true,
+    xhtmlOut: true,
+    linkify: true
+}).use(require('markdown-it-footnote'));
+
 var yaml = require('js-yaml');
 
 var scriptDir = path.dirname(require.main.filename);
@@ -24,7 +30,7 @@ nunjucks.configure({
 function markupObject(txt) {
     if (typeof txt=== "string") {
         txt = txt.trim().split("\n").join("\n\n");
-        txt = markdown.toHTML(txt.replace(/^\\/, ""));
+        txt = md.render(txt.replace(/^\\/, ""));
     }
     return txt;
 }
@@ -46,7 +52,7 @@ function makePage(tmpl, targetDir, filePathStub, latest) {
     var { txt, header } = utils.breakOutText(origFilePath, tmpl);
 
     var res = utils.extractYAML(txt);
-    var tmpl = markdown.toHTML(res.tmpl);
+    var tmpl = md.render(res.tmpl);
 
     nunjucks.configure(p.embeds, { autoescape: true });
     var inserts = {};
@@ -128,14 +134,6 @@ function makePage(tmpl, targetDir, filePathStub, latest) {
     for (var i=h2nodes.length-1; i>-1; i--) {
         var target = h2nodes[i];
         if (target.localName == "h2") {
-            if ("programs" === buildFilePath.split(path.sep)[0]) {
-                var classes = target.getAttribute("class");
-                if (!classes) {
-                    classes = [];
-                }
-                classes.push("dividers");
-                target.setAttribute("class", classes.join(" "))
-            }
             // cast wrapper  node
             var newDiv = doc.createElement('div');
             // insert wrapper node
