@@ -65,6 +65,10 @@ links:
       urlpath: https://github.com/Juris-M/assets/releases/download/connector/firefox/plugin/release/Jurism_Connector-5.0.89.2.xpi
       description: Install this Jurism Connector to enable Jurism support in Google Docs
                    and one-click acquisition of database items from many websites.
+                   
+                    **Note:** If installing over version 5.0.66.1 or earlier,
+                    *remove* the previous version of Jurism connector before
+                    installing this version. (Subsequent updates to the plugin should be automatic.)
 
     -
       label: Jurism Connector (Google Chrome or Chromium)
