@@ -250,6 +250,15 @@ $navigation-bg:               $maroon;
 
           text-decoration: none;
         }
+        &.disabled {
+            background-color: #aaa;
+
+            &:focus, &:hover {
+                cursor: default;
+                background-color: #aaa;
+                color: $category-name-default-color;
+            }
+        }
       }
     }
 
