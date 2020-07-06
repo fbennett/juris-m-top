@@ -7,8 +7,10 @@ var nunjucks = require('nunjucks');
 var md = require('markdown-it')({
     html: true,
     xhtmlOut: true,
-    linkify: true
-}).use(require('markdown-it-footnote'));
+    linkify: true,
+    typographer: true
+}).use(require('markdown-it-footnote'))
+  .use(require('markdown-it-deflist'));
 
 var yaml = require('js-yaml');
 
