@@ -48,10 +48,10 @@ all: software compass skeleton \
 	contents \
 	blogposts \
 	latest \
-	bloglist
+	bloglist \
+	redirects
 #	contacts \
 #	index \
-#	redirects
 
 clean-build:
 	rm -fR $(BUILD)
