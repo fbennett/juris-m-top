@@ -13,6 +13,7 @@ function makePath(pth) {
 }
 
 function getRelative(elems) {
+    
     if (elems.length === 0) {
         this.toppath = '.';
         this.stub = '.';
@@ -25,8 +26,13 @@ function getRelative(elems) {
 }
 
 function makePointableSourceDir(dirname) {
-    dirname = dirname.join(path.sep);
-    var firstPath = path.join(config.repoRoot, "src", dirname)
+    var firstPath;
+    if (dirname) {
+        dirname = dirname.join(path.sep);
+        firstPath = path.join(config.repoRoot, "src", dirname);
+    } else {
+        firstPath = path.join(config.repoRoot, "src");
+    }
     if (fs.existsSync(firstPath)) {
         var stat = fs.statSync(firstPath);
         if (stat.isFile()) {
@@ -35,12 +41,12 @@ function makePointableSourceDir(dirname) {
         } else if (stat.isDirectory()) {
             return firstPath;
         } else {
-            throw "Something is wrong with the ./" + dirname+ " file"
+            throw `Something is wrong with the ${firstPath} file`;
         }
     } else {
         // make the directory so we can write into it, and
         // point the path there.
-        fs.mkdirSync(firstPath)
+        fs.mkdirSync(firstPath);
         return firstPath;
     }
 }
@@ -49,6 +55,7 @@ function makePaths() {
     this.root = config.repoRoot;
     this.templates = makePath(config.templateDir);
     this.embeds = makePath(config.embedsDir);
+    this.srcdir = makePointableSourceDir();
     this.content = makePointableSourceDir(['content']);
     this.beta = makePointableSourceDir(['content', 'beta']);
     this.release = makePointableSourceDir(['content', 'release']);
@@ -56,6 +63,7 @@ function makePaths() {
     this.cslmdocs = makePointableSourceDir(['content', 'cslm-docs']);
     this.indigobook = makePointableSourceDir(['content', 'indigobook']);
     this.csl = makePointableSourceDir(['content', 'csl']);
+    this.blogroot = makePointableSourceDir(['blog']);
     this.blog = makePointableSourceDir(['blog', 'posts']);
     this.mail = makePointableSourceDir(['content', 'mail']);
     this.getRelative = getRelative;

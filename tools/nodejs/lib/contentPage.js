@@ -37,21 +37,72 @@ function markupObject(txt) {
     return txt;
 }
 
-function makePage(tmpl, targetDir, filePathStub, latest) {
-    var origFilePath = filePathStub;
-    var current = {};
-    if (latest) {
-        filePathStub = "latest/index.html";
+function makePage(sourceDir, targetDir, sourceFileName, latest) {
+    var origSourceDir = sourceDir;
+    var stub = sourceFileName.split(path.sep).slice(0, -1).join(path.sep);
+    if (stub) {
+        sourceFileName = sourceFileName.split(path.sep).slice(-1)[0];
+        sourceDir = path.join(sourceDir, stub);
+        targetDir = path.join(targetDir, stub);
     }
-    var dirPath = filePathStub.split("/");
-    var fileName = dirPath.slice(-1)[0];
-    dirPath = dirPath.slice(0, -1);
-    if (dirPath.length > 0) {
-        current[dirPath[0]] = " current";
-    }
-    var pagedirs = new p.getRelative(dirPath);
+    var sourcePath = (fn, latest) => {
+        var pth;
+        if (latest) {
+            pth = path.join(sourceDir, latest);
+        } else {
+            pth = sourceDir;
+        }
+        pth = sourceDir;
+        if (fn) {
+            return path.join(pth, fn);
+        } else {
+            return pth;
+        }
+    };
+    var targetPath = (fn, latest) => {
+        var pth;
+        if (latest) {
+            pth = path.join(targetDir, "latest");
+        } else {
+            pth = targetDir;
+        }
+        if (fn) {
+            return path.join(pth, fn);
+        } else {
+            return pth;
+        }
+    };
+    var targetFileName = (sourceFileName.slice(0, -3) +".html");
+    console.log(`${sourceFileName} → ${targetFileName}`);
 
-    var { txt, header } = utils.breakOutText(origFilePath, tmpl);
+
+    
+    var txt = fs.readFileSync(sourcePath(sourceFileName)).toString();
+
+    var current = {};
+    switch (targetPath().split("/")[0]) {
+    case "release":
+    case "beta":
+        current.downloads = " current";
+        break;
+    case "jurism-docs":
+    case "cslm-docs":
+        current.documentation = " current";
+        break;
+    case "indigobook+jurism":
+    case "lrr":
+        current.projects = " current";
+        break;
+    case "posts":
+    case "mail":
+        current.support = " current";
+        break;
+    }
+
+    var relPath = sourcePath().slice(origSourceDir.length);
+    var pagedirs = new p.getRelative(relPath.split("/").filter(o => o));
+
+    var { txt, header } = utils.breakOutText(sourcePath(), txt);
 
     var res = utils.extractYAML(txt);
     var tmpl = md.render(res.tmpl);
@@ -93,10 +144,9 @@ function makePage(tmpl, targetDir, filePathStub, latest) {
             }
         }
 
-        
-
-        
         embedData.toppath = pagedirs.toppath;
+        embedData.latest = fs.readFileSync(path.join(p.root, "latest-post.txt"));
+
 
         inserts[obj.id] = nunjucks.render(obj.type + '.html', embedData);
 
@@ -120,7 +170,7 @@ function makePage(tmpl, targetDir, filePathStub, latest) {
         INSERTME: pg,
         current: current,
         date: header.date
-    }
+    };
     var realpage = nunjucks.renderString(template, params).replace(/&nbsp;/g, "&#160;");
     // Split serialized HTML text, insert DIVs, insert class attributes?
     // Much more certain if we can make this a DOM.
@@ -175,19 +225,32 @@ function makePage(tmpl, targetDir, filePathStub, latest) {
     var realpage = xmlserializer.serializeToString(doc);
     realpage = realpage.replace(/(<script[^>]+)\/>/g, "$1></script>")
         .replace(/\&amp\;\&amp\;/g, "&&");
+
+    if (!fs.existsSync(targetPath())) {
+        fs.mkdirSync(targetPath());
+    }
+    fs.writeFileSync(targetPath(targetFileName), realpage);
+
+
+    // NOW AT LAST
+    // We need the image path and filenames
+
+    var imgSubdirName = sourceFileName.slice(0, -3);
     
-    var filePath = path.join(targetDir, dirPath.join(path.sep));
-    if (!fs.existsSync(filePath)) {
-        fs.mkdirSync(filePath);
+    var imgSourceDir = sourcePath(imgSubdirName);
+    var imgTargetDir = targetPath(imgSubdirName);
+
+    if (fs.existsSync(imgSourceDir)) {
+        if (!fs.existsSync(imgTargetDir)) {
+            fs.mkdirSync(imgTargetDir);
+        }
+        var files = fs.readdirSync(imgSourceDir);
+        for (var fn of files) {
+            var imgSourceFilePath = path.join(imgSourceDir, fn);
+            var imgTargetFilePath = path.join(imgTargetDir, fn);
+            fs.copyFileSync(imgSourceFilePath, imgTargetFilePath);
+        }
     }
-    //if (filePath === "/media/storage/src/gsl-build/build/programs/masters") {
-    //    fs.writeFileSync(path.join(targetDir, "fake-masters.html"), fakepage);
-    //}
-    if (fileName.slice(-3) === ".md") {
-        fileName = fileName.slice(0, -3) + ".html";
-    }
-    //fs.writeFileSync(path.join(filePath, fileName), realpage)
-    fs.writeFileSync(path.join(filePath, fileName), realpage);
 }
 
 // if (require.main === module) {

@@ -8,28 +8,22 @@ var walkSync = require('walk-sync');
 var contentPage = require(path.join(scriptDir, 'lib', 'contentPage'));
 var p = require(path.join(scriptDir, 'lib', 'sitePaths'));
 
-function composePage(srcdir, fn, targetdir, latest) {
-    var fileName = (fn.slice(0, -3) +".html");
-    var txt = fs.readFileSync(path.join(srcdir, fn)).toString();
-    console.log(fn);
-    contentPage(txt, targetdir, fileName, latest);
-}
-
 function makePages(srcdir, targetdir, latest) {
+    var paths;
     if (latest) {
-        var paths = fs.readdirSync(path.join(srcdir, latest));
+        paths = fs.readdirSync(path.join(srcdir, latest));
         paths = paths.filter((str) => {
             return str.slice(-3) === ".md";
         });
         paths.sort();
         var fn = paths.slice(-1)[0];
         fn = path.join(latest, fn);
-        composePage(srcdir, fn, targetdir, latest);
+        contentPage(srcdir, targetdir, fn, latest);
     } else {
-        var paths = walkSync(srcdir, {directories: false, globs: ['*/**']});
+        paths = walkSync(srcdir, {directories: false, globs: ['*/**']});
         for (var fn of paths) {
             if (fn.slice(-3) !== '.md') continue;
-            composePage(srcdir, fn, targetdir);
+            contentPage(srcdir, targetdir, fn);
         }
     }
 }

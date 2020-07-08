@@ -24,9 +24,16 @@ var data = {
 var files = fs.readdirSync(p.blog);
 files.sort();
 files.reverse();
+var hasSetLatest = false;
 for (var fn of files) {
     if (fn.slice(-3) !== ".md") continue;
     var filePath = path.join(p.blog, fn);
+    if (!hasSetLatest) {
+        var latest = filePath.slice(p.blogroot.length);
+        latest = latest.replace(/\.md$/, ".html");
+        fs.writeFileSync(path.join(p.root, "latest-post.txt"), latest);
+        hasSetLatest = true;
+    }
     var txt = fs.readFileSync(filePath).toString();
     var { txt, header } = utils.breakOutText(filePath, txt);
     data.posts.push(header);

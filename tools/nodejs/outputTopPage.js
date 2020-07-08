@@ -21,7 +21,8 @@ nunjucks.configure(p.templates, { autoescape: true });
 function outputTopPage() {
     var tmplPath = path.join(p.content, 'index.md');
     var tmpl = fs.readFileSync(tmplPath).toString();
-    contentPage(tmpl, p.builddir, 'index.md');
+    console.log(p.srcdir)
+    contentPage( p.content, p.builddir, 'index.md');
 }
 
 if (require.main === module) {
