@@ -12,6 +12,15 @@
 }
 */
 
+body { scroll-behavior: smooth; }
+
+.table-of-contents:before {
+    content: "Contents";
+    display: block;
+    font-size: 150%;
+    font-weight: bold;
+}
+
 .small-caps {
     font-variant: small-caps;
 }

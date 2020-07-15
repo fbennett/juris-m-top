@@ -10,8 +10,8 @@ var md = require('markdown-it')({
     linkify: true,
     typographer: true
 }).use(require('markdown-it-footnote'))
-  .use(require('markdown-it-deflist'));
-
+        .use(require('markdown-it-deflist'));
+ 
 var yaml = require('js-yaml');
 
 var scriptDir = path.dirname(require.main.filename);
@@ -78,6 +78,11 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
 
     
     var txt = fs.readFileSync(sourcePath(sourceFileName)).toString();
+
+    if (txt.match(/{toc}/m)) {
+        md.use( require("@gerhobbelt/markdown-it-anchor"), { permalink: true, permalinkBefore: true, permalinkSymbol: '§' } )
+          .use( require("@gerhobbelt/markdown-it-toc-done-right") );
+    }
 
     var current = {};
     switch (targetPath().split("/")[0]) {
