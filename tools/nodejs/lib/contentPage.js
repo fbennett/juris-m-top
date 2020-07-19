@@ -4,14 +4,8 @@ var fs = require('fs');
 var path = require('path');
 var nunjucks = require('nunjucks');
 
-var md = require('markdown-it')({
-    html: true,
-    xhtmlOut: true,
-    linkify: true,
-    typographer: true
-}).use(require('markdown-it-footnote'))
-        .use(require('markdown-it-deflist'));
- 
+var md = {};
+
 var yaml = require('js-yaml');
 
 var scriptDir = path.dirname(require.main.filename);
@@ -32,7 +26,7 @@ nunjucks.configure({
 function markupObject(txt) {
     if (typeof txt=== "string") {
         txt = txt.trim().split("\n").join("\n\n");
-        txt = md.render(txt.replace(/^\\/, ""));
+        txt = md.engine.render(txt.replace(/^\\/, ""));
     }
     return txt;
 }
@@ -79,11 +73,24 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
     
     var txt = fs.readFileSync(sourcePath(sourceFileName)).toString();
 
-    if (txt.match(/{toc}/m)) {
-        md.use( require("@gerhobbelt/markdown-it-anchor"), { permalink: true, permalinkBefore: true, permalinkSymbol: '§' } )
-          .use( require("@gerhobbelt/markdown-it-toc-done-right") );
+    var setPermaLinks;
+    if (txt.match(/\{toc\}/m)) {
+        setPermaLinks = true;
+        delete md.engine;
+    } else {
+        setPermaLinks = false;
+        delete md.engine;
     }
-
+    md.engine = require('markdown-it')({
+        html: true,
+        xhtmlOut: true,
+        linkify: true,
+        typographer: true
+    }).use(require('markdown-it-footnote'))
+            .use(require('markdown-it-deflist'))
+        .use( require("@gerhobbelt/markdown-it-anchor"), { permalink: setPermaLinks, permalinkBefore: true, permalinkSymbol: '§' } )
+        .use( require("@gerhobbelt/markdown-it-toc-done-right") );
+    
     var current = {};
     switch (targetPath().split("/")[0]) {
     case "release":
@@ -110,7 +117,7 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
     var { txt, header } = utils.breakOutText(sourcePath(), txt);
 
     var res = utils.extractYAML(txt);
-    var tmpl = md.render(res.tmpl);
+    var tmpl = md.engine.render(res.tmpl);
 
     nunjucks.configure(p.embeds, { autoescape: true });
     var inserts = {};
@@ -151,6 +158,8 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
 
         embedData.toppath = pagedirs.toppath;
         embedData.latest = fs.readFileSync(path.join(p.root, "latest-post.txt"));
+        embedData.animate = obj.animate;
+        header.animate = obj.animate;
 
 
         inserts[obj.id] = nunjucks.render(obj.type + '.html', embedData);
@@ -174,7 +183,8 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
         author: header.author,
         INSERTME: pg,
         current: current,
-        date: header.date
+        date: header.date,
+        animate: header.animate
     };
     var realpage = nunjucks.renderString(template, params).replace(/&nbsp;/g, "&#160;");
     // Split serialized HTML text, insert DIVs, insert class attributes?
