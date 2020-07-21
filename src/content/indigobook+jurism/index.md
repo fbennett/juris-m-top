@@ -27,9 +27,11 @@ links:
       icon: link.svg
       urlpath: https://juris-m.github.io/indigobook
       description: A copy of the IndigoBook with links on its citation
-                   examples that open popup guidance illustrating
-                   how data should be entered in Jurism for each
-                   type of material.
+                   examples that open popup guidance illustrating how
+                   data should be entered in Jurism for each type of
+                   material. Items entered correctly in Jurism can be
+                   automatically cited into documents using either the
+                   JM Indigo Book or JM Indigo Book Law Review style.
     -
       label: IndigoBook+Jurism Integration
       icon: link.svg

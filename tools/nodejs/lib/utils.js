@@ -233,9 +233,9 @@ function breakOutText(filePath, str) {
     var offset = 0;
     while (true) {
         var line = lines[offset];
-        var m = line.match(/^(pageTitle|shortTitle|shyTitle|suppressTitle|author):\s*(.*)$/);
+        var m = line.match(/^(pageTitle|shortTitle|shyTitle|suppressTitle|author|toc-min):\s*(.*)$/);
         if (m) {
-            header[m[1]] = m[2];
+            header[m[1].replace(/\-/g, "_")] = m[2];
             offset += 1;
         } else {
             break;

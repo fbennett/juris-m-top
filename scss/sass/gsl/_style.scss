@@ -14,11 +14,19 @@
 
 body { scroll-behavior: smooth; }
 
-.table-of-contents:before {
+h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+}
+
+nav.table-of-contents:before {
     content: "Contents";
     display: block;
     font-size: 150%;
     font-weight: bold;
+}
+
+nav.table-of-contents > ol > li > ol {
+  display: none;
 }
 
 .small-caps {

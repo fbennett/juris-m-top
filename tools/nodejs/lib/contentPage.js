@@ -74,6 +74,13 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
     var txt = fs.readFileSync(sourcePath(sourceFileName)).toString();
 
     var setPermaLinks;
+
+    var relPath = sourcePath().slice(origSourceDir.length);
+    var pagedirs = new p.getRelative(relPath.split("/").filter(o => o));
+    var { txt, header } = utils.breakOutText(sourcePath(), txt);
+
+    console.log(`toc_min: ${header.toc_min}`);
+    
     if (txt.match(/\{toc\}/m)) {
         setPermaLinks = true;
         delete md.engine;
@@ -88,7 +95,7 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
         typographer: true
     }).use(require('markdown-it-footnote'))
             .use(require('markdown-it-deflist'))
-        .use( require("@gerhobbelt/markdown-it-anchor"), { permalink: setPermaLinks, permalinkBefore: true, permalinkSymbol: '§' } )
+        .use( require("@gerhobbelt/markdown-it-anchor"), { permalink: setPermaLinks, permalinkBefore: true, permalinkSymbol: '🔗' } )
         .use( require("@gerhobbelt/markdown-it-toc-done-right") );
     
     var current = {};
@@ -110,11 +117,6 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
         current.support = " current";
         break;
     }
-
-    var relPath = sourcePath().slice(origSourceDir.length);
-    var pagedirs = new p.getRelative(relPath.split("/").filter(o => o));
-
-    var { txt, header } = utils.breakOutText(sourcePath(), txt);
 
     var res = utils.extractYAML(txt);
     var tmpl = md.engine.render(res.tmpl);
@@ -184,7 +186,8 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
         INSERTME: pg,
         current: current,
         date: header.date,
-        animate: header.animate
+        animate: header.animate,
+        toc_min: header.toc_min
     };
     var realpage = nunjucks.renderString(template, params).replace(/&nbsp;/g, "&#160;");
     // Split serialized HTML text, insert DIVs, insert class attributes?
