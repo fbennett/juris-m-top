@@ -1,0 +1,42 @@
+    <div style="margin-bottom:1em;position: relative;top:-120px;z-index:10;height:0px;" id="{{ slug }}">&nbsp;</div>
+    <div class="card">
+      <h4 class="card-header">{{ title }}</h4>
+      <div class="card-group">
+        {% if description %}
+        <div class="card hidden-xs-down">
+          <div class="card-block">
+            {{ description|safe }}
+          </div>
+        </div>
+        {% endif %}
+        <div class="card">
+          <dl class="dl-group">
+            <select id="category-chooser">
+              <option value="all">All Styles</option>
+              <option value="socsci">General Social Science</option>
+              <option value="arb">Arbitration</option>
+              <option value="au">Australia</option>
+              <option value="at">Austria</option>
+              <option value="zh">China</option>
+              <option value="ca">Canada</option>
+              <option value="it">Italy</option>
+              <option value="nz">New Zealand</option>
+              <option value="jp">Japan</option>
+              <option value="gb">United Kingdom</option>
+              <option value="us">United States</option>
+            </select>
+            {% for info in links %}
+            <div id="{{ info.slug }}" class="dl-group-item category-choice category-{{ info.category }}">
+              <dt style="padding: 0;">
+                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href="{{ info.urlpath }}"><img style="vertical-align: top;width: 36px;" src="{{ toppath }}/assets/icons/{{ info.icon }}"/></a>
+              </dt>
+              <dd>
+                <b style="font-size:larger;">{{ info.label }}</b>
+                {{ info.description|safe }}
+              </dd>
+            </div>
+            {% endfor %}
+          </dl>
+        </div>
+      </div>
+    </div>

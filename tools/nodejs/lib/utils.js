@@ -121,9 +121,10 @@ function makeList(obj, singleItem, canSuppress) {
 function makeLinkSlug(data, link) {
     var myslug = "";
     if (data.title) {
-        myslug = data.slug
-            + '---'
-            + slug(link.label, {remove: /[.]/g});
+        if (data.slug) {
+            myslug += data.slug + '---';
+	}
+        myslug += slug(link.label, {remove: /[.]/g});
         if (link.sublabel) {
             myslug +=
                 '-'

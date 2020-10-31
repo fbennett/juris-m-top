@@ -92,7 +92,7 @@ xl: 0
 }
 
 $desktop-navigation-collapsed-height: 56px;
-$desktop-navigation-expanded-height: 156px;
+$desktop-navigation-expanded-height: 205px;
 
 .navbar-fixed-height {
   height: $desktop-navigation-collapsed-height;
@@ -264,7 +264,7 @@ $navigation-bg:               $maroon;
 
     // Highlight navigation columns under the mouse cursor
     .dropdown-nav.highlight {
-      background-color: $copper;
+        background-color: $copper;
     }
   } // .navbar-nav
 } // .navbar
