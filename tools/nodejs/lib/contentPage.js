@@ -95,8 +95,8 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
         typographer: true
     }).use(require('markdown-it-footnote'))
             .use(require('markdown-it-deflist'))
-        .use( require("@gerhobbelt/markdown-it-anchor"), { permalink: setPermaLinks, permalinkBefore: true, permalinkSymbol: '🔗' } )
-        .use( require("@gerhobbelt/markdown-it-toc-done-right") );
+        .use( require("@gerhobbelt/markdown-it-anchor"), { level: [2,3], permalink: setPermaLinks, permalinkBefore: true, permalinkSymbol: '🔗' } )
+        .use( require("@gerhobbelt/markdown-it-toc-done-right"));
     
     var current = {};
     switch (targetPath().split("/")[0]) {

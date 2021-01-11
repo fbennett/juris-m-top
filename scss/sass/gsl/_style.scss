@@ -12,7 +12,57 @@
 }
 */
 
+
 body { scroll-behavior: smooth; }
+
+table, ol ol, ul ul, ol ul, ul ol {
+    margin-bottom: 1rem;
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  white-space: pre;
+  overflow: auto;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: .5rem;
+  font-family: monospace;
+  code {
+    color: inherit;
+    background-color: transparent;
+    padding: 0;
+    display: block;
+  }
+  .line-number {
+      display: block;
+      float: left;
+      margin: 0 1em 0 -1em;
+      border-right: 1px solid #ddd;
+      text-align: right;
+      span {
+          display: block;
+          padding: 0 .5em 0 1em;
+          color: #aaa;
+      }
+  }
+  .cl {
+      display: block;
+      clear: both;
+  }
+}
+
+div#proper-page table tbody tr td {
+    padding: 0.5em;
+    border: 1px solid black !important;
+}
+
+div#proper-page > div > table {
+    margin-bottom: 1em;
+}
 
 h2, h3, h4, h5, h6 {
     margin-top: 2rem;
@@ -53,7 +103,21 @@ blockquote {
 }
  
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
+}
+
+h4 {
+    font-size: 1.2rem !important;
+}
+
+h5 {
+    font-size: 1rem !important;
+    font-style: italic;
+}
+
+h6 {
+    font-size: 1rem !important;
+    font-decoration: underline;
 }
 
 h2.dividers {
