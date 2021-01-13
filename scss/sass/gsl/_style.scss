@@ -15,6 +15,14 @@
 
 body { scroll-behavior: smooth; }
 
+blockquote.umbrella {
+    border-top: 2px solid #bbbbbb;
+    border-right: 2px solid #bbbbbb;
+    border-left: 2px solid #bbbbbb;
+    border-radius: 1em 1em 0 0;
+    padding: 0.5rem 1rem 0 1rem;
+}
+
 table, ol ol, ul ul, ol ul, ul ol {
     margin-bottom: 1rem;
 }
