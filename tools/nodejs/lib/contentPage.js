@@ -79,8 +79,6 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
     var pagedirs = new p.getRelative(relPath.split("/").filter(o => o));
     var { txt, header } = utils.breakOutText(sourcePath(), txt);
 
-    console.log(`toc_min: ${header.toc_min}`);
-    
     if (txt.match(/\{toc\}/m)) {
         setPermaLinks = true;
         delete md.engine;
@@ -238,6 +236,14 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
                 acc.ja = true;
             }
         }
+    }
+    // Also
+    // Find all A nodes with @href containing %3A, and remove it.
+    var anchorNodes = xpath.select('//a[contains(@href, "%3A")]', doc);
+    for (var node of anchorNodes) {
+        var href = node.getAttribute("href");
+        href = href.replace(/\%3A/g, "");
+        node.setAttribute("href", href);
     }
     
     var realpage = xmlserializer.serializeToString(doc);
