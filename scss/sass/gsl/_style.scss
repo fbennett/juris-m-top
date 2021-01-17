@@ -23,6 +23,21 @@ blockquote.umbrella {
     padding: 0.5rem 1rem 0 1rem;
 }
 
+code.white {
+    background-color: white !important;
+    background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.07) 50%) !important;
+}
+
+code.yellow {
+    background-color: #ffffee !important;
+    background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.06) 50%) !important;
+}
+
+code.green {
+    background-color: #eeffee !important;
+    background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.05) 50%) !important;
+}
+
 table, ol ol, ul ul, ol ul, ul ol {
     margin-bottom: 1rem;
 }

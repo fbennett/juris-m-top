@@ -1,10 +1,4 @@
 (function() {
-    var paraNodes = document.evaluate('//blockquote[p/child::strong[contains(text(), "Line")]]', document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
-    
-    for (var i=0,ilen=paraNodes.snapshotLength; i<ilen; i++) {
-        var paraNode = paraNodes.snapshotItem(i);
-        paraNode.classList.add("umbrella");
-    }
     var pre = document.getElementsByTagName('pre'),
         pl = pre.length, start = 0;
     
@@ -14,13 +8,19 @@
         var codeNodes = pre[i].getElementsByTagName("code");
         if (codeNodes.length > 0) {
             className = codeNodes[0].getAttribute("class");
-            var m = className.match(/([^0-9]+)\-?(\+|[0-9]+)/);
+            var m = className.match(/([^:0-9]+)(?::([^-:0-9]+))*(?:\-?([0-9]+))*/);
             if (m) {
-                arg = m[2];
-                codeNodes[0].setAttribute("class", m[1].replace(/\-$/, ""));
+                var classes = [m[1]];
+                if (m[2]) {
+                    classes.push(m[2]);
+                }
+                if (m[3]) {
+                    arg = m[3].replace(/\-$/, "");
+                    
+                }
+                codeNodes[0].setAttribute("class", classes.join(" "));
             }
         }
-        console.log(arg);
         pre[i].innerHTML = '<span class="line-number"></span>' + pre[i].innerHTML + '<span class="cl"></span>';
         var num = pre[i].innerHTML.split(/\n/).length;
         

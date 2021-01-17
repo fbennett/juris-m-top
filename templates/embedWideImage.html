@@ -1,1 +1,1 @@
-<img src="{{ src }}" {% if animate %}class="animate" {% endif %}style="width:100%;{% if style %}{{ style }}{% endif %}" alt="{{ alt }}" />
+<img src="{{ src }}" {% if animate %}class="animate" {% endif %}style="width:{% if width %}{{ width }}{% else %}100%{% endif %};{% if style %}{{ style }}{% endif %}" alt="{{ alt }}" />

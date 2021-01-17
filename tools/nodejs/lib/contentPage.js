@@ -237,14 +237,28 @@ function makePage(sourceDir, targetDir, sourceFileName, latest) {
             }
         }
     }
-    // Also
-    // Find all A nodes with @href containing %3A, and remove it.
+    
+    // Also ...
+    
+    // 1. Find all A nodes with @href containing %3A, and remove it.
     var anchorNodes = xpath.select('//a[contains(@href, "%3A")]', doc);
     for (var node of anchorNodes) {
         var href = node.getAttribute("href");
         href = href.replace(/\%3A/g, "");
         node.setAttribute("href", href);
     }
+
+    // 2. Find all "Line" annotations over code blocks and give them
+    //    an umbrella decoration
+    var paraNodes = xpath.select('//blockquote[p/child::strong[contains(text(), "Line")]]', doc);
+    for (var i=0,ilen=paraNodes.length; i<ilen; i++) {
+        var paraNode = paraNodes[i];
+        var classes = paraNodes[i].getAttribute("class").split(/\s+/);
+        classes.push("umbrella");
+        paraNode.setAttribute("class", classes.join(" "));
+    }
+
+    // 3. 
     
     var realpage = xmlserializer.serializeToString(doc);
     realpage = realpage.replace(/(<script[^>]+)\/>/g, "$1></script>")
