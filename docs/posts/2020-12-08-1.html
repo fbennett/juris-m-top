@@ -7,7 +7,9 @@
     </script>
     <title>
       
-        Beta
+        
+          Notes on legal-support updates
+        
       
     </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -18,7 +20,7 @@
     <meta property="og:type" content="summary"/>
     <meta property="og:image" content="https://juris-m.github.io/assets/icons/jurism-small-logo.png"/>
     <meta property="og:description" content="for the laws and languages of the world"/>
-    <meta property="og:title" content="Beta Version"/>
+    <meta property="og:title" content="Notes on legal-support updates"/>
     <meta property="og:url" content="https://juris-m.github.io/"/>
     
     <!-- Favicon -->
@@ -217,118 +219,31 @@
               
               
               
+                <h1 style="margin-bottom: 0.5em;" class="hidden-sm-down">Notes on legal-support updates</h1>
+                <h1 class="hidden-md-up">Notes on legal-support updates</h1>
+                
               
-<p>    <div style="margin-bottom:1em;position: relative;top:-120px;z-index:10;height:0px;" id=""> </div>
-    <div class="card">
-      <h4 class="card-header">Jurism Installer (Beta Version)</h4>
-      <div class="card-group">
-        
-        <div class="card hidden-xs-down">
-          <div class="card-block">
-            <p>The beta-version client installer in this page has passed automated tests, and is offered for testing in the wild.</p>
-<p>The beta client may contain undetected bugs, and may make changes to the database schema. To avoid touching your primary database, run the client from the command line with the <code>--ProfileManager</code> option, and in any case be sure to fully back up your data before installing this version of the client.</p>
-<p>To return to the stable version of the client, install via the <strong>Current Release</strong> page.</p>
-<p>This version includes comprehensive support for US legal citation rules. The test, select the style “JM Indigo Book (beta version),” and enter data as illustrated in the linked examples contained in the <a href="../indigobook/indigobook.html">Jurism-enhanced version of the IndigoBook</a>.</p>
+              
+              
+              
+<p><strong>(from the Jurism mailing lists)</strong></p>
+<p>A brief note here on some items relating to Jurism support for legal materials. The notes below apply to the 5.0.93m12 release, the last in a short series of releases over the past week.</p>
+<div><h2 id="style-updates">Style updates</h2><p>In theory, Jurism styles should now be updating automatically to their latest version. However, if you need to be sure that you have the latest, styles can now be installed by running the Jurism client and visiting <a href="https://juris-m.github.io/styles">https://juris-m.github.io/styles</a>. One click should install or update the style of your choice.</p></div>
 
-          </div>
-        </div>
-        
-        <div class="card">
-          <dl class="dl-group">
-            
-            <div id="jurism-client-installer-mac" class="dl-group-item os-installer os-is-mac">
-              <dt style="padding: 0;">
-                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href="https://our.law.nagoya-u.ac.jp/jurism/dl?channel=beta&amp;platform=mac"><img style="vertical-align: top;width: 36px;" src="../assets/icons/link.svg"/></a>
-              </dt>
-              <dd>
-                <b style="font-size:larger;">Jurism Client Installer (Mac)</b>
-                <p>The installer for the Mac is currently unsigned. To run the application after a first-time install, find Jurism in the Applications folder of the Finder, right-click on its icon, and choose “Open.” Subsequent beta updates will be automatic.</p>
+<div><h2 id="indigo-book-law-review-style-bug">Indigo Book Law Review style bug</h2><p>Madeleine Plasencia reported a show-stopping error with parallel references in the Indigo Book Law Review style. This was traced to a processor bug, which is now fixed.</p></div>
 
-              </dd>
-            </div>
-            
-            <div id="jurism-client-installer-windows" class="dl-group-item os-installer os-is-win">
-              <dt style="padding: 0;">
-                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href="https://our.law.nagoya-u.ac.jp/jurism/dl?channel=beta&amp;platform=win32"><img style="vertical-align: top;width: 36px;" src="../assets/icons/link.svg"/></a>
-              </dt>
-              <dd>
-                <b style="font-size:larger;">Jurism Client Installer (Windows)</b>
-                <p>The installer for Windows is currently unsigned. On some systems (depending on security software) you may need to take steps to permit the application to run. Beta updates after the first install are automatic.</p>
+<div><h2 id="attachments-for-three-legal-translators">Attachments for three legal translators</h2><p>Back in the day (two years ago?), certain Jurism site translators were able to clip elements out of a web page, saving a content-only snapshot stripped of navigation etc. This stopped working when Zotero (for good reasons) made some changes to the way attachments are saved. The main sites affected by this were CourtListener, the Cornell LII US Code, and Google Scholar for cases, all of which have since been able to save, at best, a full snapshot of the web page displaying a case or statute.</p><p>Some recent changes in Zotero have made it possible to restore the clipping feature to Jurism translators, and the three sites listed above will now save content-only snapshots. To take advantage of the new translators, you will need to upgrade to or install the latest Jurism browser connector (version 5.0.93.4) for Firefox or Chrome.</p></div>
 
-              </dd>
-            </div>
-            
-            <div id="jurism-client-installer-linux-64-bit" class="dl-group-item os-installer os-is-lin64bit">
-              <dt style="padding: 0;">
-                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href="https://our.law.nagoya-u.ac.jp/jurism/dl?channel=beta&amp;platform=linux-x86_64"><img style="vertical-align: top;width: 36px;" src="../assets/icons/link.svg"/></a>
-              </dt>
-              <dd>
-                <b style="font-size:larger;">Jurism Client Installer (Linux 64-bit)</b>
-                <p>The Linux installers (for 32-bit and 64-bit systems respectively) are offered here as <em>zip</em> archives, not as package installers. To use, download the archive, unzip it (<code>/opt</code> is a common location), enter its directory, and run the <code>jurism</code> application. Subsequent beta updates will be automatic.</p>
 
-              </dd>
-            </div>
-            
-            <div id="jurism-client-installer-linux-32-bit" class="dl-group-item os-installer os-is-lin32bit">
-              <dt style="padding: 0;">
-                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href="https://our.law.nagoya-u.ac.jp/jurism/dl?channel=beta&amp;platform=linux-i686"><img style="vertical-align: top;width: 36px;" src="../assets/icons/link.svg"/></a>
-              </dt>
-              <dd>
-                <b style="font-size:larger;">Jurism Client Installer (Linux 32-bit)</b>
-                <p>The Linux installers (for 32-bit and 64-bit systems respectively) are offered here as <strong>zip</strong> archives, not as package installers. To install, download the archive, unzip it (<code>/opt</code> is a common location), enter its directory, and run the <code>jurism</code> application. Subsequent beta updates will be automatic.</p>
+<div><h2 id="myles-plugin-gotcha">Myles plugin gotcha</h2><p>Jurism does a pretty good job on parallel references, as detailed in the Jurism blog (<a href="https://juris-m.github.io/posts/2020-07-05-0.html">https://juris-m.github.io/posts/2020-07-05-0.html</a>). The magic is written into the style modules for individual jurisdictions. Back in the day (two years ago?) the modules were supplied by a plugin called “Myles.” The modules and the Myles plugin logic have since been integrated into Jurism itself, but the new magic will be bypassed (and break things) if the Myles plugin is installed on your system.</p><p>If you are a long-standing user, it’s worth checking in Jurism under Tools→Add-ons to see you have the Myles plugin installed. If it’s in there, you should disable or remove it.</p></div>
 
-              </dd>
-            </div>
-            
-            <div id="jurism-client-no-installer-available" class="dl-group-item os-installer os-is-none">
-              <dt style="padding: 0;">
-                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href=""><img style="vertical-align: top;width: 36px;" src="../assets/icons/stop.svg"/></a>
-              </dt>
-              <dd>
-                <b style="font-size:larger;">Jurism Client (no installer available)</b>
-                <p>Installers for the Jurism client are available only for Windows, Mac, and Linux operating systems.</p>
 
-              </dd>
-            </div>
-            
-            <div id="jurism-connector-firefox" class="dl-group-item browser-installer browser-is-firefox">
-              <dt style="padding: 0;">
-                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href="https://github.com/Juris-M/assets/releases/download/connector/firefox/plugin/release/Jurism_Connector-5.0.66.1.xpi"><img style="vertical-align: top;width: 36px;" src="../assets/icons/link.svg"/></a>
-              </dt>
-              <dd>
-                <b style="font-size:larger;">Jurism Connector (Firefox)</b>
-                <p>Install this Jurism Connector to enable Jurism support in Google Docs and one-click acquisition of database items from many websites.</p>
+<div><h2 id="cites-to-the-court-of-justice-of-the-european-union">Cites to the Court of Justice of the European Union</h2><p>Michael Veale reported corruption of citations to the CJEU. This was due to module specific to this court that was accidentally dropped from the project by yours truly. The module has been restored, and cites to this court should now render correctly once again.</p><p>That’s all the news for today. Be careful out there, and feel free to post a note to the list if you hit any problems with Jurism and its friends.</p><p>Frank Bennett
+2020-12-08
+Nagoya</p></div>
 
-              </dd>
-            </div>
-            
-            <div id="jurism-connector-chrome" class="dl-group-item browser-installer browser-is-chrome">
-              <dt style="padding: 0;">
-                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href="https://chrome.google.com/webstore/detail/juris-m-connector/pbhldkcipcaeniadfnhhdaealdfjgbpj"><img style="vertical-align: top;width: 36px;" src="../assets/icons/link.svg"/></a>
-              </dt>
-              <dd>
-                <b style="font-size:larger;">Jurism Connector (Chrome)</b>
-                <p>Install this Jurism Connector to enable Jurism support in Google Docs and one-click acquisition of database items from many websites.</p>
 
-              </dd>
-            </div>
-            
-            <div id="jurism-connector-no-installer-available" class="dl-group-item browser-installer browser-is-none">
-              <dt style="padding: 0;">
-                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href=""><img style="vertical-align: top;width: 36px;" src="../assets/icons/stop.svg"/></a>
-              </dt>
-              <dd>
-                <b style="font-size:larger;">Jurism Connector (no installer available)</b>
-                <p>Jurism connectors are available only for Chrome and Firefox browsers.</p>
 
-              </dd>
-            </div>
-            
-          </dl>
-        </div>
-      </div>
-    </div>
-</p>
 
 
             </div>
