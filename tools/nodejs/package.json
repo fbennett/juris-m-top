@@ -10,6 +10,8 @@
   "author": "Frank Bennett <biercenator@gmail.com> (https://juris-m.github.io)",
   "license": "AGPL-1.0",
   "dependencies": {
+    "@gerhobbelt/markdown-it-anchor": "=6.0.0-23",
+    "@gerhobbelt/markdown-it-toc-done-right": "4.1.0-3",
     "citeproc": ">=2.0.2",
     "citeproc-js-node": ">=0.0.2",
     "connect": "^3.6.2",
@@ -37,6 +39,5 @@
     "xpath": ">=0.0.24",
     "yauzl": ">=2.9.1",
     "zotero2jurismcsl": ">=0.0.3"
-  },
-  "devDependencies": {}
+  }
 }
