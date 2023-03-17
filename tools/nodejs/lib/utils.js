@@ -3,7 +3,6 @@
 var fs = require('fs');
 var path = require('path');
 var Promise = require('bluebird');
-var validator = require('nu-web-validator');
 var slug = require('slug');
 slug.defaults.mode = 'rfc3986';
 var marked = require('marked');
@@ -159,7 +158,7 @@ function extractYAML(txt) {
             if (endPos > -1) {
                 // Source and object
                 var embeddedYAML = lines.slice(i+1, endPos).join('\n');
-                var obj = yaml.safeLoad(embeddedYAML);
+                var obj = yaml.load(embeddedYAML);
                 obj.id = 'yaml' + yamlCount;
                 yamlList.push(embeddedYAML);
                 objList.push(obj);
@@ -185,7 +184,7 @@ var loadAndValidate = Promise.coroutine(function*(errors, fullpath, type, txt, i
         txt = fs.readFileSync(fullpath).toString();
     }
     try {
-        var obj = yaml.safeLoad(txt);
+        var obj = yaml.load(txt);
         // validate here as type
         if (!type) {
             type = obj.type;

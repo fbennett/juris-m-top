@@ -20,7 +20,7 @@ links:
       label: Jurism Client Installer (Mac)
       icon: link.svg
       os: mac
-      urlpath: https://github.com/Juris-M/assets/releases/download/client%2Frelease%2F5.0.93m18/Jurism-5.0.93m18.dmg
+      urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=mac
       description: The installer for the Mac is currently unsigned. To run the application after
                    a first-time install, find Jurism in the Applications folder of the
                    Finder, right-click on its icon, and choose “Open.” Subsequent updates
@@ -29,7 +29,7 @@ links:
       label: Jurism Client Installer (Windows)
       icon: link.svg
       os: win
-      urlpath: https://github.com/Juris-M/assets/releases/download/client%2Frelease%2F5.0.93m18/Jurism-5.0.93m18_setup.exe
+      urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=win32
       description: The installer for Windows is currently unsigned. On some systems
                    (depending on security software) you may need to take steps to permit
                    the application to run. Updates after the first install are
@@ -38,7 +38,7 @@ links:
       label: Jurism Client Installer (Linux 64-bit)
       icon: link.svg
       os: lin64bit
-      urlpath: https://github.com/Juris-M/assets/releases/download/client%2Frelease%2F5.0.93m18/Jurism-5.0.93m18_linux-x86_64.tar.bz2
+      urlpath: https://jurism.xyz/jurism/dl?channel=release&amp;platform=linux-x86_64
       description: The Linux installers (for 32-bit and 64-bit systems respectively) are
                    offered here as *zip* archives, not as package installers. To use, download
                    the archive, unzip it (``/opt`` is a common location), enter its directory,
@@ -47,7 +47,7 @@ links:
       label: Jurism Client Installer (Linux 32-bit)
       icon: link.svg
       os: lin32bit
-      urlpath: https://github.com/Juris-M/assets/releases/download/client%2Frelease%2F5.0.93m18/Jurism-5.0.93m18_linux-i686.tar.bz2
+      urlpath: https://jurism.xyz/jurism/dl?channel=release&amp;platform=linux-i686
       description: The Linux installers (for 32-bit and 64-bit systems respectively) are
                    offered here as **zip** archives, not as package installers. To install, download
                    the archive, unzip it (``/opt`` is a common location), enter its directory,

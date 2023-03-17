@@ -15,7 +15,7 @@ nunjucks.configure({
 nunjucks.configure(p.templates, { autoescape: true });
 
 var infoYaml = fs.readFileSync(path.join(scriptDir, 'lib', 'redirects.yml'))
-var info = yaml.safeLoad(infoYaml)
+var info = yaml.load(infoYaml)
 
 function mkdirs(pathToCreate) {
     pathToCreate
