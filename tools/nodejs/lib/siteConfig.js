@@ -2,7 +2,7 @@ module.exports = {
     siteTitle: "The Jurism Project",
     siteMaintainer: "Frank Bennett",
     rights: "© 2019 Frank Bennett",
-    repoRoot: '/Users/bennett/src/juris-m-top',
+    repoRoot: '/media/storage/src/JM/juris-m-top',
     templateDir: 'templates',
     embedsDir: 'templates',
     buildDir: 'docs',

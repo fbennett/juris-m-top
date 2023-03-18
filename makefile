@@ -48,6 +48,7 @@ all: software compass skeleton \
 	blogposts \
 	bloglist \
 	contents \
+	zips \
 	redirects
 
 clean-build:
@@ -86,6 +87,9 @@ blogposts: $(BUILDDIRS)
 
 bloglist: $(BUILDDIRS)
 	node ./tools/nodejs/blogList.js
+
+zips: $(BUILDDIRS)
+	cp src/content/*.zip docs/
 
 redirects:
 	node ./tools/nodejs/setRedirects.js

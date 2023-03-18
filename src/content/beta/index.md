@@ -8,18 +8,15 @@ type: embedProgramInfo
 title: Jurism Installer (Beta Version)
 
 description: The beta-version client installer in this page has passed
-             automated tests, and is offered for testing in the wild.
+             automated tests, but contains code that has not yet been run
+             in the wild. Before installing, be sure to back up your
+             data, in particular your Jurism database file (jurism.sqlite)
+             and storage directory.
 
-             The beta client may contain undetected bugs, and should
-             be installed only for testing purposes.  To return to the
-             stable version of the client, install via the **Current
-             Release** page.
+             Take note of special instructions for the browser plugins,
+             and be sure to replace beta versions of the Jurism client
+             and connector when the proper release becomes available.
 
-             The current beta release incorporates fixes for Mac M1
-             compatibility, some recent extensions to the CSL-M
-             citation style language, and a fix for jurisdiction and
-             court drop-down menus in languages other than English.
-             
 links:
     -
       label: Jurism Client Installer (Mac)
@@ -34,7 +31,7 @@ links:
       label: Jurism Client Installer (Windows)
       icon: link.svg
       os: win
-      urlpath: https://jurism.xyz/jurism/dl?channel=beta&platform=win32
+      urlpath: https://www.youtube.com/watch?v=xvFZjo5PgG0
       description: The installer for Windows is currently unsigned. On some systems
                    (depending on security software) you may need to take steps to permit
                    the application to run. Beta updates after the first install are
@@ -61,26 +58,31 @@ links:
       label: Jurism Client (no installer available)
       icon: stop.svg
       os: none
+      urlpath: https://www.youtube.com/watch?v=xvFZjo5PgG0
       description: Installers for the Jurism client are available only for
                    Windows, Mac, and Linux operating systems.
     -
       label: Jurism Connector (Firefox)
       icon: link.svg
       browser: firefox
-      urlpath: https://github.com/Juris-M/assets/releases/download/connector/firefox/plugin/release/Jurism_Connector-5.0.93.4.xpi
+      urlpath: https://www.youtube.com/watch?v=xvFZjo5PgG0
       description: Install this Jurism Connector to enable Jurism support in Google Docs
                    and one-click acquisition of database items from many websites.
     -
       label: Jurism Connector (Chrome)
       icon: link.svg
       browser: chrome
-      urlpath: https://chrome.google.com/webstore/detail/juris-m-connector/pbhldkcipcaeniadfnhhdaealdfjgbpj
-      description: Install this Jurism Connector to enable Jurism support in Google Docs
-                   and one-click acquisition of database items from many websites.
+      urlpath: ../jurism-chrome-connector-beta.zip
+      description: This is the unpacked code for the Chrome connector.
+                   To run it, unzip the contents, open Settings→Extensions,
+                   turn on "Developer mode", click on "Load unpacked,"
+                   navigate into the ``jurism-chrome-connector-beta`` 
+                   directory, and select it.
     -
       label: Jurism Connector (no installer available)
       icon: stop.svg
       browser: none
+      urlpath: https://www.youtube.com/watch?v=xvFZjo5PgG0
       description: Jurism connectors are available only for
                    Chrome and Firefox browsers.
 
