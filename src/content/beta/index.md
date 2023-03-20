@@ -31,7 +31,7 @@ links:
       label: Jurism Client Installer (Windows)
       icon: link.svg
       os: win
-      urlpath: https://jurism.xyz/jurism/dl?channel=beta&platform=win
+      urlpath: https://jurism.xyz/jurism/dl?channel=beta&platform=win32
       description: The installer for Windows is currently unsigned. On some systems
                    (depending on security software) you may need to take steps to permit
                    the application to run. Beta updates after the first install are
