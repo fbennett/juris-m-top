@@ -65,7 +65,7 @@ links:
       label: Jurism Connector (Firefox)
       icon: link.svg
       browser: firefox
-      urlpath: ../jurism-firefix-connector-beta.zip
+      urlpath: ../jurism-firefox-connector-beta.zip
       description: To install this beta version of the Jurism connector for Firefox,
                    save this zip file to your computer (without unzipping it).
                    Open Firefox, and in the URL menu bar, type ``about:debugging``.
