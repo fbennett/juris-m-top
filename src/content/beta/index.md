@@ -65,9 +65,13 @@ links:
       label: Jurism Connector (Firefox)
       icon: link.svg
       browser: firefox
-      urlpath: https://www.youtube.com/watch?v=xvFZjo5PgG0
-      description: Install this Jurism Connector to enable Jurism support in Google Docs
-                   and one-click acquisition of database items from many websites.
+      urlpath: ../jurism-firefix-connector-beta.zip
+      description: To install this beta version of the Jurism connector for Firefox,
+                   save this zip file to your computer (without unzipping it).
+                   Open Firefox, and in the URL menu bar, type ``about:debugging``.
+                   Click on **This Firefox**, then **Load Temporary Add-on**,
+                   and select the zip file. (You will need to repeat the
+                   temporary installation steps if you restart Firefox.)
     -
       label: Jurism Connector (Chrome)
       icon: link.svg
