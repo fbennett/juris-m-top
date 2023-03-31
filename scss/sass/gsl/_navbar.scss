@@ -94,9 +94,10 @@ xl: 0
 $desktop-navigation-collapsed-height: 56px;
 $desktop-navigation-expanded-height: 205px;
 
-.navbar-fixed-height {
-  height: $desktop-navigation-collapsed-height;
-}
+/* .navbar-fixed-height { 
+ *  height: $desktop-navigation-collapsed-height;
+ * }
+ */
 
 // Expand and collapse the full navigation menu on mouseover
 .navbar-nav#desktopNavMenu {
