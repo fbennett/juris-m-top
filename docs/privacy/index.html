@@ -7,7 +7,7 @@
     </script>
     <title>
       
-        Mailing List
+        Privacy Policy
       
     </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -18,7 +18,7 @@
     <meta property="og:type" content="summary"/>
     <meta property="og:image" content="https://juris-m.github.io/assets/icons/jurism-small-logo.png"/>
     <meta property="og:description" content="for the laws and languages of the world"/>
-    <meta property="og:title" content="Jurism Mailing List"/>
+    <meta property="og:title" content="Privacy Policy"/>
     <meta property="og:url" content="https://juris-m.github.io/"/>
     
     <!-- Favicon -->
@@ -219,38 +219,68 @@
               
               
               
-<p>    <div style="margin-bottom:1em;position: relative;top:-120px;z-index:10;height:0px;" id=""> </div>
-    <div class="card">
-      <h4 class="card-header">Jurism Mailing List</h4>
-      <div class="card-group">
-        
-        <div class="card hidden-xs-down">
-          <div class="card-block">
-            <p>Register for the Jurism support list to receive project announcements and post support queries. The list is currently hosted on a Mailman server at the university where I work. Sometime in the next year or so (before I retire from the day job on April 1st 2022), I’ll be moving subscriptions, with member consent, to an external forum.</p>
-<p>As noted in the <strong>Documentation: Jurism client</strong> page, the Zotero forums are also a valuable source of information, but the Zotero developers cannot be expected to respond to queries related to Jurism.</p>
-
-          </div>
-        </div>
-        
-        <div class="card">
-          <dl class="dl-group">
-            
-            <div id="jurism-support" class="dl-group-item">
-              <dt style="padding: 0;">
-                <a style="display:block;width:100%;white-space:nowrap;" class="nodecor" href="https://mail.law.nagoya-u.ac.jp/mailman/listinfo/jurism-support"><img style="vertical-align: top;width: 36px;" src="../assets/icons/link.svg"/></a>
-              </dt>
-              <dd>
-                <b style="font-size:larger;">Jurism Support</b>
-                <p>Sign up for (or visit your account on) the Jurism support list.</p>
-
-              </dd>
-            </div>
-            
-          </dl>
-        </div>
-      </div>
-    </div>
-</p>
+<p>The Jurism reference management system is an effort to provide the
+benefits of modern reference management technology to lawyers and
+multilingual scholars. None of the project’s tools or websites impose
+advertising on the user, user data is not shared with third parties,
+and where information is collected, it is deleted after serving its
+purpose. See below for specifics on information collected, and the
+purpose of collection.</p>
+<p>The system consists of six elements:</p>
+<ul>
+<li>a <strong>library client</strong> installed on the user’s computer;</li>
+<li>a <strong>distribution server</strong> that supplies automatic updates to the
+library client.</li>
+<li>a <strong>debugging service</strong> to which users may voluntarily submit logs of
+the internal operation of the library client for examination by the
+Jurism developers;</li>
+<li><strong>connectors</strong> that enable web browsers to save bibliographic details
+from web pages to the library client;</li>
+<li><strong>integration plugins</strong> that support one-click insertion of references
+into word processor documents;</li>
+<li><strong>Zotero storage</strong>, an optional third-party service to which users may
+syncronize the content of the library client.</li>
+</ul>
+<p>The collection and disposition of information in each of these elements
+is as follows:</p>
+<h1>Library Client</h1>
+<p>The library client itself is a standalone tool installed on the user’s
+computer that is as secure to outside access as the computer’s operating
+system.</p>
+<h1>Distribution Server</h1>
+<p>The library client is updated from time to time with bugfixes and new
+features. Unless disabled by the user, these updates operate by the
+library client polling a distribution server once per day, and
+installing updates when a fresh update is detected. These polling
+transactions are logged on the distributon server with their
+originating IP address. This information may be used to identify the
+number of unique installations of the library client exist in the
+field. IP addresses and other details contained in the log files are
+not and will not be shared with third parties, and the information is
+deleted after one month.</p>
+<h1>Debugging Service</h1>
+<p>For debugging purposes, the Jurism maintainers may invite a user to
+submit a “Debugging Report” logging the internal state of the library
+client during a problematic operation. These records contain no
+identifying information of the individual user, are not shared with
+third parties, and are deleted after two weeks.</p>
+<h1>Connectors</h1>
+<p>The browser connectors pass information on two channels. First, they
+rely on the library client to provide “translator” code to extract
+bibliographic information from web pages, and in return send
+bibliographic records to the library client for storage. These
+transactions take place within the user’s computer. Second, the
+connectors support word processor integration with the Google Docs
+service, which has a separate Privacy Policy.</p>
+<h1>Integration Plugins</h1>
+<p>The word processor integration plugins communicate with the
+library client to support one-click insertion of references
+in user documents. These transactions take place inside the
+user’s computer, and do not involve collection of data of any kind.</p>
+<h1>Zotero Storage</h1>
+<p>The cloud sync service Zotero Storage is maintained by the
+unaffiliated upstream parent of the Jurism project. The Zotero privacy
+policy is available at: <a href="https://www.zotero.org/support/privacy">https://www.zotero.org/support/privacy</a>.</p>
 
 
             </div>
