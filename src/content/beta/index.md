@@ -66,12 +66,12 @@ links:
       icon: link.svg
       browser: firefox
       urlpath: ../juris_m_connector-6.0.20.6.xpi
-      description: To install this beta version of the Jurism connector for Firefox,
-                   save this zip file to your computer (without unzipping it).
-                   Open Firefox, and in the URL menu bar, type ``about:debugging``.
-                   Click on **This Firefox**, then **Load Temporary Add-on**,
-                   and select the zip file. (You will need to repeat the
-                   temporary installation steps if you restart Firefox.)
+      description: This beta version of the Jurism connector for Firefox
+                   should install itself when the link button to the left is
+                   clicked. This is an advance release of the final connector;
+                   there will be no need to reinstall this Firefox add-on
+                   when the Jurism client software is upgraded to the
+                   official release.
     -
       label: Jurism Connector (Chrome)
       icon: link.svg
