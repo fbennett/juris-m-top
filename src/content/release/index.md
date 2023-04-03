@@ -24,12 +24,17 @@ links:
       description: Jurism version 6. Click on the link to the right to download the installer,
                    then double-click on the downloaded file to install.
                    
-                   If Jurism 5.0 is currently installed on your computer,
-                   please note that in Jurism 6 the location of the default
-                   data directory changes from ``Juris-M`` to ``Jurism``.
-                   You can find its location by visiting Preferences→Advanced→Files and Folders.
-                   To use your existing library, set the Custom library location
-                   to use the old directory name.
+                   If you are upgrading from Jurism 5.0 ...
+                   
+                   * Jurism 6 creates a fresh application profile. Your settings,
+                     including your sync and language settings, will be reset
+                     to the default values.
+                   
+                   * In Jurism 6, the location of the default
+                     data directory changes from ``Juris-M`` to ``Jurism``.
+                     You can find its location by visiting **Preferences** → **Advanced** → **Files and Folders**
+                     To use your existing library, set the Custom library location
+                     to use the old directory name.
     -
       label: Jurism Client Installer (Windows)
       icon: link.svg
@@ -38,13 +43,18 @@ links:
       description: Jurism version 6. Click on the link to the right to download the installer,
                    then double-click on the downloaded file to install.
 
-                   If Jurism 5.0 is currently installed on your computer,
-                   please note that in Jurism 6 the location of the default
-                   data directory changes from ``Juris-M`` to ``Jurism``.
-                   You can find its location by visiting Preferences→Advanced→Files and Folders.
-                   To use your existing library, set the Custom library location
-                   to use the old directory name.
+                   If you are upgrading from Jurism 5.0 ...
                    
+                   * Jurism 6 creates a fresh application profile. Your settings,
+                     including your sync and language settings, will be reset
+                     to the default values.
+                   
+                     In Jurism 6, the location of the default
+                     data directory changes from ``Juris-M`` to ``Jurism``.
+                     You can find its location by visiting **Preferences** → **Advanced** → **Files and Folders**
+                     To use your existing library, set the Custom library location
+                     to use the old directory name.
+    
                    (*By default, Windows will display a stern warning with
                    no "Install" option. In that case, click on the small
                    "info" link to see the BENNETT JR FRANK GEORGE signature
@@ -60,13 +70,17 @@ links:
                    suitable location, and set the path to point at the subdirectory
                    it creates. The command name is ``jurism``.
                    
-                   If Jurism 5.0 is currently installed on your computer,
-                   please note that in Jurism 6 the location of the default
-                   data directory changes from ``Juris-M`` to ``Jurism``.
-                   You can find its location by visiting Preferences→Advanced→Files and Folders.
-                   To use your existing library, set the Custom library location
-                   to use the old directory name.
+                   If you are upgrading from Jurism 5.0 ...
                    
+                   * Jurism 6 creates a fresh application profile. Your settings,
+                     including your sync and language settings, will be reset
+                     to the default values.
+                   
+                   * In Jurism 6, the location of the default
+                     data directory changes from ``Juris-M`` to ``Jurism``.
+                     You can find its location by visiting **Preferences** → **Advanced** → **Files and Folders**
+                     To use your existing library, set the Custom library location
+                     to use the old directory name.
     -
       label: Jurism Client Installer (Linux 32-bit)
       icon: link.svg
@@ -77,12 +91,17 @@ links:
                    suitable location, and set the path to point at the subdirectory
                    it creates. The command name is ``jurism``.
 
-                   If Jurism 5.0 is currently installed on your computer,
-                   please note that in Jurism 6 the location of the default
-                   data directory changes from ``Juris-M`` to ``Jurism``.
-                   You can find its location by visiting Preferences→Advanced→Files and Folders.
-                   To use your existing library, set the Custom library location
-                   to use the old directory name.
+                   If you are upgrading from Jurism 5.0 ...
+                   
+                   * Jurism 6 creates a fresh application profile. Your settings,
+                     including your sync and language settings, will be reset
+                     to the default values.
+                   
+                   * In Jurism 6, the location of the default
+                     data directory changes from ``Juris-M`` to ``Jurism``.
+                     You can find its location by visiting **Preferences** → **Advanced** → **Files and Folders**
+                     To use your existing library, set the Custom library location
+                     to use the old directory name.
     -
       label: Jurism Client (no installer available)
       icon: stop.svg
