@@ -23,8 +23,13 @@ links:
       urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=mac
       description: Jurism version 6. Click on the link to the right to download the installer,
                    then double-click on the downloaded file to install.
+                   
                    If Jurism 5.0 is currently installed on your computer,
-                   its library will be automatically upgraded to work with Jurism 6.
+                   please note that in Jurism 6 the location of the default
+                   data directory changes from ``Juris-M`` to ``Jurism``.
+                   You can find its location by visiting Preferences→Advanced→Files and Folders.
+                   To use your existing library, set the Custom library location
+                   to use the old directory name.
     -
       label: Jurism Client Installer (Windows)
       icon: link.svg
@@ -32,8 +37,13 @@ links:
       urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=win32
       description: Jurism version 6. Click on the link to the right to download the installer,
                    then double-click on the downloaded file to install.
+
                    If Jurism 5.0 is currently installed on your computer,
-                   its library will be automatically upgraded to work with Jurism 6.
+                   please note that in Jurism 6 the location of the default
+                   data directory changes from ``Juris-M`` to ``Jurism``.
+                   You can find its location by visiting Preferences→Advanced→Files and Folders.
+                   To use your existing library, set the Custom library location
+                   to use the old directory name.
                    
                    (*By default, Windows will display a stern warning with
                    no "Install" option. In that case, click on the small
@@ -46,22 +56,33 @@ links:
       os: lin64bit
       urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=linux-x86_64
       description: Jurism version 6. Installation is not automatic on Linux
-                   systems. Unpack the archive (``tar vxfj <filename>``) in a
+                   systems. Unpack the archive (``tar vxjf <filename>``) in a
                    suitable location, and set the path to point at the subdirectory
                    it creates. The command name is ``jurism``.
+                   
                    If Jurism 5.0 is currently installed on your computer,
-                   its library will be automatically upgraded to work with Jurism 6.
+                   please note that in Jurism 6 the location of the default
+                   data directory changes from ``Juris-M`` to ``Jurism``.
+                   You can find its location by visiting Preferences→Advanced→Files and Folders.
+                   To use your existing library, set the Custom library location
+                   to use the old directory name.
+                   
     -
       label: Jurism Client Installer (Linux 32-bit)
       icon: link.svg
       os: lin32bit
       urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=linux-i686
       description: Jurism version 6. Installation is not automatic on Linux
-                   systems. Unpack the archive (``tar vxfj <filename>``) in a
+                   systems. Unpack the archive (``tar vxjf <filename>``) in a
                    suitable location, and set the path to point at the subdirectory
                    it creates. The command name is ``jurism``.
+
                    If Jurism 5.0 is currently installed on your computer,
-                   its library will be automatically upgraded to work with Jurism 6.
+                   please note that in Jurism 6 the location of the default
+                   data directory changes from ``Juris-M`` to ``Jurism``.
+                   You can find its location by visiting Preferences→Advanced→Files and Folders.
+                   To use your existing library, set the Custom library location
+                   to use the old directory name.
     -
       label: Jurism Client (no installer available)
       icon: stop.svg
