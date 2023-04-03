@@ -222,6 +222,13 @@ $navigation-bg:               $maroon;
       color:            $category-name-default-color;
       background-color: $category-name-default-bg;
 
+      &.empty {
+          &:focus, &:hover {
+              cursor: default;
+              background-color: rgba($navigation-bg, 0.9);
+          }
+      }
+
       &.current {
         color:            $category-name-hover-color;
         background-color: $category-name-hover-bg;
@@ -236,6 +243,7 @@ $navigation-bg:               $maroon;
         color: $category-name-default-color;
         text-decoration: none;
       }
+      
     }
 
     .dropdown-menu, .dropdown-nav {

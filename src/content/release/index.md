@@ -5,14 +5,14 @@ suppressTitle: true
 ``` yaml
 title: Jurism Installers (Current Release)
 description: The Jurism client is a desktop tool for managing
-             research materials. Like other reference managers, it can
-             be thought of as a “smart library” or “desktop research
-             assistant” with support for collecting, organizing and
+             research materials. Like other reference managers, it serves
+             as a “smart library” or “desktop research
+             assistant” with support for collecting, organizing, and
              citing resources.
 
              Jurism is based on the popular
              [Zotero](https://zotero.org) reference manager, to which
-             it adds significant extensions to handle legal and
+             it adds feature for handling legal and
              multilingual resources.
 type: embedProgramInfo
 links:
@@ -21,37 +21,47 @@ links:
       icon: link.svg
       os: mac
       urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=mac
-      description: The installer for the Mac is currently unsigned. To run the application after
-                   a first-time install, find Jurism in the Applications folder of the
-                   Finder, right-click on its icon, and choose “Open.” Subsequent updates
-                   will be automatic.
+      description: Jurism version 6. Click on the link to the right to download the installer,
+                   then double-click on the downloaded file to install.
+                   If Jurism 5.0 is currently installed on your computer,
+                   its library will be automatically upgraded to work with Jurism 6.
     -
       label: Jurism Client Installer (Windows)
       icon: link.svg
       os: win
       urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=win32
-      description: The installer for Windows is currently unsigned. On some systems
-                   (depending on security software) you may need to take steps to permit
-                   the application to run. Updates after the first install are
-                   automatic.
+      description: Jurism version 6. Click on the link to the right to download the installer,
+                   then double-click on the downloaded file to install.
+                   If Jurism 5.0 is currently installed on your computer,
+                   its library will be automatically upgraded to work with Jurism 6.
+                   
+                   (*By default, Windows will display a stern warning with
+                   no "Install" option. In that case, click on the small
+                   "info" link to see the BENNETT JR FRANK GEORGE signature
+                   information of the maintainer, and expose the install button.*)
+                   
     -
       label: Jurism Client Installer (Linux 64-bit)
       icon: link.svg
       os: lin64bit
       urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=linux-x86_64
-      description: The Linux installers (for 32-bit and 64-bit systems respectively) are
-                   offered here as *zip* archives, not as package installers. To use, download
-                   the archive, unzip it (``/opt`` is a common location), enter its directory,
-                   and run the ``jurism`` application. Subsequent updates will be automatic.
+      description: Jurism version 6. Installation is not automatic on Linux
+                   systems. Unpack the archive (``tar vxfj <filename>``) in a
+                   suitable location, and set the path to point at the subdirectory
+                   it creates. The command name is ``jurism``.
+                   If Jurism 5.0 is currently installed on your computer,
+                   its library will be automatically upgraded to work with Jurism 6.
     -
       label: Jurism Client Installer (Linux 32-bit)
       icon: link.svg
       os: lin32bit
       urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=linux-i686
-      description: The Linux installers (for 32-bit and 64-bit systems respectively) are
-                   offered here as **zip** archives, not as package installers. To install, download
-                   the archive, unzip it (``/opt`` is a common location), enter its directory,
-                   and run the ``jurism`` application. Subsequent updates will be automatic.
+      description: Jurism version 6. Installation is not automatic on Linux
+                   systems. Unpack the archive (``tar vxfj <filename>``) in a
+                   suitable location, and set the path to point at the subdirectory
+                   it creates. The command name is ``jurism``.
+                   If Jurism 5.0 is currently installed on your computer,
+                   its library will be automatically upgraded to work with Jurism 6.
     -
       label: Jurism Client (no installer available)
       icon: stop.svg
@@ -62,21 +72,16 @@ links:
       label: Jurism Connector (Firefox)
       icon: link.svg
       browser: firefox
-      urlpath: https://github.com/Juris-M/assets/releases/download/connector/firefox/plugin/release/Jurism_Connector-5.0.93.4.xpi
-      description: Install this Jurism Connector to enable Jurism support in Google Docs
-                   and one-click acquisition of database items from many websites.
-                   
-                    **Note:** If installing over version 5.0.66.1 or earlier,
-                    *remove* the previous version of Jurism connector before
-                    installing this version. (Subsequent updates to the plugin should be automatic.)
-
+      urlpath: https://juris-m.github.io/juris_m_connector-6.0.20.6.xpi
+      description: Provides a "Save to Jurism" option in the Firefox context
+                   menu (right-click), and enables Jurism support in Google Docs.
+                   Clicking on the link to the right will install this add-on.
     -
       label: Jurism Connector (Google Chrome or Chromium)
       icon: link.svg
       browser: chrome
-      urlpath: https://chrome.google.com/webstore/detail/juris-m-connector/pbhldkcipcaeniadfnhhdaealdfjgbpj
-      description: Install this Jurism Connector to enable Jurism support in Google Docs
-                   and one-click acquisition of database items from many websites.
+      urlpath: https://www.youtube.com/watch?v=xvFZjo5PgG0
+      description: The Jurism connector for Chrome is under review, but not yet available.
     -
       label: Jurism Connector (no installer available)
       icon: stop.svg
