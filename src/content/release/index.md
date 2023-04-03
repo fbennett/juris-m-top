@@ -38,7 +38,7 @@ links:
       label: Jurism Client Installer (Linux 64-bit)
       icon: link.svg
       os: lin64bit
-      urlpath: https://jurism.xyz/jurism/dl?channel=release&amp;platform=linux-x86_64
+      urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=linux-x86_64
       description: The Linux installers (for 32-bit and 64-bit systems respectively) are
                    offered here as *zip* archives, not as package installers. To use, download
                    the archive, unzip it (``/opt`` is a common location), enter its directory,
@@ -47,7 +47,7 @@ links:
       label: Jurism Client Installer (Linux 32-bit)
       icon: link.svg
       os: lin32bit
-      urlpath: https://jurism.xyz/jurism/dl?channel=release&amp;platform=linux-i686
+      urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=linux-i686
       description: The Linux installers (for 32-bit and 64-bit systems respectively) are
                    offered here as **zip** archives, not as package installers. To install, download
                    the archive, unzip it (``/opt`` is a common location), enter its directory,
