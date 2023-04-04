@@ -120,7 +120,7 @@ links:
       label: Jurism Connector (Google Chrome or Chromium)
       icon: link.svg
       browser: chrome
-      urlpath: https://www.youtube.com/watch?v=xvFZjo5PgG0
+      urlpath: https://chrome.google.com/webstore/detail/jurism-connector/pbhldkcipcaeniadfnhhdaealdfjgbpj?hl=en&authuser=0
       description: The Jurism connector for Chrome is under review, but not yet available.
     -
       label: Jurism Connector (no installer available)
