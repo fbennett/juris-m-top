@@ -121,7 +121,9 @@ links:
       icon: link.svg
       browser: chrome
       urlpath: https://chrome.google.com/webstore/detail/jurism-connector/pbhldkcipcaeniadfnhhdaealdfjgbpj?hl=en&authuser=0
-      description: The Jurism connector for Chrome is under review, but not yet available.
+      description: Provides a "Save to Jurism" option in the Chrome context
+                   menu (right-click), and enables Jurism support in Google Docs.
+                   Clicking on the link to the right will install this add-on.
     -
       label: Jurism Connector (no installer available)
       icon: stop.svg
