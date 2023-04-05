@@ -112,7 +112,7 @@ links:
       label: Jurism Connector (Firefox)
       icon: link.svg
       browser: firefox
-      urlpath: https://juris-m.github.io/juris_m_connector-6.0.20.6.xpi
+      urlpath: https://juris-m.github.io/juris_m_connector-6.0.20.7.xpi
       description: Provides a "Save to Jurism" option in the Firefox context
                    menu (right-click), and enables Jurism support in Google Docs.
                    Clicking on the link to the right will install this add-on.
