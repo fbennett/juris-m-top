@@ -21,7 +21,7 @@ links:
       icon: link.svg
       os: mac
       urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=mac
-      description: Jurism version 6. Click on the link to the right to download the installer,
+      description: Jurism version 6. Click on the link to the left to download the installer,
                    then double-click on the downloaded file to install.
                    
                    If you are upgrading from Jurism 5.0 ...
@@ -40,7 +40,7 @@ links:
       icon: link.svg
       os: win
       urlpath: https://jurism.xyz/jurism/dl?channel=release&platform=win32
-      description: Jurism version 6. Click on the link to the right to download the installer,
+      description: Jurism version 6. Click on the link to the left to download the installer,
                    then double-click on the downloaded file to install.
 
                    If you are upgrading from Jurism 5.0 ...
@@ -115,7 +115,7 @@ links:
       urlpath: https://juris-m.github.io/juris_m_connector-6.0.20.7.xpi
       description: Provides a "Save to Jurism" option in the Firefox context
                    menu (right-click), and enables Jurism support in Google Docs.
-                   Clicking on the link to the right will install this add-on.
+                   Clicking on the link to the left will install this add-on.
     -
       label: Jurism Connector (Google Chrome or Chromium)
       icon: link.svg
@@ -123,7 +123,7 @@ links:
       urlpath: https://chrome.google.com/webstore/detail/jurism-connector/pbhldkcipcaeniadfnhhdaealdfjgbpj?hl=en&authuser=0
       description: Provides a "Save to Jurism" option in the Chrome context
                    menu (right-click), and enables Jurism support in Google Docs.
-                   Clicking on the link to the right will install this add-on.
+                   Clicking on the link to the left will install this add-on.
     -
       label: Jurism Connector (no installer available)
       icon: stop.svg
