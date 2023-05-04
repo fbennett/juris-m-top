@@ -23,10 +23,7 @@ links:
       icon: link.svg
       os: mac
       urlpath: https://jurism.xyz/jurism/dl?channel=beta&platform=mac
-      description: The installer for the Mac is currently unsigned. To run the application after
-                   a first-time install, find Jurism in the Applications folder of the
-                   Finder, right-click on its icon, and choose “Open.” Subsequent beta updates
-                   will be automatic.
+      description: Welcome to the Mac beta.
     -
       label: Jurism Client Installer (Windows)
       icon: link.svg
