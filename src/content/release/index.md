@@ -107,7 +107,9 @@ links:
       icon: stop.svg
       os: none
       description: Installers for the Jurism client are available only for
-                   Windows, Mac, and Linux operating systems.
+                   the Windows, Mac, and Linux operating systems. An appropriate
+                   installer will be offered when this page is accessed from
+                   a supported operating system.
     -
       label: Jurism Connector (Firefox)
       icon: link.svg
@@ -116,6 +118,9 @@ links:
       description: Provides a "Save to Jurism" option in the Firefox context
                    menu (right-click), and enables Jurism support in Google Docs.
                    Clicking on the link to the left will install this add-on.
+                   
+                   **Note:** Several restarts of client and browser may be needed
+                   before the client and connector recognize one another.
     -
       label: Jurism Connector (Google Chrome or Chromium)
       icon: link.svg
@@ -124,11 +129,18 @@ links:
       description: Provides a "Save to Jurism" option in the Chrome context
                    menu (right-click), and enables Jurism support in Google Docs.
                    Clicking on the link to the left will install this add-on.
+                   
+                   **Note:** Several restarts of client and browser may be needed
+                   before the client and connector recognize one another.
     -
       label: Jurism Connector (no installer available)
       icon: stop.svg
       browser: none
-      description: Jurism connectors are available only for
-                   Chrome, Chromium, and Firefox browsers.
+      description: Jurism connectors are not available for this platform.
+                   Connectors are available in the Linux, Mac OSX, and
+                   Windows operating systems for the
+                   Chrome, Chromium, and Firefox browsers. The appropriate
+                   connector will be offered when this page is accessed
+                   from a supported browser.
 
 ```
